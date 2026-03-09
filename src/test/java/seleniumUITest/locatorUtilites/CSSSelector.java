@@ -44,6 +44,46 @@ public class CSSSelector {
         }
     }
 
+    public static By LocateByElementMatchingString(String matchingType, String Value) {
+        switch (matchingType) {
+            case "reverseSelection":
+                return byCssSelector(":not(:first-child)");
+            case "ElementWithMatchingDescendant":
+                return byCssSelector(":has(" + Value + ")");
+            case "ApplyMultipleSelectors":
+                return byCssSelector(":is(" + Value + ")");
+            case "selectFirstElementInGroup":
+                return byCssSelector(":first-child");
+            case "selectLastElementInGroup":
+                return byCssSelector(":last-child");
+            case "selectNthElementInGroup":
+                return byCssSelector(":nth-child(" + Value + ")");
+            case "selectNthElementButReverse":
+                return byCssSelector(":nth-last-child(" + Value + ")");
+            case "selectFirstElementOfType":
+                return byCssSelector(":first-of-type");
+            case "selectLastElementOfType":
+                return byCssSelector(":last-of-type");
+            case "selectNthElementOfType":
+                return byCssSelector(":nth-of-type(" + Value + ")");
+            case "selectOnlyOfType":
+                return byCssSelector(":only-of-type");
+            default:
+                return null;
+        }
+    }
+
+    public static By locateByNonStandardFunction(String functionType, String argument) {
+        switch (functionType) {
+            case "selectAttrValue":
+                return byCssSelector(":attr("+argument+")");
+            case "selectTextValue":
+                return byCssSelector(":text");
+            default:
+                return null;
+        }
+    }
+
     public static By locateByParentChild(String parentTag, String childTag) {
         return byCssSelector(parentTag + " > " + childTag);
     }
@@ -60,43 +100,19 @@ public class CSSSelector {
         return byCssSelector(ancestorTag + " " + descendantTag);
     }
 
-
-    //Element Matching Strategies
-    public static By LocateByElementMatchingString(String matchingType, String Value) {
-        switch (matchingType) {
-            case "reverseSelection":
-                return byCssSelector(":not(:first-child)");
-            case "ElementWithMatchingDescendant":
-                return byCssSelector(":has(" + Value + ")");
-            case "ApplyMultipleSelectors":
-                return byCssSelector(":is(" + Value + ")");
-            case "selectFirstElementInGroup":
-            default:
-                return null;
-        }
-    }
     public static void main(String[] args) {
-        // Setup WebDriver
-        WebDriver driver = new ChromeDriver();
-
+       WebDriver driver = new ChromeDriver();
         try {
-            // Navigate to a test page
             driver.get("https://example.com");
-
-            // Using generalized methods to find elements
             WebElement elementById = driver.findElement(CSSSelector.locateById("submit-button"));
             WebElement elementByClassName = driver.findElement(CSSSelector.locateByClassName("form-control"));
             WebElement elementByAttribute = driver.findElement(CSSSelector.locateByAttributeMatching(null,"data-testid", "username","ExactMatch"));
             WebElement elementByParentChild = driver.findElement(CSSSelector.locateByParentChild("div", "span"));
             WebElement elementBySibling = driver.findElement(CSSSelector.locateBySiblingPreceding("label", "input"));
-
-            // Perform actions
             elementById.click();
             System.out.println("Element interaction completed.");
-
         } finally {
-            // Close the browser
-            driver.quit();
+              driver.quit();
         }
     }
 }
