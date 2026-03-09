@@ -99,6 +99,9 @@ public class CSSSelector {
     public static By locateByDescendant(String ancestorTag, String descendantTag) {
         return byCssSelector(ancestorTag + " " + descendantTag);
     }
+    //select preceding siblings
+    //select parent or ancestor elements
+    //select array
 
     public static void main(String[] args) {
        WebDriver driver = new ChromeDriver();
