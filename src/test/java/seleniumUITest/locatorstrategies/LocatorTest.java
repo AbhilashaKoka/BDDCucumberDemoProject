@@ -16,9 +16,9 @@ public class LocatorTest {
             // Using generalized methods to find elements
             WebElement elementById = driver.findElement(CSSSelectorUtility.locateById("submit-button"));
             WebElement elementByClassName = driver.findElement(CSSSelectorUtility.locateByClassName("form-control"));
-            WebElement elementByAttribute = driver.findElement(CSSSelectorUtility.locateByAttribute("data-testid", "username"));
+            WebElement elementByAttribute = driver.findElement(CSSSelectorUtility.locateByAttributeMatching(null,"data-testid", "username","ExactMatch"));
             WebElement elementByParentChild = driver.findElement(CSSSelectorUtility.locateByParentChild("div", "span"));
-            WebElement elementBySibling = driver.findElement(CSSSelectorUtility.locateBySibling("label", "input"));
+            WebElement elementBySibling = driver.findElement(CSSSelectorUtility.locateBySiblingPreceding("label", "input"));
 
             // Perform actions
             elementById.click();
