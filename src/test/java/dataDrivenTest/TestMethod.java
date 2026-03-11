@@ -1,15 +1,13 @@
-package DataDrivenTest;
-
+package dataDrivenTest;
 import org.json.JSONObject;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-import static DataDrivenTest.ReaderUtility.SearchMethod;
-import static DataDrivenTest.ReaderUtility.getTestData;
+import static dataDrivenTest.ReaderUtility.SearchMethod;
+import static dataDrivenTest.ReaderUtility.getTestData;
 
 public class TestMethod{
 

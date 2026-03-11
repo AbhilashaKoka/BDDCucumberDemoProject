@@ -1,121 +1,111 @@
 package seleniumUITest.locatorUtilites;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
+import org.openqa.selenium.By;
+
+/**
+ * Utility class for building robust Selenium locators.
+ * Separates CSS and XPath usage, avoids unsupported selectors,
+ * and uses enums for type safety.
+ */
 public class CSSSelector {
 
+    // --- ENUMS FOR TYPE SAFETY ---
+    public enum AttributeMatchType {
+        TAG_AND_EXACT,
+        EXACT,
+        CONTAINS,
+        STARTS_WITH,
+        ENDS_WITH,
+        CONTAINS_WORD
+    }
 
-    public static By byCssSelector(String selector) {
+    public enum PseudoClassType {
+        FIRST_CHILD,
+        LAST_CHILD,
+        NTH_CHILD,
+        NTH_LAST_CHILD,
+        FIRST_OF_TYPE,
+        LAST_OF_TYPE,
+        NTH_OF_TYPE,
+        ONLY_OF_TYPE
+    }
+
+    // --- BASIC LOCATORS ---
+    public static By byCss(String selector) {
         return By.cssSelector(selector);
     }
 
-
-    public static By locateById(String id) {
-
-        return byCssSelector("#" + id);
+    public static By byId(String id) {
+        return byCss("#" + id);
     }
 
-    public static By locateByClassName(String className) {
-
-        return byCssSelector("." + className);
+    public static By byClass(String className) {
+        return byCss("." + className);
     }
 
-
-    public static By locateByAttributeMatching(String tagName, String attribute, String partialValue, String matchType) {
-        switch (matchType) {
-            case "TagAndExactMatch":
-                return byCssSelector(tagName + "[" + attribute + "='" + partialValue + "']");
-            case "ExactMatch":
-                return byCssSelector("[" + attribute + "='" + partialValue + "']");
-            case "ContainsAttribute":
-                return byCssSelector("[" + attribute + "*='" + partialValue + "']");
-            case "IgnoreSuffixValue":
-                return byCssSelector("[" + attribute + "|='" + partialValue + "']");
-            case "StartWithValue":
-                return byCssSelector("[" + attribute + "^='" + partialValue + "']");
-            case "EndWithValue":
-                return byCssSelector("[" + attribute + "$='" + partialValue + "']");
-            case "ContainsAWord":
-                return byCssSelector("[" + attribute + "~='" + partialValue + "']");
+    // --- ATTRIBUTE MATCHING ---
+    public static By byAttribute(String tag, String attribute, String value, AttributeMatchType type) {
+        String prefix = (tag != null && !tag.isEmpty()) ? tag : "";
+        switch (type) {
+            case TAG_AND_EXACT:
+                return byCss(prefix + "[" + attribute + "='" + value + "']");
+            case EXACT:
+                return byCss("[" + attribute + "='" + value + "']");
+            case CONTAINS:
+                return byCss("[" + attribute + "*='" + value + "']");
+            case STARTS_WITH:
+                return byCss("[" + attribute + "^='" + value + "']");
+            case ENDS_WITH:
+                return byCss("[" + attribute + "$='" + value + "']");
+            case CONTAINS_WORD:
+                return byCss("[" + attribute + "~='" + value + "']");
             default:
-                return null;
+                throw new IllegalArgumentException("Unsupported match type");
         }
     }
 
-    public static By LocateByElementMatchingString(String matchingType, String Value) {
-        switch (matchingType) {
-            case "reverseSelection":
-                return byCssSelector(":not(:first-child)");
-            case "ElementWithMatchingDescendant":
-                return byCssSelector(":has(" + Value + ")");
-            case "ApplyMultipleSelectors":
-                return byCssSelector(":is(" + Value + ")");
-            case "selectFirstElementInGroup":
-                return byCssSelector(":first-child");
-            case "selectLastElementInGroup":
-                return byCssSelector(":last-child");
-            case "selectNthElementInGroup":
-                return byCssSelector(":nth-child(" + Value + ")");
-            case "selectNthElementButReverse":
-                return byCssSelector(":nth-last-child(" + Value + ")");
-            case "selectFirstElementOfType":
-                return byCssSelector(":first-of-type");
-            case "selectLastElementOfType":
-                return byCssSelector(":last-of-type");
-            case "selectNthElementOfType":
-                return byCssSelector(":nth-of-type(" + Value + ")");
-            case "selectOnlyOfType":
-                return byCssSelector(":only-of-type");
-            default:
-                return null;
+    // --- PSEUDO CLASSES ---
+    public static By byPseudo(PseudoClassType type, int index) {
+        switch (type) {
+            case FIRST_CHILD: return byCss(":first-child");
+            case LAST_CHILD: return byCss(":last-child");
+            case NTH_CHILD: return byCss(":nth-child(" + index + ")");
+            case NTH_LAST_CHILD: return byCss(":nth-last-child(" + index + ")");
+            case FIRST_OF_TYPE: return byCss(":first-of-type");
+            case LAST_OF_TYPE: return byCss(":last-of-type");
+            case NTH_OF_TYPE: return byCss(":nth-of-type(" + index + ")");
+            case ONLY_OF_TYPE: return byCss(":only-of-type");
+            default: throw new IllegalArgumentException("Unsupported pseudo class");
         }
     }
 
-    public static By locateByNonStandardFunction(String functionType, String argument) {
-        switch (functionType) {
-            case "selectAttrValue":
-                return byCssSelector(":attr("+argument+")");
-            case "selectTextValue":
-                return byCssSelector(":text");
-            default:
-                return null;
-        }
+    // --- RELATIONSHIPS ---
+    public static By byParentChild(String parent, String child) {
+        return byCss(parent + " > " + child);
     }
 
-    public static By locateByParentChild(String parentTag, String childTag) {
-        return byCssSelector(parentTag + " > " + childTag);
+    public static By byDescendant(String ancestor, String descendant) {
+        return byCss(ancestor + " " + descendant);
     }
 
-    public static By locateBySiblingPreceding(String precedingSiblingTag, String siblingTag) {
-        return byCssSelector(precedingSiblingTag + " + " + siblingTag);
+    public static By byAdjacentSibling(String sibling1, String sibling2) {
+        return byCss(sibling1 + " + " + sibling2);
     }
 
-    public static By locateBySiblingFollowing(String FollowingSiblingTag, String siblingTag) {
-        return byCssSelector(FollowingSiblingTag + " + " + siblingTag);
+    // --- XPATH FALLBACKS ---
+    public static By byText(String text) {
+        return By.xpath("//*[text()='" + text + "']");
     }
 
-    public static By locateByDescendant(String ancestorTag, String descendantTag) {
-        return byCssSelector(ancestorTag + " " + descendantTag);
+    public static By byContainsText(String text) {
+        return By.xpath("//*[contains(text(),'" + text + "')]");
     }
-    //select preceding siblings
-    //select parent or ancestor elements
-    //select array
 
-    public static void main(String[] args) {
-       WebDriver driver = new ChromeDriver();
-        try {
-            driver.get("https://example.com");
-            WebElement elementById = driver.findElement(CSSSelector.locateById("submit-button"));
-            WebElement elementByClassName = driver.findElement(CSSSelector.locateByClassName("form-control"));
-            WebElement elementByAttribute = driver.findElement(CSSSelector.locateByAttributeMatching(null,"data-testid", "username","ExactMatch"));
-            WebElement elementByParentChild = driver.findElement(CSSSelector.locateByParentChild("div", "span"));
-            WebElement elementBySibling = driver.findElement(CSSSelector.locateBySiblingPreceding("label", "input"));
-            elementById.click();
-            System.out.println("Element interaction completed.");
-        } finally {
-              driver.quit();
-        }
+    public static By byPrecedingSibling(String element, String sibling) {
+        return By.xpath("//" + element + "/preceding-sibling::" + sibling);
+    }
+
+    public static By byAncestor(String element, String ancestor) {
+        return By.xpath("//" + element + "/ancestor::" + ancestor);
     }
 }
