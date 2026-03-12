@@ -69,23 +69,22 @@ public class XPATHSelector {
     public static By locateBystringlength() { return byXPath("//string-length()");}
     public static By locateBystartswith() { return byXPath("//[starts-with(name(), 'h')]"); }
     public static By textbutton(String Submit) {return byXPath("//button[text()='"+Submit+"']");}
-   public static By buttontext01() {return byXPath("//button/text()");}
-   public static By langstr() {return byXPath("//lang(str)"); }
-   public static By namespaceuri(){return byXPath("//namespace-uri()");}
-   public static By tablecounttr() { return byXPath("//table[count(tr)=1]");}
-   public static By useSelectposition(){return byXPath("// ol/li[position()=2]");}
-   public static By useSelectLInk() { return byXPath("//a[1]");}
-   public static By useSelectlast() { return byXPath("//a[last()]");}
-  public static By useSelectLi() { return byXPath("//ol/li[2]");}
-  public static By useSelectPositionequal() { return byXPath("//ol/li[position()=2]");}
-  public static By useSelectPositionlessthan() { return byXPath("//ol/li[position()>1]");}
-  public static By useSelecthref() {  return byXPath("//a[1][@href='/']");}
-  public static By useSelecthref01() {  return byXPath("// a[@href='/'][1]");}
-  public static By useSelectsection() {  return byXPath("// section[.//h1[@id='hi']");}
-  public static By useSelectboolean() { return byXPath("// div[true()]");}
- public static By useSelectParentwithHead(String head) {return byXPath("//div[@class='"+head+"']");}
-public static By useSelectParent(String head,String top) { return byXPath("//div[@class='"+head+"'][@id='"+top+"']");}
-    public static By useSelectParentWithString(String xyz) {return byXPath("//a[@id = '"+xyz+"']");}
+    public static By buttontext01() {return byXPath("//button/text()");}
+    public static By langstr() {return byXPath("//lang(str)"); }
+    public static By namespaceuri(){return byXPath("//namespace-uri()");}
+    public static By tablecounttr() { return byXPath("//table[count(tr)=1]");}
+    public static By useSelectposition(){return byXPath("// ol/li[position()=2]");}
+    public static By useSelectLInk() { return byXPath("//a[1]");}
+    public static By useSelectlast() { return byXPath("//a[last()]");}
+   public static By useSelectLi() { return byXPath("//ol/li[2]");}
+   public static By useSelectPositionequal() { return byXPath("//ol/li[position()=2]");}
+   public static By useSelectPositionlessthan() { return byXPath("//ol/li[position()>1]");}
+   public static By useSelecthref() {  return byXPath("//a[1][@href='/']");}
+   public static By useSelecthref01() {  return byXPath("// a[@href='/'][1]");}
+   public static By useSelectsection() {  return byXPath("// section[.//h1[@id='hi']");}
+   public static By useSelectboolean() { return byXPath("// div[true()]");}
+   public static By useSelectParentwithHead(String head) {return byXPath("//div[@class='"+head+"']");}
+   public static By useSelectParent(String head,String top) { return byXPath("//div[@class='"+head+"'][@id='"+top+"']");}public static By useSelectParentWithString(String xyz) {return byXPath("//a[@id = '"+xyz+"']");}
  public static By useSelectParentWithNot(String xyz) { return byXPath("//a[@id != '"+xyz+"']");}
 public static By useSelectParentWithLessThan() {return byXPath("//a[@price > 25]");}
  public static By useSelectParentWithHeadAndPosition(String head) {return byXPath("//div[@id='"+head+"' and position()=2]");}
@@ -109,8 +108,7 @@ public static By useSelectParentWithAncestorOrSelf() {    return byXPath("//li/a
  public static By locateByuseSelectParentWithSibling(String xyz) { return byXPath("//h1/following-sibling::ul[1]");}
  public static By locateByuseSelectParentWithSiblingId(String xyz) {return byXPath("//h1/following-sibling::[@id='"+xyz+"'] ");}
  public static By locateByuseSelectParentWithLi1() {return byXPath("// ul/li[1]");}
-  public static By locateByuseSelectParentWithLi2() {return byXPath("//ul/li[2]");}
-    public static By locateByuseSelectParentWithLast() {return byXPath("//ul/li[last()]");}
+  public static By locateByuseSelectParentWithLi2() {return byXPath("//ul/li[2]");}public static By locateByuseSelectParentWithLast() {return byXPath("//ul/li[last()]");}
 public static By locateByuseSelectParentWithIdLi(String xyz) {return byXPath("//li[@id='"+xyz+"'][1]");}
 public static By locateByuseSelectParentWithALink() {return byXPath("//a[1]");     }
  public static By locateByuseSelectParentWithLast12() { return byXPath("//a[last()]");}

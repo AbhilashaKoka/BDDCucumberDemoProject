@@ -10,10 +10,9 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class StringOperation{
-
-    private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-    private static final SecureRandom RANDOM = new SecureRandom();
-    private static final String UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  private static final SecureRandom RANDOM = new SecureRandom();
+   private static final String UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private static final String LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
     private static final String NUMERIC = "0123456789";
     private static final String SPECIAL_CHARACTERS = "!@#$%^&*";
@@ -22,28 +21,33 @@ public class StringOperation{
     public static void nonRepeatedCharacter(String str) {
         String[] arr = str.split("\\s+");
         Map<String, Integer> map = new Hashtable<>();
+
         for (String str2 : arr) {
             map.put(str2, map.getOrDefault(str2, 0) + 1);
         }
+
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
             System.out.println(entry.getKey() + ":" + entry.getValue());
         }
+
+    }
+
+
+    public static void vowelAndConsonent(String str){
         int vowelCount = 0;
         int consonentsCount = 0;
+
         for (char ch : str.toLowerCase().toCharArray()) {
             if (ch >= 'a' && ch <= 'z') {
-                if ("aeiou".indexOf(ch) != -1) {
+                if ("aeiou".indexOf(ch) != -1){
                     vowelCount++;
                 }
                 consonentsCount++;
             }
         }
-        System.out.println("Vowel count:"
-                + vowelCount +
-                ":" 
-                + "Consonent Count:"
-                + consonentsCount);
+        System.out.println("Vowel count:" + vowelCount + ":"+ "Consonent Count:" + consonentsCount);
     }
+
 
 
     public static int[] countVowelsAndConsonants(String input) {
@@ -61,6 +65,8 @@ public class StringOperation{
 
         return new int[]{vowelsCount, consonantsCount};
     }
+
+
 
     public static void swapToString(String str1, String str2){
         String temp=str1;
