@@ -2,10 +2,8 @@ package utilityDemoTest.programInJavaTest;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.util.Map;
 import java.util.Scanner;
-
 import static utilityDemoTest.programInJavaTest.StringOperation.*;
 
 public class TestClass {
@@ -13,93 +11,90 @@ public class TestClass {
 
 
     @Test
-    public void Test1() {
+    public void ReversingsecondcharacterwithchangecaseTest() {
             String str = "sitakumari";
             Reversingsecondcharacterwithchangecase(str);
             Assert.assertEquals("iSaTuKaMiR","iSaTuKaMiR");
         }
 
     @Test
-    public void Test2() {
+    public void countCharactersTest() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the string:");
         String input = scanner.nextLine();
         Map<Character, Integer> charCount = countCharacters(input);
         for (Map.Entry<Character, Integer> entry : charCount.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue());
-
         }
 
     }
     @Test
-    public void Test3() {
+    public void containsOnlyDigitsTest() {
         String input1 = "123456";
         boolean result = containsOnlyDigits(input1);
         System.out.println(result);
     }
 
     @Test
-    public void Test4() {
-
+    public void containOnlyLetterTest() {
         String str1 = "HelloWorld";
         boolean result1 = containOnlyLetter(str1);
         System.out.println(result1);
-
     }
+
     @Test
-    public void Test5() {
+    public void duplicateCharacterCountTest() {
         Scanner scanner2 = new Scanner(System.in);
         System.out.println("Enter the String:");
         String str3 = scanner2.nextLine();
         duplicateCharacterCount(str3);
     }
     @Test
-    public void Test6() {
+    public void findDuplicateCharacter2Test() {
         String sentence = "Java id a programming language and java is also a platform";
         System.out.println("Duplicate words in the string is:");
         findDuplicateCharacter2(sentence);
     }
 
     @Test
-    public void Test7() {
+    public void findRepeatedCharacterTest() {
         String input2 = "javastream";
         findRepeatedCharacter(input2);
     }
 
     @Test
-    public void Test8() {
-
+    public void duplicateWordCountTest() {
         String Input = "Java is great and java is fun, Programming in java is great";
         duplicateWordCount(Input);
     }
     @Test
-    public void Test9() {
+    public void findOccurrenceOfWordInStrTest() {
         String text = "this is a test this is only a test";
         findOccurrenceOfWordInStr(text);
     }
 
     @Test
-    public void Test10() {
+    public void findOccurOfWordInStrTest() {
         String str4 = "This is an example string, an example of a string.";
         String word = "example";
         findOccurOfWordInStr(str4, word);
     }
 
     @Test
-    public void Test11() {
+    public void DivideStringInSubSetTest() {
         String str5 = "aaaabbbbcccc";
         DivideStringInSubSet(str5, 3);
     }
 
     @Test
-    public void Test12() {
+    public void generateallPermutationOfStringTest() {
         Scanner scanner6 = new Scanner(System.in);
         System.out.println("Enter any string:");
         String input3 = scanner6.nextLine();
         generateallPermutationOfString(input3);
     }
     @Test
-    public void Test13() {
+    public void containOnlyLetter1Test() {
         String str66 = "HelloWorld12344";
         boolean result6 = containOnlyLetter1(str66);
         System.out.println(result6);
@@ -107,14 +102,14 @@ public class TestClass {
         maxOccurOfChar(str8);
     }
     @Test
-    public void Test14() {
+    public void mergeTwoStrsTest() {
         String[] str11 = {"java", "is", "fun"};
         String[] str21 = {"and", "powerful"};
         mergeTwoStrs(str11, str21);
     }
 
     @Test
-    public void Test15() {
+    public void findNonRepeatedCharaterTest() {
         String text1 = "Java Guides";
         char result11 = findNonRepeatedCharater(text1);
         if (result11 != '\0'){
@@ -124,9 +119,7 @@ public class TestClass {
         }
     }
     @Test
-    public void Test16() {
-
-
+    public void isPalindromeTest() {
         Scanner scanner4 = new Scanner(System.in);
         System.out.println("Enter any String :");
         String str7 = scanner4.nextLine();
@@ -135,40 +128,39 @@ public class TestClass {
     }
 
     @Test
-    public void Test17() {
+    public void removeTheDuplicateWordsTest() {
 
         String input9 = "Java is great and java is fun and java is powerful";
         String result9 = removeTheDuplicateWords(input9);
         System.out.println(result9);
     }
     @Test
-    public void Test18() {
+    public void reverseWordIntraditionTest() {
 
         String str99 = "java is great and fun";
         String result99 = reverseWordIntradition(str99);
-
         System.out.println("reverse String:" + result99);
     }
     @Test
-    public void Test19() {
+    public void reverseListTest() {
         Integer[] arr = {1, 2, 3, 4, 5};
         reverseList(arr);
     }
     @Test
-    public void Test20() {
+    public void subStringCountTest() {
         String input34 = "java is great. java is fun. java is POwerful";
         String substring = "Java";
         subStringCount(input34, substring);
     }
     @Test
-    public void Test21() {
+    public void swapToStringTest() {
         String str14 = "Hello";
         String str24 = "World";
         swapToString(str14, str24);
     }
 
     @Test
-    public void Test22() {
+    public void countVowelsAndConsonantsTest() {
         Scanner scanner5 = new Scanner(System.in);
         System.out.println("Enter your string:");
         String input5 = scanner5.nextLine();
@@ -177,56 +169,55 @@ public class TestClass {
         System.out.println("Number of consonants: " + counts[1]);
     }
     @Test
-    public void Test23() {
+    public void nonRepeatedCharacterTest() {
         String str555 = "Abhilasha Koka Koka";
         nonRepeatedCharacter(str555);
 
     }
     @Test
-    public void Test24() {
+    public void capitalizeWordsTest() {
         String str34 = "hello 54689 world of 8687 gorilla";
         String output = capitalizeWords(str34);
         System.out.println(output);
     }
 
     @Test
-    public void Test25() {
+    public void characterCountInStringTest() {
     String input1 = "hello world";
     characterCountInString(input1);
     String input2 = "programming";
     countCharacterInString(input2);
 
-}
+    }
 
-@Test
-    public void Test26()
-{
-
+    @Test
+    public void swapFirstLastTest()
+   {
     String str = " Hello World";
     String str2 = swapFirstLast(str);
     System.out.println("Original String: " + str);
     System.out.println("Modified String: " + str2);
 }
 
-@Test
-    public void Test27()
-{
+   @Test
+    public void generateRandomNameTest()
+   {
     int nameLength = 10;
     String randomName = generateRandomName(nameLength);
     System.out.println("Generated Random Name: " + randomName);
-}
+    }
 
 
 
 @Test
-    public void Test28()
+    public void generatePasswordTest()
 {
     String password = generatePassword();
     System.out.println("Generated Password: " + password);
 }
 
 @Test
-    public void Test29()
+    public void UUIDGeneratorTest()
 {
     String  UUID=UUIDGenerator();
     System.out.println(UUID);

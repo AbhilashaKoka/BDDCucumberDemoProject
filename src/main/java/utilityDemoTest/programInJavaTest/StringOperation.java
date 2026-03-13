@@ -1,7 +1,6 @@
 package utilityDemoTest.programInJavaTest;
 
 import org.apache.commons.lang3.StringUtils;
-
 import java.security.SecureRandom;
 import java.util.*;
 import java.util.function.Function;
@@ -18,7 +17,7 @@ public class StringOperation{
     private static final String SPECIAL_CHARACTERS = "!@#$%^&*";
     private static final SecureRandom RANDOM1 = new SecureRandom();
 
-    public static void nonRepeatedCharacter(String str) {
+    public static void nonRepeatedCharacter(String str){
         String[] arr = str.split("\\s+");
         Map<String, Integer> map = new Hashtable<>();
 
@@ -26,7 +25,7 @@ public class StringOperation{
             map.put(str2, map.getOrDefault(str2, 0) + 1);
         }
 
-        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+        for (Map.Entry<String, Integer> entry : map.entrySet()){
             System.out.println(entry.getKey() + ":" + entry.getValue());
         }
 
