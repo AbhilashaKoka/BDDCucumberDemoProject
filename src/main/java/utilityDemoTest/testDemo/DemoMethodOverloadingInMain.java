@@ -1,7 +1,7 @@
 package utilityDemoTest.testDemo;
 import java.util.Arrays;
 
-//Main method can be overloaded
+
 public class DemoMethodOverloadingInMain {
     public static void main(String[] args) {
         System.out.println("String[] args main method called");

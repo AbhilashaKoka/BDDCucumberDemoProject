@@ -14,6 +14,6 @@ public class EmployeeTest {
         e.EmployeesDepartmentCout();
         e.OldestEmpoyee();
         e.YoungestEmployee();
-        e.Department();
+        EmployeeMethod.Department();
     }
 }

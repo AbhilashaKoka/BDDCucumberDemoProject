@@ -1,5 +1,4 @@
 package utilityDemoTest.programInJavaTest;
-
 import org.apache.commons.lang3.StringUtils;
 import java.security.SecureRandom;
 import java.util.*;
@@ -9,9 +8,9 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class StringOperation{
-  private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-  private static final SecureRandom RANDOM = new SecureRandom();
-   private static final String UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    private static final SecureRandom RANDOM = new SecureRandom();
+    private static final String UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private static final String LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
     private static final String NUMERIC = "0123456789";
     private static final String SPECIAL_CHARACTERS = "!@#$%^&*";
@@ -20,11 +19,9 @@ public class StringOperation{
     public static void nonRepeatedCharacter(String str){
         String[] arr = str.split("\\s+");
         Map<String, Integer> map = new Hashtable<>();
-
         for (String str2 : arr) {
             map.put(str2, map.getOrDefault(str2, 0) + 1);
         }
-
         for (Map.Entry<String, Integer> entry : map.entrySet()){
             System.out.println(entry.getKey() + ":" + entry.getValue());
         }
@@ -33,9 +30,7 @@ public class StringOperation{
 
 
     public static void vowelAndConsonent(String str){
-        int vowelCount = 0;
-        int consonentsCount = 0;
-
+        int vowelCount = 0, consonentsCount = 0;
         for (char ch : str.toLowerCase().toCharArray()) {
             if (ch >= 'a' && ch <= 'z') {
                 if ("aeiou".indexOf(ch) != -1){
@@ -51,17 +46,15 @@ public class StringOperation{
 
     public static int[] countVowelsAndConsonants(String input) {
         int vowelsCount = 0, consonantsCount = 0;
-        for (char c : input.toLowerCase().toCharArray()) {
+        for (char c : input.toLowerCase().toCharArray()){
             if (c >= 'a' && c <= 'z') {
-                // Ensure character is a letter
-                if ("aeiou".indexOf(c) != -1) {
+                if ("aeiou".indexOf(c) != -1){
                     vowelsCount++;
-                } else {
+                }else{
                     consonantsCount++;
                 }
             }
         }
-
         return new int[]{vowelsCount, consonantsCount};
     }
 
@@ -84,8 +77,7 @@ public class StringOperation{
         String[] parts=input.split(substring);
         int countUsingSplit=parts.length-1;
         System.out.println("No. of occurrence using split:"+countUsingSplit);
-        int countUsingIndexOf=0;
-        int index=0;
+        int countUsingIndexOf=0, index=0;
         while((index=input.indexOf(substring, index))!=-1){
             countUsingIndexOf++;
             index +=substring.length();
@@ -100,7 +92,8 @@ public class StringOperation{
         System.out.println("Number of occurrences using regex:"+countUsingRegex);
     }
 
-    public static void reverseList ( Integer[] arr){
+
+    public static void reverseList( Integer[] arr){
         List<Integer> numbers = Arrays.asList(arr);
         System.out.println("Original Array:" + numbers);
         Collections.reverse(numbers);
@@ -111,7 +104,6 @@ public class StringOperation{
         System.out.println("Reversed string:"+reverseString);
         String rev=reverseString(originalString);
         System.out.println(rev);
-
         char[] charArr=originalString.toCharArray();
         for(int i=charArr.length-1;i>0;i--)
         {
@@ -126,23 +118,19 @@ public class StringOperation{
         return reverseString(input.substring(1))+input.charAt(0);
     }
 
-//    public static String reverseWord(String input) {
-//
-//        return Arrays.stream(input.split("\s+"))
-//                .map(word->new StringBuilder(word).reverse().toString())
-//                .collect(Collectors.joining(" "));
-//    }
-//
+    public static String reverseWord(String input) {
+        return Arrays.stream(input.split("\s+"))
+                .map(word->new StringBuilder(word).reverse().toString())
+                .collect(Collectors.joining(" "));
+    }
 
-    public static String reverseWordIntradition(String input){
+
+    public static String reverseWordInTradition(String input){
         String[] words=input.split("\\s+");
-
         StringBuilder result=new StringBuilder();
-
         for(String word:words){
             result.append(new StringBuilder(word).reverse()).append(" ");
         }
-
         return result.toString().trim();
     }
 
@@ -151,7 +139,6 @@ public class StringOperation{
         String[] words=normalizedStr.split("\\s+");
         Set<String> wordset = new HashSet<>();
         StringBuilder result=new StringBuilder();
-
         for(String word:words){
             if(!wordset.contains(word)){
                 wordset.add(word);
@@ -162,7 +149,7 @@ public class StringOperation{
     }
 
 
-    public static String removeduplicateWords(String input){
+    public static String removeDuplicateWords(String input){
         Set<String> wordSet=Arrays.stream(input.split("\\s+"))
                 .collect(Collectors.toCollection(LinkedHashSet::new));
         return String.join(" ",wordSet);
@@ -177,8 +164,11 @@ public class StringOperation{
         String PalindromeString=new StringBuffer(normalizedString).reverse().toString();
         return normalizedString.equals(PalindromeString);
     }
-    public static char findNonRepeatedCharater(String input) {
-        Map<Character, Integer> charCount = new HashMap<>();
+
+
+
+    public static char findNonRepeatedInCharater(String input) {
+        Map<Character,Integer> charCount = new HashMap<>();
         for (char c:input.toCharArray()){
             charCount.put(c,charCount.getOrDefault(c,0)+1);
         }
@@ -198,16 +188,16 @@ public class StringOperation{
         }
         for(String s2:str2)
         {
-            mergedarr[index++]=s2;
+         mergedarr[index++]=s2;
         }
-
         System.out.println("Merged array using loop:");
         for(String element:mergedarr){
-            System.out.println(element);
+        System.out.println(element);
         }
     }
+
     public static void maxOccurOfChar(String str){
-        Map<Character,Integer> charfrequencyMap=new HashMap();
+        Map<Character,Integer> charfrequencyMap=new HashMap<>();
         char maxOcurringChar=' ';
         int maxFequency=0;
         for(char c:str.toCharArray()){
@@ -220,11 +210,11 @@ public class StringOperation{
                 maxOcurringChar= entry.getKey();
             }
         }
-        System.out.println("Maximum Occuring character:'"+maxOcurringChar+"'with a frequency of"+maxFequency);
+        System.out.println("Maximum occuring character:'"+maxOcurringChar+"'with a frequency of"+maxFequency);
 
     }
     public static boolean containOnlyLetter1(String input) {
-        if (!input.isEmpty() || input == null){
+        if (!input.isEmpty()){
             for (int i = 0; i < input.length(); i++){
                 if(!Character.isLetterOrDigit(input.charAt(i))){
                     return false;
@@ -233,29 +223,27 @@ public class StringOperation{
         }
         return true;
     }
-    public static void generateallPermutationOfString(String input){
-        if(input.length()==0)
-        {
-            System.out.println("   ");
+
+    public static void generateAllPermutationOfString(String input){
+        if(input.isEmpty()){
+        System.out.println("   ");
         }
-        for(int i=0;i<input.length();i++)
-        {
+        for(int i=0;i<input.length();i++){
             char ch=input.charAt(i);
             String remaining=input.substring(0,i)+input.substring(i+1);
-            System.out.println(remaining);
+        System.out.println(remaining);
         }
     }
 
-    public static void DivideStringInSubSet (String str, int n) {
+    public static void DivideStringInSubSet(String str, int n) {
         int len = str.length();
         int temp = 0, chars = len / n;
         String[] equalStr = new String[n];
         if (len % n != 0)
         {
-            System.out.println("Sorry the string can`t be divided into " + n
-                    + " equals parts");
+         System.out.println("Sorry the string can`t be divided into equals parts");
         }
-        else { //how much to iterate
+        else {
             for (int i = 0; i < len; i = i + chars)
             {
                 String part = str.substring(i, i + chars);
@@ -269,7 +257,7 @@ public class StringOperation{
             }
         }
     }
-    public static void findOccurrenceOfWordInStr(String text) {
+    public static void findOccurrenceOfWordInStr(String text){
         String[] words = text.split(" ");
         Map<String, Integer> wordCount = new Hashtable<>();
         for (String word : words) {
@@ -279,7 +267,6 @@ public class StringOperation{
                 wordCount.put(word, 1);
             }
         }
-
         System.out.println("word Occurrence");
         for (Map.Entry<String, Integer> entry : wordCount.entrySet()) {
             System.out.println(entry.getKey() + ":" + entry.getValue());
@@ -289,12 +276,9 @@ public class StringOperation{
 
     public static void findOccurOfWordInStr(String str, String word){
         int count = 0;
-        // Convert string to lower case to make the search case-insensitive
         String lowerCaseStr = str.toLowerCase();
         String lowerCaseWord = word.toLowerCase();
-        // Split the string into words
         String[] words = lowerCaseStr.split("\\s+");
-        // Count the occurrence of the word
         for (String w : words)
         {
             if (w.equals(lowerCaseWord))
@@ -309,8 +293,8 @@ public class StringOperation{
         String normalizedStr = Input.toLowerCase();
         String[] words = normalizedStr.split("\\W+");
         Map<String, Integer> wordCountMap = new HashMap<>();
-        for (String word : words) {
-            if (wordCountMap.containsKey(word)) {
+        for (String word : words){
+            if (wordCountMap.containsKey(word)){
                 wordCountMap.put(word, wordCountMap.get(word) + 1);
             } else {
                 wordCountMap.put(word, 1);

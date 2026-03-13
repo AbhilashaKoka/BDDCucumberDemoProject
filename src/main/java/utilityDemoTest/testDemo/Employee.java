@@ -10,15 +10,7 @@ public class Employee {
     private long salary;
     private String city;
 
-    public Employee(int id,
-                    String name,
-                    int age,
-                    String gender,
-                    String department,
-                    String organization,
-                    long salary,
-                    String city) {
-
+    public Employee(int id,  String name, int age,  String gender,  String department,String organization, long salary,String city) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -28,6 +20,8 @@ public class Employee {
         this.salary = salary;
         this.city = city;
     }
+
+
     public int getId() {
         return id;
     }

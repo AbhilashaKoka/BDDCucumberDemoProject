@@ -91,7 +91,7 @@ public class TestClass {
         Scanner scanner6 = new Scanner(System.in);
         System.out.println("Enter any string:");
         String input3 = scanner6.nextLine();
-        generateallPermutationOfString(input3);
+        generateAllPermutationOfString(input3);
     }
     @Test
     public void containOnlyLetter1Test() {
@@ -111,7 +111,7 @@ public class TestClass {
     @Test
     public void findNonRepeatedCharaterTest() {
         String text1 = "Java Guides";
-        char result11 = findNonRepeatedCharater(text1);
+        char result11 = findNonRepeatedInCharater(text1);
         if (result11 != '\0'){
             System.out.println("The Non repeated character is:" + result11);
         } else {
@@ -138,7 +138,7 @@ public class TestClass {
     public void reverseWordIntraditionTest() {
 
         String str99 = "java is great and fun";
-        String result99 = reverseWordIntradition(str99);
+        String result99 = reverseWordInTradition(str99);
         System.out.println("reverse String:" + result99);
     }
     @Test
