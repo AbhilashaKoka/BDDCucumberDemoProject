@@ -108,7 +108,8 @@ public class XPATHSelector {
     public static By locateByuseSelectParentWithSibling(String xyz) { return byXPath("//h1/following-sibling::ul[1]");}
     public static By locateByuseSelectParentWithSiblingId(String xyz) {return byXPath("//h1/following-sibling::[@id='"+xyz+"'] ");}
     public static By locateByuseSelectParentWithLi1() {return byXPath("// ul/li[1]");}
-    public static By locateByuseSelectParentWithLi2() {return byXPath("//ul/li[2]");}public static By locateByuseSelectParentWithLast() {return byXPath("//ul/li[last()]");}
+    public static By locateByuseSelectParentWithLi2() {return byXPath("//ul/li[2]");}
+    public static By locateByuseSelectParentWithLast() {return byXPath("//ul/li[last()]");}
     public static By locateByuseSelectParentWithIdLi(String xyz) {return byXPath("//li[@id='"+xyz+"'][1]");}
     public static By locateByuseSelectParentWithALink() {return byXPath("//a[1]");     }
     public static By locateByuseSelectParentWithLast12() { return byXPath("//a[last()]");}
