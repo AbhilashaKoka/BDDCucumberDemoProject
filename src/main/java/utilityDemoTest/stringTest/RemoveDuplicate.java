@@ -11,19 +11,15 @@ public class RemoveDuplicate {
     }
     public static void removeDuplicateMethod(String input)
     {
-        char[] chars=input.toCharArray();
         Set<Character> charSet=new LinkedHashSet<>();
-
-        for(char c:chars){
+        for(char c:input.toCharArray()){
             charSet.add(c);
         }
 
         StringBuilder sb=new StringBuilder();
-
         for(char c:charSet){
             sb.append(c);
         }
-
-        System.out.println("String after removing duplicated:"+sb.toString());
+        System.out.println("String after removing duplicated:"+ sb);
     }
 }

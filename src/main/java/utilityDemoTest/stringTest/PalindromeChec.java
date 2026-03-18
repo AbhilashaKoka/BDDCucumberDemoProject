@@ -7,8 +7,7 @@ public class PalindromeChec {
     }
 
     public static void palindromeCheck( String str ){
-      String normalizestr=str.toLowerCase();
-      boolean isPalindrome=new StringBuilder(normalizestr).reverse().toString().equals(normalizestr);
+      boolean isPalindrome=new StringBuilder(str.toLowerCase()).reverse().toString().equals(str.toLowerCase());
         System.out.println(isPalindrome);
     }
 }

@@ -14,7 +14,7 @@ public class StringOperation2 {
         String str22 = "Grab";
         anagramString(str11,str22);
         String input="hello world";
-        System.out.println(captializeFirstLetter(input));
+        System.out.println(capitalizeFirstLetter(input));
         String string = "The best of both worlds";
         String input1="abc";
         printAllSubString(input1);
@@ -22,7 +22,7 @@ public class StringOperation2 {
         int noOfVowel = countVowels(str);
         System.out.println("String: " + str);
         System.out.println("Total number of vowels in the string are: "+ noOfVowel + "\n");
-        FindFreqofEachCharacterInString("Java is Fun");
+        FindFreqEachCharacterInString("Java is Fun");
         FrequencyOfGivenCharacter("Java is Fun", 'a');
         LongestSubstringMethod("aaabbbbbccccc",0,0);
         String str4 = "FUN";
@@ -37,8 +37,7 @@ public class StringOperation2 {
         }
 
     public static void palindromeCheck( String str ){
-        String normalizestr=str.toLowerCase();
-        boolean isPalindrome=new StringBuilder(normalizestr).reverse().toString().equals(normalizestr);
+        boolean isPalindrome=new StringBuilder(str.toLowerCase()).reverse().toString().equals(str.toLowerCase());
         System.out.println(isPalindrome);
     }
 
@@ -70,13 +69,13 @@ public class StringOperation2 {
             }
         }
         System.out.println("All subsets for given string are:");
-        for(int i=0;i<arr.length;i++){
-            System.out.println(arr[i]);
+        for (String s : arr) {
+            System.out.println(s);
         }
     }
 
 
-    public static void FindFreqofEachCharacterInString(String str){
+    public static void FindFreqEachCharacterInString(String str){
         int i, j;
         char[] string = str.toCharArray();
         int[] freq = new int[str.length()];
@@ -154,9 +153,8 @@ public class StringOperation2 {
     public static void countTotalNumberOfCharacter(String string){
         int count=0;
         char[] chars=string.toCharArray();
-        for(int i=0;i<chars.length;i++){
-            if(chars[i]!=' ')
-            {
+        for (char aChar : chars) {
+            if (aChar != ' ') {
                 count++;
             }
         }
@@ -164,7 +162,7 @@ public class StringOperation2 {
         System.out.println("Total Number of Characters in a string:"+count);
     }
 
-    public static String captializeFirstLetter(String str)
+    public static String capitalizeFirstLetter(String str)
     {
         String[] words=str.split(" ");
         StringBuilder sb=new StringBuilder();
@@ -172,8 +170,7 @@ public class StringOperation2 {
 
         for(String word:words){
             sb.append(Character.toUpperCase(word.charAt(0)))
-                    .append(word.substring(1))
-                    .append("");
+                    .append(word.substring(1));
         }
 
         return sb.toString().trim();

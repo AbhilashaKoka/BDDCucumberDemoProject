@@ -1,13 +1,13 @@
 package utilityDemoTest.stringTest;
 
-public class PrintRepeatedCharacterfromGivenWord {
+public class PrintRepeatedCharacterGivenWord {
     public static void main(String[] args) {
         String input = "hello";
         String doubledString = "";
-        char[] inputArray = input.toCharArray();
-        char[] doubledArray = new char[inputArray.length * 2];
+
+        char[] doubledArray = new char[input.length() * 2];
         int index = 0;
-        for (char c : inputArray) {
+        for (char c : input.toCharArray()) {
             doubledArray[index++] = c;
             doubledArray[index++] = c;
         }
