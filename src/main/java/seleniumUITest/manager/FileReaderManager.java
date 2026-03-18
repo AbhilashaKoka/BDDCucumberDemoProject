@@ -2,7 +2,6 @@ package seleniumUITest.manager;
 
 import seleniumUITest.dataProvider.ConfigFileReader;
 import seleniumUITest.dataProvider.JsonDataReader;
-
 import java.io.IOException;
 
 public class FileReaderManager {

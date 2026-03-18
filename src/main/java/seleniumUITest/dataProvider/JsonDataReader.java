@@ -12,26 +12,22 @@ import java.util.List;
 
 public class JsonDataReader {
 private final String TextBoxFilePath;//configs//TextBoxData.json";
-
     {
         try {
             TextBoxFilePath = System.getProperty("user.dir")+ FileReaderManager.getInstance().getConfigFileReader().getTestDataResourcePath()+"TextBoxData.json";
-        } catch (IOException e) {
+        } catch (IOException e){
             throw new RuntimeException(e);
         }
     }
-
-    private final String PracticalFormsDetailsFilePath;
-
-    {
+  private final String PracticalFormsDetailsFilePath;
+ {
         try {
             PracticalFormsDetailsFilePath = System.getProperty("user.dir")+FileReaderManager.getInstance().getConfigFileReader().getTestDataResourcePath()+"PracticeFormData.json";
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-
-    private final List<TextBoxDetails>  textBoxDetails;
+private final List<TextBoxDetails>  textBoxDetails;
 private final List<PracticeFormsDetails> practiceFormsDetails;
 
 

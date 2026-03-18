@@ -29,8 +29,7 @@ public class ConfigFileReader {
        finally
        {
            try {
-                   if (reader != null)
-                   reader.close();} catch(IOException ignore) { }
+                   if (reader != null) reader.close();} catch(IOException ignore) { }
        }
        }
 

@@ -29,7 +29,12 @@ public class StringOperation2 {
         subsetOfArrElements(str4);
         String str5="Madam";
         palindromeCheck(str5);
-    }
+       String input345 = "[example]";
+         String result = removeBrackets(input345);
+        System.out.println(result); // Output: example
+
+
+        }
 
     public static void palindromeCheck( String str ){
         String normalizestr=str.toLowerCase();
@@ -212,4 +217,15 @@ public class StringOperation2 {
 
         return Arrays.equals(charArray1, charArray2);
     }
-}
+
+
+        public static String removeBrackets(String str) {
+            // Check if the string starts with '[' and ends with ']'
+            if (str.startsWith("[") && str.endsWith("]")) {
+                // Remove the first and last characters
+                str = str.substring(1, str.length() - 1);
+            }
+            return str;
+        }
+    }
+

@@ -17,7 +17,6 @@ public class MultiParamApiTest {
                 "age", new int[]{18, 60},
                 "amount", new int[]{100, 1000}
         );
-
         List<MultiParamScenarioFactory.TestScenario> scenarios =
                 MultiParamScenarioFactory.generateScenarios(ranges, 200, 400);
 
@@ -35,7 +34,6 @@ public class MultiParamApiTest {
         Response response = RestAssured.given()
                 .queryParams(inputs)   // Dynamically inject multiple params
                 .get("/validateInputs");
-
         Assert.assertEquals(response.getStatusCode(), expectedStatus,
                 "Scenario failed for inputs: " + inputs);
     }
