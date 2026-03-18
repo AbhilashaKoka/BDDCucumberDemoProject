@@ -5,22 +5,6 @@ import java.util.Map;
 
 public class TransformString {
 
-    public static void main(String[] args) {
-        String input = "Abhilasha";
-        String target = "salih";
-
-        transformString1(input);
-        transformString2(input);
-
-        String result = transformString(target);
-        System.out.println("Transformed string:" + result);
-
-
-        String[] array = {"apple", "banana", "cherry"};
-        arrToMapConversion(array);
-    }
-
-
     public static void arrToMapConversion(String[] array){
         Map<String, Integer> map = new HashMap<>();
         for (String element : array){
@@ -58,4 +42,20 @@ public class TransformString {
         // Build "salih" from the extracted substring
         System.out.println("Transformed string2: " + result);
     }
+
+    public static void main(String[] args) {
+        String input = "Abhilasha";
+        String target = "salih";
+
+        transformString1(input);
+        transformString2(input);
+
+        String result = transformString(target);
+        System.out.println("Transformed string:" + result);
+
+
+        String[] array = {"apple", "banana", "cherry"};
+        arrToMapConversion(array);
+    }
+
 }

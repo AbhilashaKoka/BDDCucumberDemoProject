@@ -1,6 +1,4 @@
 package utilityDemoTest.stringTest;
-
-
 public class VowelAndConstant {
     public static void main(String[] args) {
         int vCount=0, cCount=0;
