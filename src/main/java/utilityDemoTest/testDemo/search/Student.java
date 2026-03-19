@@ -1,5 +1,7 @@
 package utilityDemoTest.testDemo.search;
+
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Student {
@@ -35,22 +37,30 @@ public class Student {
     }
 
 
-    public void getValueFromDB(String url, String username, String password) {
+   static  public List<Student> getStudentsFromDB(String url, String username, String password) {
+        List<Student> students = new ArrayList<>();
+
+        String query = "SELECT name, rollno, grade FROM Student";
+
         try (Connection con = DriverManager.getConnection(url, username, password);
-             Statement statement = con.createStatement();
-             ResultSet rs = statement.executeQuery("Select name,Rollno,grade From Student ")) {
+             Statement stmt = con.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+
             while (rs.next()) {
                 String name = rs.getString("name");
-                int Rollno = rs.getInt("rollno");
-                String grade = rs.getString("Grade");
-                System.out.println("Name: " + name);
-                System.out.println("Rollno: " + Rollno);
-                System.out.println("Grade: " + grade);
+                int rollNo = rs.getInt("rollno");
+                String grade = rs.getString("grade");
+
+                students.add(new Student(name, rollNo, grade));
             }
-        } catch (SQLException q) {
-            q.printStackTrace();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+
+        return students;
     }
 }
+
 
 
