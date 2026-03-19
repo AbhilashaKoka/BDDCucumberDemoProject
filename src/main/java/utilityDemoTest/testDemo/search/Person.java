@@ -1,4 +1,4 @@
-package utilityDemoTest.testDemo.Test_0234;
+package utilityDemoTest.testDemo.search;
 
 abstract public class Person {
     String name;
