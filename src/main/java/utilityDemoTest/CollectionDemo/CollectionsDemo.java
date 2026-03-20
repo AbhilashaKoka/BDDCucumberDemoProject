@@ -1,4 +1,4 @@
-package utilityDemoTest.testDemo;
+package utilityDemoTest.CollectionDemo;
 
 
     import java.util.*;

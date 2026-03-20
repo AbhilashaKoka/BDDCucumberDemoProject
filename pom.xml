@@ -33,6 +33,7 @@
         <surefire.version>2.22.2</surefire.version>
         <proxy.version>2.1.5</proxy.version>
         <appium.version>8.5.1</appium.version>
+        <common.csv>1.10.0</common.csv>
 <!--  <SeleniumGrid.version>4.25.0</SeleniumGrid.version>-->
     </properties>
     <dependencies>
@@ -168,6 +169,12 @@
             <artifactId>commons-lang3</artifactId>
             <version>${apache.common}</version>
         </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>com.opencsv</groupId>-->
+<!--            <artifactId>opencsv</artifactId>-->
+<!--            <version>5.9</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>

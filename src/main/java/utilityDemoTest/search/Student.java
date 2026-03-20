@@ -1,4 +1,4 @@
-package utilityDemoTest.testDemo.search;
+package utilityDemoTest.search;
 
 import java.sql.*;
 import java.util.ArrayList;
