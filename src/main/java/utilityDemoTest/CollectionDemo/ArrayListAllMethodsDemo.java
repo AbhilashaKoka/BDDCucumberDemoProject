@@ -65,8 +65,8 @@ public class ArrayListAllMethodsDemo {
         Iterator<String> it = list.iterator();
         while (it.hasNext()) {
             System.out.print(it.next() + " ");
-        }
-        System.out.println();
+        } System.out.println();
+
 
         // 16. Clear
         list.clear();
