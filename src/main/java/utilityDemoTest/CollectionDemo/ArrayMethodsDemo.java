@@ -55,8 +55,12 @@ public class ArrayMethodsDemo {
         // Output:
         // 1 2 3
         // 4 5 6
-
-
     }
+
+//Storing marks of students: int[] marks = new int[50];
+//Handling fixed datasets: Days of the week, months, etc.
+//Matrix operations: Using 2D arrays for mathematical computations.
+//Low-level performance needs: Arrays are faster than dynamic collections when size is known.
+
 }
 
