@@ -47,6 +47,10 @@ SELECT Name,MAX(Salary) AS SecondHighestSalary
 FROM Employees
 WHERE Salary NOT IN (SELECT MAX(Salary) FROM Employees);
 
+SELECT Name,MAX(Salary) AS SecondHighestSalary
+FROM Employees
+WHERE Salary  IN (SELECT Salary FROM Employees MINUS SELECT MAX(Salary) FROM Employees);
+
 --list the number of the orders send by each supplier
 SELECT Suppliers.SupplierName, COUNT(Orders.OrderId) AS NumberOfOrders
 FROM Orders
