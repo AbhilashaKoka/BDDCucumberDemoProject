@@ -70,8 +70,9 @@ ORDER BY COUNT(CustomerId) DESC;
 --list the number of Customers in each Country Coloumns
 SELECT COUNT(CustomerId), Country
 FROM Customers
-GROUP BY Country
-;
+GROUP BY Country;
+
+--List the Employees "David" and "Michael" have registered more than 25 orders
 
 
 

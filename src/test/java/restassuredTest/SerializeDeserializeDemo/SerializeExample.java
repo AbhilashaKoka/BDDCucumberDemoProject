@@ -7,10 +7,9 @@ import static io.restassured.RestAssured.*;
 public class SerializeExample {
     public static void main(String[] args) {
         RestAssured.baseURI = "https://reqres.in/api";
-
         User newUser = new User(101, "Abhilasha", "abhilasha@test.com");
 
-        given()
+                 given()
                 .contentType(ContentType.JSON)
                 .body(newUser)   // <-- Serialization happens here
                 .when()

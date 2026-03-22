@@ -1,5 +1,7 @@
 package restassuredTest.DDTSerializeDeserializeDemo;
 
+import java.util.List;
+
 public class Users {
     private int id;
     private String name;
@@ -16,4 +18,13 @@ public class Users {
     public void setName(String name) { this.name = name; }
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
+
+    public static Users findByRollNo(List<Users> users, int id) {
+        for (Users s : users) {
+            if (s.getId() == id) {
+                return s;
+            }
+        }
+        return null;
+    }
 }
