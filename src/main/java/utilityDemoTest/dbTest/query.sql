@@ -77,6 +77,23 @@ FROM Customers
 GROUP BY Country;
 
 --List the Employees "David" and "Michael" have registered more than 25 orders
+SELECT  Employee.LastName, Count(Orders.OrderID) As NumberOfOrders
+FROM Orders
+INNER JOIN Employees
+On Orders.EmployeeId=Employees.EmployeeId
+WHERE Employees.LastName IN ('David','Michael')
+GROUP BY Employees.LastName
+HAVING COUNT(Orders.OrderID)>25
+ORDER BY NumberOfOrders DESC;
+
+--List the employees the have registered more than 10 Orders
+SELECT Employees.lastName, Count(Orders.OrderID) AS NumberOfOrders
+FROM Orders
+INNER JOIN Employees
+ON Orders.EmployeeId=Employees.EmployeeId
+GROUP BY Employees.LastName
+HAVING COUNT(Orders.OrderID)>10
+ORDER BY NumberOfOrders DESC;
 
 
 
