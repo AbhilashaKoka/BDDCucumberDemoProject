@@ -1,0 +1,45 @@
+package seleniumUITest;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
+
+import java.time.Duration;
+
+public class Selenium2DemoTest {
+        WebDriver driver;
+
+        public void setUpDriver(){
+        System.setProperty("Webdriver.driver.chrome", "\\src\\test\\resource\\driver\\chromedriver-win64\\chromedriver.exe");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("start-maximized");
+         driver = new ChromeDriver(options);
+        driver.get("https://www.emirates.com/in/english/");
+        }
+
+        public void HandlingModelAndBanner(WebDriver driver){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ot-sdk-container > div:has(div) > div:nth-of-type(2) button:nth-of-type(2)")));
+        WebElement banner=driver.findElement(By.cssSelector(".ot-sdk-container > div:has(div) > div:nth-of-type(2) button:nth-of-type(2)"));
+        banner.click();
+        WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(60));
+        wait2.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#modal-wrapper > div > div :has(button[id=\"modal-close\"])>button")));
+        WebElement modalBox=driver.findElement(By.cssSelector("#modal-wrapper > div > div :has(button[id=\"modal-close\"])>button"));
+        modalBox.click();
+        driver.close();
+    }
+
+
+    @Test
+    public void test(){
+            setUpDriver();
+            HandlingModelAndBanner(driver);
+    }
+
+
+}

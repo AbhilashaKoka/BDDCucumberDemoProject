@@ -195,7 +195,6 @@ public class SeleniumDemoTest extends BaseSetUp{
         Elements_Frames.click();
         WebElement Button_span=driver.findElement(By.xpath( "//*[@class=\"accordion\"]//div[@class=\"element-group\"]//following::span[@class=\"text\" and contains(text(),\"Buttons\")]"));
         Button_span.click();
-
         WebElement title = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]/h1[contains(text(), \"Buttons\")]"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,350)", title);

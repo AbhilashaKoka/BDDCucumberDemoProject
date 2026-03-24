@@ -26,7 +26,7 @@ public class BaseSetUp {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         driver = new ChromeDriver(options);
-       // localDriverSetUp();
+       localDriverSetUp();
         driver.get("https://demoqa.com");
         js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,300)");

@@ -61,12 +61,8 @@ public class TestNGTestClass extends BaseSetUp{
         Assert.assertEquals( SeleniumDemoTest.HandlingMenu(),true);
     }
 
-
     @Test(description = "verify ModalDialog",enabled = false)
-    public void TestModalDialog() throws InterruptedException {
-        Assert.assertEquals(SeleniumDemoTest.HandlingModalDialog(),true);
-    }
-
+    public void TestModalDialog() throws InterruptedException { Assert.assertEquals(SeleniumDemoTest.HandlingModalDialog(),true);}
     @Test(description = "verify MultipleFrames",enabled = false)
     public void TestMultipleFrame(){
        Assert.assertEquals(SeleniumDemoTest.HandlingMultipleFrames(),true);

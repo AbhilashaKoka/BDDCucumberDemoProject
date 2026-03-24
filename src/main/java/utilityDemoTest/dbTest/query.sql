@@ -96,6 +96,40 @@ HAVING COUNT(Orders.OrderID)>10
 ORDER BY NumberOfOrders DESC;
 
 
+--list the number of customers in each country sorted higher to low(only include countries with more than 5 customers)
+SELECT COUNT(CustomerId), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerId)>5
+ORDER BY COUNT(CustomerId) DESC;
+
+--List  the number of customers in each country only include countries with more than 5 customers
+SELECT COUNT(CustomerId), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerId)>5
+ORDER BY Country;
+
+--List the ProductName if all the records in the Order Details table have quality equal to 10
+SELECT  ProductName FROM Products
+WHERE ProductId IN (
+SELECT ProductId
+FROM OrderDetails
+WHERE Quality=10);
+
+--lists Alls Products name
+SELECT  all ProductName FROM Products
+Where True;
+
+--Return lists of the suppliers with a product price higher than 20
+SELECT SupplierName FROM Suppliers
+WHERE EXISTS(SELECT ProductName FROM Products)
+WHERE Products.SupplierId=Suppliers.SupplierId
+AND Products.Price<20);
+
+
+
+
 
 
 
