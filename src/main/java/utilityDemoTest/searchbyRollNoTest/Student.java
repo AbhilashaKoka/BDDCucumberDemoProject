@@ -50,7 +50,6 @@ public class Student {
                 String name = rs.getString("name");
                 int rollNo = rs.getInt("rollno");
                 String grade = rs.getString("grade");
-
                 students.add(new Student(name, rollNo, grade));
             }
 
