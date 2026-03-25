@@ -27,15 +27,32 @@ jobs:
 
       - name: Install matching ChromeDriver
         run: |
+          set -e
+
+          # Get Chrome version
           CHROME_VERSION=$(google-chrome --version | awk '{print $3}')
           MAJOR_VERSION=$(echo $CHROME_VERSION | cut -d. -f1)
-          DRIVER_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${MAJOR_VERSION})
+
           echo "Installed Chrome version: $CHROME_VERSION"
+
+          # Try to get matching ChromeDriver version
+          DRIVER_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${MAJOR_VERSION} || true)
+
+          # Fallback if version not found (for newer Chrome versions)
+          if [ -z "$DRIVER_VERSION" ]; then
+            echo "No exact match found, using latest ChromeDriver"
+            DRIVER_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
+          fi
+
           echo "Fetching ChromeDriver version: $DRIVER_VERSION"
-          wget -N https://chromedriver.storage.googleapis.com/${DRIVER_VERSION}/chromedriver_linux64.zip
+
+          # Download and install
+          wget -q https://chromedriver.storage.googleapis.com/${DRIVER_VERSION}/chromedriver_linux64.zip
           unzip -o chromedriver_linux64.zip
           sudo mv -f chromedriver /usr/local/bin/chromedriver
           sudo chmod 0755 /usr/local/bin/chromedriver
+
+          # Verify installation
           chromedriver --version
 
       - name: Build with Maven

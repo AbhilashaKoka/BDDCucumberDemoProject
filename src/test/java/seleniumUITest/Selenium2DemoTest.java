@@ -1,4 +1,5 @@
 package seleniumUITest;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,13 +16,10 @@ public class Selenium2DemoTest {
 
 
         public void setUpDriver(){
-        System.setProperty("Webdriver.driver.chrome", "\\src\\test\\resource\\driver\\chromedriver-win64\\chromedriver.exe");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("start-maximized");
-            options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--no-sandbox");
-            options.addArguments("--remote-allow-origins=*");
-            options.addArguments("--headless=new"); // CI-friendly
+            WebDriverManager.chromedriver().setup();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("start-maximized");
+            driver = new ChromeDriver(options);
         driver = new ChromeDriver(options);
         driver.get("https://www.emirates.com/in/english/");
         }
