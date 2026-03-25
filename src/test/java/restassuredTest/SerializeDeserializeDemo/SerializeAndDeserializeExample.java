@@ -6,17 +6,13 @@ import io.restassured.response.Response;
 import java.util.List;
 import static io.restassured.RestAssured.given;
 
-public class DeserializeExample {
+public class SerializeAndDeserializeExample {
     public static void main(String[] args) {
         RestAssured.baseURI = "https://reqres.in/api";
-
-        Response response =
-                given()
-                        .contentType(ContentType.JSON)
-                        .when()
-                        .get("/users/2")
-                        .then()
-                        .statusCode(200)
+        User newUser = new User(101, "Abhilasha", "abhilasha@test.com");
+        Response response = given().contentType(ContentType.JSON).body(newUser)// <-- Serialization happens here
+                        .when().get("/users/2")
+                        .then().statusCode(200)
                         .extract().response();
 
         // Deserialize JSON into POJO
@@ -29,11 +25,9 @@ public class DeserializeExample {
                 .then()
                 .extract()
                 .response();
-
         List<User> usersList = response2.jsonPath().getList("", User.class);
         usersList.forEach(user1 -> System.out.println(user.getName()));
-
-        List<User> createdUser = response.jsonPath().getList("data", User.class);
+        List<User> createdUser = response.jsonPath().getList("data", User.class);//
 //        {
 //            "data": [
 //            { "id": 1, "name": "John" }
