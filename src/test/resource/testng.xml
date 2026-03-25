@@ -5,7 +5,7 @@
 <!--</listeners>-->
     <test name="SeleniumTestNG">
         <classes>
-            <class name="seleniumUITest.TestNGTestClass"></class>
+            <class name="seleniumUITest.Selenium2DemoTest"></class>
         </classes>
     </test>
     <!--    <test name="SeleniumGridStandaloneTest">-->

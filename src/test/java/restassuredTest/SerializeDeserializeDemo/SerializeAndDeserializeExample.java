@@ -19,12 +19,9 @@ public class SerializeAndDeserializeExample {
         User user = response.as(User.class);
         System.out.println("ID: " + user.getId()+"Name: " + user.getName()+"Email: " + user.getEmail());
 
-        Response response2 = given()
-                .when()
-                .get("/users")
-                .then()
-                .extract()
-                .response();
+        Response response2 = given().when() .get("/users")
+                .then().extract().response();
+
         List<User> usersList = response2.jsonPath().getList("", User.class);
         usersList.forEach(user1 -> System.out.println(user.getName()));
         List<User> createdUser = response.jsonPath().getList("data", User.class);//
