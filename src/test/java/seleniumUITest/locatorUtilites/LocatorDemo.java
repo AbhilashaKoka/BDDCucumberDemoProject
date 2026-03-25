@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LocatorDemo {
     public static void main(String[] args) {
+
         // Make sure chromedriver is on your PATH or use WebDriverManager
         WebDriver driver = new ChromeDriver();
 
@@ -13,15 +14,11 @@ public class LocatorDemo {
             driver.get("https://example.com");
 
             // Locate by ID
-            WebElement submitButton = driver.findElement(
-                    CSSSelector.byId("submit-button")
-            );
+            WebElement submitButton = driver.findElement(CSSSelector.byId("submit-button"));
             submitButton.click();
 
             // Locate by class
-            WebElement inputField = driver.findElement(
-                    CSSSelector.byClass("form-control")
-            );
+            WebElement inputField = driver.findElement( CSSSelector.byClass("form-control"));
             inputField.sendKeys("Hello World");
 
             // Locate by attribute (exact match)

@@ -34,9 +34,20 @@
         <proxy.version>2.1.5</proxy.version>
         <appium.version>8.5.1</appium.version>
         <common.csv>1.10.0</common.csv>
+        <healenium.version>3.5.4</healenium.version>
 <!--  <SeleniumGrid.version>4.25.0</SeleniumGrid.version>-->
     </properties>
+
+
+
+
+
     <dependencies>
+<!--        <dependency>-->
+<!--            <groupId>com.epam.healenium</groupId>-->
+<!--            <artifactId>healenium-web</artifactId>-->
+<!--            <version>${healenium.version}</version>-->
+<!--        </dependency>-->
            <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>

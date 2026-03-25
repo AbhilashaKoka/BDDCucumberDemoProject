@@ -66,7 +66,7 @@ public class CSSSelector {
 
     // --- PSEUDO CLASSES ---
     public static By byPseudo(PseudoClassType type, int index) {
-        switch (type) {
+        switch (type){
             case FIRST_CHILD: return byCss(":first-child");
             case LAST_CHILD: return byCss(":last-child");
             case NTH_CHILD: return byCss(":nth-child(" + index + ")");
@@ -81,23 +81,28 @@ public class CSSSelector {
 
     // --- RELATIONSHIPS ---
     public static By byParentChild(String parent, String child) {
+
         return byCss(parent + " > " + child);
     }
 
     public static By byDescendant(String ancestor, String descendant) {
+
         return byCss(ancestor + " " + descendant);
     }
 
     public static By byAdjacentSibling(String sibling1, String sibling2) {
+
         return byCss(sibling1 + " + " + sibling2);
     }
 
     // --- XPATH FALLBACKS ---
     public static By byText(String text) {
+
         return By.xpath("//*[text()='" + text + "']");
     }
 
     public static By byContainsText(String text) {
+
         return By.xpath("//*[contains(text(),'" + text + "')]");
     }
 
