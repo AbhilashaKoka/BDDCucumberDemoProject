@@ -17,10 +17,10 @@ public class Selenium2DemoTest {
         public void setUpDriver(){
         System.setProperty("Webdriver.driver.chrome", "\\src\\test\\resource\\driver\\chromedriver-win64\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("start-maximized");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--remote-allow-origins=*");
+                options.addArguments("--disable-dev-shm-usage");
+                options.addArguments("--no-sandbox");
+                options.addArguments("--remote-allow-origins=*");
+                options.addArguments("--headless=new"); // CI-friendly
         //options.addArguments("--headless=new"); // CI-friendly
         driver = new ChromeDriver(options);
         driver.get("https://www.emirates.com/in/english/");

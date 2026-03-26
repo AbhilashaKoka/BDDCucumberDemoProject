@@ -25,28 +25,17 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
 
-      - name: Install matching ChromeDriver (Modern Fix)
+      - name: Install matching ChromeDriver
         run: |
-          set -e
-          
-          # Get Chrome version
           CHROME_VERSION=$(google-chrome --version | awk '{print $3}')
           MAJOR_VERSION=$(echo $CHROME_VERSION | cut -d. -f1)
-          
+          DRIVER_VERSION=$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${MAJOR_VERSION})
           echo "Installed Chrome version: $CHROME_VERSION"
-          
-          # Fetch matching driver from Chrome for Testing
-          DRIVER_VERSION=$(curl -s https://googlechromelabs.github.io/chrome-for-testing/LATEST_RELEASE_${MAJOR_VERSION})
-          
-          echo "Resolved ChromeDriver version: $DRIVER_VERSION"
-          
-          # Download driver
-          wget -q https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${DRIVER_VERSION}/linux64/chromedriver-linux64.zip
-          
-          unzip -o chromedriver-linux64.zip
-          sudo mv -f chromedriver-linux64/chromedriver /usr/local/bin/chromedriver
-          sudo chmod +x /usr/local/bin/chromedriver
-          
+          echo "Fetching ChromeDriver version: $DRIVER_VERSION"
+          wget -N https://chromedriver.storage.googleapis.com/${DRIVER_VERSION}/chromedriver_linux64.zip
+          unzip -o chromedriver_linux64.zip
+          sudo mv -f chromedriver /usr/local/bin/chromedriver
+          sudo chmod 0755 /usr/local/bin/chromedriver
           chromedriver --version
 
       - name: Build with Maven
