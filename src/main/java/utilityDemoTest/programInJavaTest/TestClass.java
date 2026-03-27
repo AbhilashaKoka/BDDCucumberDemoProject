@@ -129,29 +129,31 @@ public class TestClass {
 
     @Test
     public void removeTheDuplicateWordsTest() {
-
         String input9 = "Java is great and java is fun and java is powerful";
         String result9 = removeTheDuplicateWords(input9);
         System.out.println(result9);
     }
+
     @Test
     public void reverseWordIntraditionTest() {
-
         String str99 = "java is great and fun";
         String result99 = reverseWordInTradition(str99);
         System.out.println("reverse String:" + result99);
     }
+
     @Test
     public void reverseListTest() {
         Integer[] arr = {1, 2, 3, 4, 5};
         reverseList(arr);
     }
+
     @Test
     public void subStringCountTest() {
         String input34 = "java is great. java is fun. java is POwerful";
         String substring = "Java";
         subStringCount(input34, substring);
     }
+
     @Test
     public void swapToStringTest() {
         String str14 = "Hello";

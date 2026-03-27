@@ -38,6 +38,7 @@ utilityDemoTest\CollectionDemo\HashSetMethodsDemo.class
 utilityDemoTest\dbTest\GetEmployeeByIdExample.class
 utilityDemoTest\programInJavaTest\StarPattern.class
 utilityDemoTest\programInJavaTest\java8Operation.class
+utilityDemoTest\dataDrivenTest\endToendTest\configDrivenLocator\LoginPage.class
 utilityDemoTest\dataDrivenTest\excel\EncryptExcel.class
 seleniumUITest\pages\PracticeFormPage.class
 utilityDemoTest\staticAndNonStaticMethodDemo\Bank3.class
@@ -50,6 +51,7 @@ seleniumUITest\pages\LInkPage.class
 utilityDemoTest\programInJavaTest\OptionalMethodjava11.class
 utilityDemoTest\dataDrivenTest\DataDrivenTestCSVAndJson\TestData.class
 utilityDemoTest\stringTest\OnlyDigitCheck.class
+utilityDemoTest\threadExample\ThreadUsingLambda.class
 utilityDemoTest\stringTest\CountPunctuation.class
 utilityDemoTest\dbTest\SelectRecord.class
 utilityDemoTest\CollectionDemo\PriorityQueueMethodsDemo.class
@@ -61,9 +63,11 @@ utilityDemoTest\dateTest\YesterdayDateExample.class
 utilityDemoTest\programInJavaTest\TestClass.class
 seleniumUITest\pages\SortablePage.class
 utilityDemoTest\searchbyRollNoTest\Student.class
+utilityDemoTest\threadExample\ByUsingRunnable.class
 utilityDemoTest\dataDrivenTest\encryptAndDecrypt\EncryptionUtil.class
 seleniumUITest\pages\DataPickerPage.class
 utilityDemoTest\FileTest\FileUtil.class
+utilityDemoTest\threadExample\MyThread.class
 seleniumUITest\dataProvider\DBReader.class
 utilityDemoTest\randomIdTest\RandomIDGenerator.class
 seleniumUITest\pages\DroppablePage.class
@@ -85,7 +89,6 @@ utilityDemoTest\programInJavaTest\NumberOperation.class
 utilityDemoTest\dbTest\UpdateRecord.class
 seleniumUITest\manager\PageObjectManager.class
 utilityDemoTest\dataDrivenTest\endToendTest\configDrivenLocator\LocatorFactory.class
-utilityDemoTest\dataDrivenTest\endToendTest\LoginPage.class
 seleniumUITest\pages\CheckBoxPage.class
 utilityDemoTest\dateTest\TestFile.class
 seleniumUITest\pages\ProgressBarPage.class
@@ -101,10 +104,12 @@ seleniumUITest\pages\MenuPage.class
 utilityDemoTest\testDemo\DeriDerived.class
 utilityDemoTest\threadExample\TemporarySuspendThread.class
 utilityDemoTest\stringTest\reverseString.class
+utilityDemoTest\threadExample\MyRunnable.class
 utilityDemoTest\programInJavaTest\Number2Operation.class
 utilityDemoTest\dbTest\JDBCExample.class
 utilityDemoTest\programInJavaTest\FibonnaciSeries.class
 seleniumUITest\pages\ModalPage.class
+utilityDemoTest\ReadTest\PDFReaderUtil.class
 utilityDemoTest\threadExample\GFG.class
 seleniumUITest\pages\SelectablePage.class
 utilityDemoTest\staticAndNonStaticMethodDemo\RealWorldExampleWithOverriding.class
@@ -135,6 +140,7 @@ utilityDemoTest\stringTest\TransformString.class
 seleniumUITest\dataProvider\JsonDataReader.class
 utilityDemoTest\stringTest\IndexOfCharacterInString.class
 utilityDemoTest\programInJavaTest\PrimeNumberWithUserInput.class
+utilityDemoTest\threadExample\CreateThread.class
 seleniumUITest\pages\HomePage.class
 utilityDemoTest\dbTest\DeleteRecord.class
 seleniumUITest\dataProvider\CSVFileReader.class

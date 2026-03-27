@@ -26,11 +26,10 @@ ORDER BY Customers.CustomerName;
 
 --(Inner Join) Select all orders with Customers and Shipper information
 SELECT  Orders.OrderId,Customers.CustomerName, Shippers.ShipperName
-FROM Orders
-    INNER JOIN Customers
-    ON Orders.CustomerId = Customers.CustomerId
-    INNER JOIN Shippers
-    ON Orders.ShipperId = Shippers.ShipperId;
+FROM Orders INNER JOIN Customers
+ON Orders.CustomerId = Customers.CustomerId
+INNER JOIN Shippers
+ON Orders.ShipperId = Shippers.ShipperId;
 
 --Between operator
 --NotIn operator

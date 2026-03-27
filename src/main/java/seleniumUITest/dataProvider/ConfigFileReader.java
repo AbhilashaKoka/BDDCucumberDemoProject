@@ -21,15 +21,14 @@ public class ConfigFileReader {
           catch(IOException e) {
           e.printStackTrace();
           }
-       }catch (FileNotFoundException e)
-       {
-           throw new RuntimeException("properties file not found at path:"+propertyFilePath);
+       }catch (FileNotFoundException e){
+        throw new RuntimeException("properties file not found at path:"+propertyFilePath);
        }
 
-       finally
-       {
-           try {
-                   if (reader != null) reader.close();} catch(IOException ignore) { }
+       finally{
+       try {
+        if (reader != null) reader.close();
+       } catch(IOException ignore) { }
        }
        }
 

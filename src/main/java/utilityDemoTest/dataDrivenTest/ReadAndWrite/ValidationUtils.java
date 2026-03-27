@@ -34,7 +34,8 @@ public class ValidationUtils {
 
             // Return true if the message matches the expected message
             return actualMessage.equals(expectedMsg);
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             System.err.println("Error during validation message check: " + e.getMessage());
             return false;
         }

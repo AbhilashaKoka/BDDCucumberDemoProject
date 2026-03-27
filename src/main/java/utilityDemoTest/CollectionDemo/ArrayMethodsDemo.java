@@ -8,7 +8,6 @@ public class ArrayMethodsDemo {
         int[] numbers = {10, 20, 30, 40};
         System.out.println(Arrays.toString(numbers));
         // Output: [10, 20, 30, 40]
-
         //Sort an array
         int[] numbers2 = {420, 10, 30, 20};
         Arrays.sort(numbers2);

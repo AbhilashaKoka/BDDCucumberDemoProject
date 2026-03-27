@@ -5,13 +5,8 @@ import java.util.*;
 public class CsvReaderWithTestID {
     public static void main(String[] args) throws IOException {
         String csvFile = "src/main/java/utilityDemoTest/dataDrivenTest/DataDrivenTestCSVAndJson/TestData.csv";
-
-
         // Read the CSV and store rows indexed by TestID
         Map<String, Map<String, String>> dataByTestID = readCsvWithTestID(csvFile);
-
-
-
         // Example usage: Fetch a row by TestID
         String testID = "TC01";
         if (dataByTestID.containsKey(testID)){
@@ -21,12 +16,9 @@ public class CsvReaderWithTestID {
         }
     }
 
-
-
     // Method to read CSV and store rows indexed by TestID
     private static Map<String, Map<String, String>> readCsvWithTestID(String csvFile) throws IOException {
         Map<String, Map<String, String>> dataMap = new HashMap<>(); // Store data by TestID
-
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
             String line;
             String[] headers = br.readLine().split(","); // First row as headers

@@ -10,9 +10,9 @@ import java.io.IOException;
 
 public class BrowserStackReadExcelTest {
     public static void main (String [] args) throws IOException{
-//Path of the excel file
+        //Path of the excel file
         FileInputStream fs = new FileInputStream("C:\\Users\\Abhilasha\\Documents\\DOCUMENT\\StudyDocumentFolder\\IDE\\IdeaProjects\\Spring_Course-master\\APIDemoProject\\test.xlsx");
-//Creating a workbook
+        //Creating a workbook
         XSSFWorkbook workbook = new XSSFWorkbook(fs);
         XSSFSheet sheet = workbook.getSheetAt(0);
         Row row = sheet.getRow(0);

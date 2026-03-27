@@ -13,6 +13,7 @@ public class java8Operation {
 
         Stream<String> stream1= Stream.of("Java","Python","C++");
         Stream<String> stream2= Stream.of("Javascript","TypeScript","Kotlin");
+
         concatenateStream(stream1,stream2);
 
         String input1 = "programming";
@@ -61,9 +62,7 @@ public class java8Operation {
 
 
     public static void sumOfAllDigits(String num){
-        int sum=num.chars()
-                .map(Character::getNumericValue)
-                .sum();
+        int sum=num.chars().map(Character::getNumericValue).sum();
         System.out.println("The sum of the digits is:"+sum);
     }
 
@@ -75,7 +74,7 @@ public class java8Operation {
     }
 
     public static  void reverseString(String str){
-        String revstr=new StringBuilder(str).reverse().toString();
+        String revstr= new StringBuilder(str).reverse().toString();
         System.out.println("Original String:"+str);
         System.out.println("Reversed String:"+revstr);
     }

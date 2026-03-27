@@ -15,7 +15,7 @@ public class ExcelFileReader {
             FileInputStream fis = new FileInputStream((new File(filePath)));
             Workbook workbook = new XSSFWorkbook(fis);
             Sheet sheet = workbook.getSheetAt(0);
-            for (Row row : sheet) {
+            for (Row row : sheet){
                 String[] rowData = new String[row.getLastCellNum()];
                 for (int i = 0; i < row.getLastCellNum(); i++) {
                     Cell cell = row.getCell(i);
@@ -49,14 +49,11 @@ public class ExcelFileReader {
 
 
     public static void main(String[] args) {
-        // Read data from Excel
-        List<String[]> data = ExcelFileReader.readExcel("src/main/java/selenium/demo/testData/testdata.xlsx");
-       // Use data in your Selenium test
-        for (String[] rowData : data) {
-            // Example: Use rowData for login
-            System.out.println("Username: " + rowData[0] + ", Password: " + rowData[1]);
+       List<String[]> data = ExcelFileReader.readExcel("src/main/java/selenium/demo/testData/testdata.xlsx");
+        for (String[] rowData : data)
+        {
+        System.out.println("Username: " + rowData[0] + ", Password: " + rowData[1]);
         }
-        // Write data to Excel
         List<String[]> outputData = new ArrayList<>();
         outputData.add(new String[]{"Result", "Pass"});
         ExcelFileReader.writeExcel("path/to/output.xlsx", outputData);

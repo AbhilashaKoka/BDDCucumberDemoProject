@@ -12,8 +12,6 @@ public class ReaderFile {
     {
      TestDataFilePath ="src/main/java/utilityDemoTest/dataDrivenTest/DataDrivenTestCSVAndJson/TestData.json";
     }
-
-
     private List<TestData> testDataList;
 
 

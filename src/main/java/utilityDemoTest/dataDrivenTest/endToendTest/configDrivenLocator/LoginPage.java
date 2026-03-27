@@ -1,4 +1,4 @@
-package utilityDemoTest.dataDrivenTest.endToendTest;
+package utilityDemoTest.dataDrivenTest.endToendTest.configDrivenLocator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import java.time.Duration;
 
-public class LoginPage {
+public class LoginPage{
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("Webdriver.driver.chrome", "\\src\\test\\resource\\driver\\chromedriver-win64\\chromedriver.exe");
         WebDriver  driver = new ChromeDriver();

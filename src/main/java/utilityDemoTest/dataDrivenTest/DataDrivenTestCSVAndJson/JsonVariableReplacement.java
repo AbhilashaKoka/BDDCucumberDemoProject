@@ -14,12 +14,10 @@ public class JsonVariableReplacement {
     public static void main(String[] args) throws IOException {
         String csvFile = "src/main/java/utilityDemoTest/dataDrivenTest/DataDrivenTestCSVAndJson/TestData.csv";
         String jsonTemplateFile = "src/main/java/utilityDemoTest/dataDrivenTest/DataDrivenTestCSVAndJson/TestData.json";
-
         // Read CSV and JSON template
         List<Map<String, String>> csvData = readCsv(csvFile);
         String jsonTemplate = readJsonTemplate(jsonTemplateFile);
         List<String> jsonList = new ArrayList<>();
-
         for (Map<String, String> row : csvData)
         {
             String populatedJson = replacePlaceholders(jsonTemplate, row);

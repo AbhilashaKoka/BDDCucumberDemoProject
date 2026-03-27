@@ -17,10 +17,10 @@ public class Selenium2DemoTest {
         public void setUpDriver(){
         System.setProperty("Webdriver.driver.chrome", "\\src\\test\\resource\\driver\\chromedriver-win64\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-                options.addArguments("--disable-dev-shm-usage");
-                options.addArguments("--no-sandbox");
-                options.addArguments("--remote-allow-origins=*");
-                options.addArguments("--headless=new"); // CI-friendly
+         options.addArguments("--disable-dev-shm-usage");
+         options.addArguments("--no-sandbox");
+         options.addArguments("--remote-allow-origins=*");
+         options.addArguments("--headless=new"); // CI-friendly
         //options.addArguments("--headless=new"); // CI-friendly
         driver = new ChromeDriver(options);
         driver.get("https://www.emirates.com/in/english/");
@@ -33,13 +33,14 @@ public class Selenium2DemoTest {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ot-sdk-container > div:has(div) > div:nth-of-type(2) button:nth-of-type(2)")));
         WebElement banner=driver.findElement(By.cssSelector(".ot-sdk-container > div:has(div) > div:nth-of-type(2) button:nth-of-type(2)"));
         banner.click();
+
         WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait2.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#modal-wrapper > div > div :has(button[id=\"modal-close\"])>button")));
         WebElement modalBox=driver.findElement(By.cssSelector("#modal-wrapper > div > div :has(button[id=\"modal-close\"])>button"));
         modalBox.click();
 //        WebElement LogIn_Button=driver.findElement(By.cssSelector("div[class=\"js-ek-global-navigation-secondarymenu ek-global-navigation__secondarymenu\"]>ul>li:nth-of-type(3)>a"));
 //        LogIn_Button.click();
-//
+
 
 
 //        WebElement Email=driver.findElement(By.cssSelector("input[id=\"registration-email\"]"));

@@ -29,14 +29,10 @@ public class AccordionPage {
     @FindBy(how = How.XPATH, using = "//div[@id=\"accordianContainer\"]//following::div[@class=\"accordion\"]")
     private  List<WebElement> accordiansLIst;
 
-
-
     public AccordionPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
-
 
     public boolean AccordionLandingPage()
     {
@@ -47,7 +43,6 @@ public class AccordionPage {
         bol=true;
         return bol;
     }
-
 
     public Boolean HandlingAccordion(){
         Boolean bol=false;
