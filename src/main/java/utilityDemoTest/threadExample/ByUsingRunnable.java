@@ -1,9 +1,9 @@
 package utilityDemoTest.threadExample;
 
 
-    class MyRunnable implements Runnable {
+class MyRunnable implements Runnable {
         public void run() {
-            System.out.println("Thread is running...");
+           System.out.println("Thread is running...");
         }
     }
 

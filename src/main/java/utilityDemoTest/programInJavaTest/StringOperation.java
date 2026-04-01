@@ -25,14 +25,13 @@ public class StringOperation{
         for (Map.Entry<String, Integer> entry : map.entrySet()){
             System.out.println(entry.getKey() + ":" + entry.getValue());
         }
-
     }
 
 
     public static void vowelAndConsonent(String str){
         int vowelCount = 0, consonentsCount = 0;
         for (char ch : str.toLowerCase().toCharArray()) {
-            if (ch >= 'a' && ch <= 'z') {
+            if (ch >= 'a' && ch <= 'z'){
                 if ("aeiou".indexOf(ch) != -1){
                     vowelCount++;
                 }
@@ -57,8 +56,6 @@ public class StringOperation{
         }
         return new int[]{vowelsCount, consonantsCount};
     }
-
-
 
     public static void swapToString(String str1, String str2){
         String temp=str1;
@@ -453,10 +450,10 @@ public static String swapFirstLast(String input) {
 
     for (String word : words) {
         if (word.length() > 1) {
-            String modifiedWord =
-                    word.charAt(word.length() - 1) + word.substring(1, word.length() - 1) + word.charAt(0);
+            String modifiedWord =word.charAt(word.length() - 1) + word.substring(1, word.length() - 1) + word.charAt(0);
             result.append(modifiedWord).append(" ");
-        } else {
+        }
+        else {
             result.append(word).append(" ");
         }
     }
@@ -525,6 +522,26 @@ public static String swapFirstLast(String input) {
         }
 
 
-}
+        public static String  ChageEvenPositionToUpperCaseAndOddPositionToLowerCaseAndInterchangePosition(String input) {
+            char[] charArray = input.toCharArray();
+            char[] newCharArray = new char[charArray.length];
+
+            for (int i = 0; i < charArray.length; i += 2) {
+                if (i + 1 < charArray.length)
+                {
+                    // Swap and change case
+                    newCharArray[i] = Character.toLowerCase(charArray[i + 1]);
+                    newCharArray[i + 1] = Character.toUpperCase(charArray[i]);
+                }
+                else {
+                    // If last character (odd length), just convert it
+                    newCharArray[i] = Character.toUpperCase(charArray[i]);
+                }
+            }
+            return new String(newCharArray);
+        }
+    }
+
+
 
 
