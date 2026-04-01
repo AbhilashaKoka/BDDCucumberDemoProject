@@ -11,6 +11,7 @@ utilityDemoTest\numberTest\LeapYear.class
 seleniumUITest\pages\AutomCompletePage.class
 utilityDemoTest\stringTest\VowelAndConstant.class
 utilityDemoTest\testDemo\Test4.class
+utilityDemoTest\matrixTest\TransposeMatrix.class
 utilityDemoTest\dataDrivenTest\ReadAndWrite\WriteintoExcel.class
 utilityDemoTest\dataDrivenTest\encryptAndDecrypt\ReadExcelWithDecryption.class
 utilityDemoTest\dataDrivenTest\DataDrivenTestCSVAndJson\JsonVariableReplacement.class
@@ -140,6 +141,7 @@ utilityDemoTest\randomIdTest\Main.class
 seleniumUITest\pages\ResizablePage.class
 utilityDemoTest\dbTest\BatchInsert.class
 seleniumUITest\pages\BrowserWindowPage.class
+utilityDemoTest\matrixTest\matrixAddition.class
 utilityDemoTest\stringTest\TransformString.class
 seleniumUITest\dataProvider\JsonDataReader.class
 utilityDemoTest\stringTest\IndexOfCharacterInString.class
