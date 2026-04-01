@@ -149,10 +149,15 @@ SEELCT customer_id
 
          Group by coloumn1, coloumn2, coloumn3
             HAVING COUNT(*)>1;
+
+
+
 --Retreive the second highest salary from the Employees table
 SELECT MAX(Salary) AS SecondHighestSalary
 FROM Employees
 WHERE Salary < (SELECT MAX(Salary) FROM Employees);
+
+
 --find employee without department(left join usage
 select e.*
 From Employees e
@@ -175,11 +180,15 @@ Order By Salary DESC;
 Select Customer c
 join Orders on c.CustomerId=o.CustomerId
 where c.customerId not in (select CustomerId from Returns);
+
+
 --show the count of orders per customer
 select customer_id
 count(*) As order_count
 from Orders
 Group by customer_id;
+
+
 --retreive all employee who joined in 2023
 Select *
 from employees
@@ -191,26 +200,32 @@ AVG(total_amount) As average_order_value
 from Orders
 Group by customer_id;
 
+
 --get the latest order placed by each customer
 select customer_id, MAX(order_date) As latest_order_date
 from Orders
 Group by customer_id;
+
+
 --find prodcut theat were never slod
 selevt p.produt from Prodcuts p
 left join OrderDetails od
 on p.product_id=od.product_id
 where od.product_id is null;
 
-       --identify the most selling prodcut
-       select top 1 product_id, SUM(quantity) AS total_sold
-       from sales
-         Group by product_id
-         Order by total_sold DESC;
+ --identify the most selling prodcut
+select top 1 product_id, SUM(quantity) AS total_sold
+from sales
+Group by product_id
+Order by total_sold DESC;
+
+
 --get the total revenue and the number of orders per region
 select region
 sum(total_amount) As total_revenue, count(*) As number_of_orders
 from Orders
 Group by region;
+
 
 --count how many customers plcaed more than 5 orders
 select count(*) as customer_count
@@ -219,31 +234,36 @@ select customer_id
 from Orders
 Group by customer_id
 having count(*)>5) as subquery;
---major subject (like Computer Science, Mathematics, etc.) for the student with ID 101
 
+
+--major subject (like Computer Science, Mathematics, etc.) for the student with ID 101
 SELECT s.student_id, s.name, m.major_name
 FROM Students s
-    JOIN Majors m
-        ON s.major_id = m.major_id
+JOIN Majors m
+ ON s.major_id = m.major_id
 WHERE s.student_id = 101;
+
+
 --Example with Multiple Subjects (if students can have more than one)
 SELECT s.name, subj.subject_name
 FROM Students s
-         JOIN StudentSubjects ss ON s.student_id = ss.student_id
-         JOIN Subjects subj ON ss.subject_id = subj.subject_id
+JOIN StudentSubjects ss ON s.student_id = ss.student_id
+JOIN Subjects subj ON ss.subject_id = subj.subject_id
 WHERE s.student_id = 101;
+
+
 
 -- Students table
 CREATE TABLE Students (
-                          student_id INT PRIMARY KEY,
-                          name VARCHAR(100),
-                          major_id INT
+  student_id INT PRIMARY KEY,
+   name VARCHAR(100),
+   major_id INT
 );
 
 -- Majors table
 CREATE TABLE Majors (
-                        major_id INT PRIMARY KEY,
-                        major_name VARCHAR(100)
+ major_id INT PRIMARY KEY,
+  major_name VARCHAR(100)
 );
 
 -- Sample data
@@ -251,7 +271,7 @@ INSERT INTO Majors VALUES (1, 'Computer Science'), (2, 'Mathematics'), (3, 'Phys
 INSERT INTO Students VALUES (101, 'Abhilasha', 1), (102, 'Ravi', 2), (103, 'Sneha', 3);
 SELECT s.student_id, s.name, m.major_name
 FROM Students s
-         JOIN Majors m ON s.major_id = m.major_id
+  JOIN Majors m ON s.major_id = m.major_id
 WHERE s.student_id = 101;
 
 
