@@ -37,7 +37,7 @@ import java.util.List;
 import static io.restassured.RestAssured.given;
 
 
-public class BookStoreEndToEnd_Tests {
+public class BookStoreEndToEnd {
     static  String baseUrl="https://bookstore.toolsqa.com";
     static  JSONObject requestParam;
     private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -51,31 +51,31 @@ public class BookStoreEndToEnd_Tests {
     private static final SecureRandom RANDOM2 = new SecureRandom();
 
 
-            public Response CreateUser(String UserName, String Password) {
+            public Response CreateUser(String username, String password) {
             RestAssured.baseURI=baseUrl;
             RequestSpecification request= given();
             request.header("Content-Type", "application/json");
             requestParam = new JSONObject();
-            requestParam.put("userName", UserName);
-            requestParam.put("password", Password);
+            requestParam.put("userName", username);
+            requestParam.put("password", password);
             return request.body(requestParam.toString()).post("/Account/v1/User");
           }
 
 
-            public Response GenerateToken( String UserName, String Password) {
+            public Response GenerateToken( String username, String password) {
             RestAssured.baseURI = baseUrl;
             RequestSpecification request = given();
-            NewUser authRequest = new NewUser(UserName, Password);
+            NewUser authRequest = new NewUser(username, password);
             request.header("Content-Type", "application/json");
             return request.body(authRequest).post("/Account/v1/GenerateToken");
          }
 
-           public  Response AuthorizedUser(String UserName, String Password) {
+           public  Response AuthorizedUser(String username, String password) {
             RestAssured.baseURI=baseUrl;
             RequestSpecification request= given();
-            NewUser UserAuth = new NewUser(UserName, Password);
+            NewUser user = new NewUser(username, password);
             request.header("Content-Type", "application/json");
-            return request.body(UserAuth).post("/Account/v1/Authorized");
+            return request.body(user).post("/Account/v1/Authorized");
          }
 
 
@@ -87,15 +87,14 @@ public class BookStoreEndToEnd_Tests {
               return httpRequest.get("/Account/v1/User/"+userId);
     }
 
-    public  Response GetBookByUserID(String token, String userId) throws IOException {
-    // String jsonPayload = new String(Files.readAllBytes(Paths.get("src/test/resource/driver/Books.json")));
+    public  Response GetBookByUserID(String token, String userId) {
      RestAssured.baseURI=baseUrl;
      RequestSpecification request= given().header("Authorization", "Bearer " + token)
             .header("Content-Type", "application/json");
       return request.get("/Account/v1/User/" + userId);
       }
 
-    public  Response GetBooks(String token) throws IOException {
+    public  Response GetBooks(String token)  {
      RestAssured.baseURI=baseUrl;
      RequestSpecification request= given().header("Authorization", "Bearer " + token)
                 .header("Content-Type", "application/json");
@@ -112,7 +111,6 @@ public class BookStoreEndToEnd_Tests {
 
 
         public Response CreateBooksListByAddingISBN(String userId, List<ISBN> collectionOfISBN, String token){
-          // String addBookRequest = new String(Files.readAllBytes(Paths.get("src/test/resource/driver/AddListOfBooks.json")));
              RestAssured.baseURI=baseUrl;
             RequestSpecification request= given().header("Authorization", "Bearer " + token).
                     header("Content-Type", "application/json");
@@ -164,31 +162,24 @@ public class BookStoreEndToEnd_Tests {
     }
 
 
-    public  void UserRegistrationSuccessAndFailure() {
+    public  void UserRegistrationSuccessAndFailure() throws IOException {
         RestAssured.baseURI = baseUrl;
         RequestSpecification request = given();
         requestParam.put("UserName", "test_rest");
         requestParam.put("Password", "rest@123");
         request.body(requestParam.toString());
         Response  response = request.post("/Account/v1/User");
-        String body = response.getBody().asString();
-        try{
-            FileWriter file=new FileWriter("src/test/resource/driver/outputfile.json");
-            {
-           file.write(String.valueOf(response));
-         file.flush();        }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
+        FileWriter file=new FileWriter("src/test/resource/driver/outputfile.json");
+        file.write(String.valueOf(response));
+        file.flush();
         if (response.statusCode() == 200) {
             JSONFailureResponse responseBody = response.getBody().as(JSONFailureResponse.class);
-            Assert.assertEquals("User already exists", responseBody);
-            Assert.assertEquals("FAULT_USER_ALREADY_EXISTS", responseBody);
+            Assert.assertEquals(responseBody, "user already exists","");
+            Assert.assertEquals(responseBody, "FAULT_USER_ALREADY_EXISTS","");
         } else if (response.statusCode() == 201) {
             JSONSuccessResponse responseBody = response.getBody().as(JSONSuccessResponse.class);
-            Assert.assertEquals("OPERATION_SUCCESS", responseBody);
-            Assert.assertEquals("Operation completed successfully", responseBody);
+            Assert.assertEquals(responseBody, "OPERATION_SUCCESS");
+            Assert.assertEquals(responseBody, "Operation completed successfully");
         }
     }
 

@@ -7,11 +7,11 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.testng.asserts.SoftAssert;
-import restassuredTest.BookStoreEndToEnd_Tests;
+import restassuredTest.BookStoreEndToEnd;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-import static restassuredTest.BookStoreEndToEnd_Tests.*;
+import static restassuredTest.BookStoreEndToEnd.*;
 
 public class BookStoreEndToEndSteps {
     static ISBN isbn;
@@ -28,7 +28,7 @@ public class BookStoreEndToEndSteps {
 
     @Then("Verify Successfully Create User")
     public void verify_successfully_create_user() throws IOException {
-        BookStoreEndToEnd_Tests e2ETests=new BookStoreEndToEnd_Tests();
+        BookStoreEndToEnd e2ETests=new BookStoreEndToEnd();
         username = generateRandomName(10);
         password=generatePassword();
         authorizationRequest=new NewUser(username, password);
@@ -70,7 +70,7 @@ public class BookStoreEndToEndSteps {
     public boolean VerifyGenerateToken(){
         boolean bool=false;
         try {
-            BookStoreEndToEnd_Tests e2ETests = new BookStoreEndToEnd_Tests();
+            BookStoreEndToEnd e2ETests = new BookStoreEndToEnd();
             response = e2ETests.GenerateToken(username, password);
             String body = response.getBody().asString();
             System.out.println(body);
@@ -92,7 +92,7 @@ public class BookStoreEndToEndSteps {
     public boolean VerifyUserAuthorized(){
         boolean bool=false;
         try {
-            BookStoreEndToEnd_Tests e2ETests=new BookStoreEndToEnd_Tests();
+            BookStoreEndToEnd e2ETests=new BookStoreEndToEnd();
             response= e2ETests.AuthorizedUser(username,password);
             String body=response.getBody().asString();
             System.out.println(body);
@@ -114,7 +114,7 @@ public class BookStoreEndToEndSteps {
     public boolean VerifyCreateListOfBooksByISBN() throws IOException {
         boolean bool=false;
         try {
-            BookStoreEndToEnd_Tests e2ETests = new BookStoreEndToEnd_Tests();
+            BookStoreEndToEnd e2ETests = new BookStoreEndToEnd();
             isbnList = generateISBNList();
             System.out.println(isbnList);
             response = e2ETests.CreateBooksListByAddingISBN(userId, isbnList, token);
@@ -128,7 +128,7 @@ public class BookStoreEndToEndSteps {
                 System.out.println(bookOfUserNotPresent.toString());
                 System.out.println(bookOfUserNotPresent.code);
                 System.out.println(bookOfUserNotPresent.message);
-                BookStoreEndToEnd_Tests e2ETests4 = new BookStoreEndToEnd_Tests();
+                BookStoreEndToEnd e2ETests4 = new BookStoreEndToEnd();
                 response = e2ETests4.GetBookByUserID(token, userId);
                 String body4 = response.getBody().asString();
                 System.out.println(body4);
@@ -137,7 +137,7 @@ public class BookStoreEndToEndSteps {
                 System.out.println(userData3.userId);
                 System.out.println(userData3.username);
                 System.out.println(userData3.books);
-                BookStoreEndToEnd_Tests e2ETests4 = new BookStoreEndToEnd_Tests();
+                BookStoreEndToEnd e2ETests4 = new BookStoreEndToEnd();
                 response = e2ETests4.GetBookByUserID(token, userId);
                 String body4 = response.getBody().asString();
                 System.out.println(body4);
@@ -147,7 +147,7 @@ public class BookStoreEndToEndSteps {
                 System.out.println(bookOfUserNotPresent.toString());
                 System.out.println(bookOfUserNotPresent.code);
                 System.out.println(bookOfUserNotPresent.message);
-                BookStoreEndToEnd_Tests e2ETests4 = new BookStoreEndToEnd_Tests();
+                BookStoreEndToEnd e2ETests4 = new BookStoreEndToEnd();
                 response = e2ETests4.GetBookByUserID(token, userId);
                 String body4 = response.getBody().asString();
                 System.out.println(body4);
@@ -164,7 +164,7 @@ public class BookStoreEndToEndSteps {
     public boolean VerifyBooksOfUser() throws IOException {
         boolean bol=false;
         try {
-            BookStoreEndToEnd_Tests e2ETests = new BookStoreEndToEnd_Tests();
+            BookStoreEndToEnd e2ETests = new BookStoreEndToEnd();
             response = e2ETests.GetBookByUserID(token, userId);
             String body = response.getBody().asString();
             System.out.println(body);
@@ -195,7 +195,7 @@ public class BookStoreEndToEndSteps {
     @Then("Verify Successfully get User")
     public void verify_successfully_get_user() {
 
-        BookStoreEndToEnd_Tests e2ETests=new BookStoreEndToEnd_Tests();
+        BookStoreEndToEnd e2ETests=new BookStoreEndToEnd();
         response= e2ETests.getUser(userId,token);
         String body=response.getBody().asString();
         System.out.println(body);
@@ -221,7 +221,7 @@ public class BookStoreEndToEndSteps {
     @Then("Verify Successfully get Books")
     public void verify_successfully_get_books() throws IOException {
 
-        BookStoreEndToEnd_Tests e2ETests = new BookStoreEndToEnd_Tests();
+        BookStoreEndToEnd e2ETests = new BookStoreEndToEnd();
         response = e2ETests.GetBooks(token);
         String body = response.getBody().asString();
         System.out.println(body);
@@ -240,7 +240,7 @@ public class BookStoreEndToEndSteps {
     @Then("Verify Successfully Get book by ISBN")
     public void verify_successfully_get_book_by_isbn() {
 
-        BookStoreEndToEnd_Tests e2ETests=new BookStoreEndToEnd_Tests();
+        BookStoreEndToEnd e2ETests=new BookStoreEndToEnd();
         response=e2ETests.GetBookByISBN(isbn);
         String body=response.getBody().asString();
         System.out.println(body);
@@ -266,7 +266,7 @@ public class BookStoreEndToEndSteps {
     @Then("Verify Successfully update books by  UserID and ISBN")
     public void verify_successfully_update_books_by_user_id_and_isbn() {
 
-        BookStoreEndToEnd_Tests e2ETests=new BookStoreEndToEnd_Tests();
+        BookStoreEndToEnd e2ETests=new BookStoreEndToEnd();
         System.out.println(userId);
         response=  e2ETests.UpdateBookByISBNAndUserId(  token, userId,  isbn);
         String body=response.getBody().asString();
@@ -300,7 +300,7 @@ public class BookStoreEndToEndSteps {
     @Then("Verify Successfully Delete Book")
     public void verify_successfully_delete_book() {
 
-        BookStoreEndToEnd_Tests e2ETests = new BookStoreEndToEnd_Tests();
+        BookStoreEndToEnd e2ETests = new BookStoreEndToEnd();
         response = e2ETests.DeleteBookByUserIdAndISBN(token, userId, isbn);
         String body = response.getBody().asString();
         System.out.println(body);

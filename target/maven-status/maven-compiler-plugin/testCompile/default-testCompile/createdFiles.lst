@@ -7,6 +7,7 @@ cucumberBddTest\model\bookstoreResponse\Book.class
 cucumberBddTest\runner\UITestRunner.class
 cucumberBddTest\model\bookstoreRequest\RemoveBookRequest.class
 seleniumperfTest\SeleniumBrowserMobWithProxy.class
+restassuredTest\utilities\SpecFactory.class
 restassuredTest\utilities\MultiParamScenarioFactory$TestScenario.class
 cucumberBddTest\uiStepDef\CheckBoxStepDefs.class
 restassuredTest\utilities\ScenarioFactory.class
@@ -27,7 +28,6 @@ restassuredTest\PetStore_TestNGTest.class
 cucumberBddTest\model\bookstoreResponse\BookOfUserNotPresent.class
 cucumberBddTest\uiStepDef\TextBoxStepDefs.class
 restassuredTest\utilities\EnvAwareApiTest.class
-restassuredTest\BookStoreEndToEnd_Tests.class
 seleniumCDPTest\GeoLocationTest.class
 cucumberBddTest\apiStepDef\APITestSteps.class
 restassuredTest\utilities\EnvAwarePostApiTest.class
@@ -75,6 +75,7 @@ seleniumGridTest\GridProxyExample.class
 cucumberBddTest\uiStepDef\PracticeFormStepDefs.class
 seleniumCDPTest\MultiRegionGeoTest$Region.class
 restassuredTest\utilities\ScenarioFactory$TestScenario.class
+restassuredTest\BookStoreEndToEnd.class
 cucumberBddTest\utility\TestBook.class
 restassuredTest\SerializeDeserializeDemo\User.class
 cucumberBddTest\apiTestManager\BookStoreEndPoints.class

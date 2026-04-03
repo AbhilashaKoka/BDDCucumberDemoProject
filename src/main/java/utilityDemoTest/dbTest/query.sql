@@ -267,12 +267,19 @@ CREATE TABLE Majors (
 );
 
 -- Sample data
-INSERT INTO Majors VALUES (1, 'Computer Science'), (2, 'Mathematics'), (3, 'Physics');
-INSERT INTO Students VALUES (101, 'Abhilasha', 1), (102, 'Ravi', 2), (103, 'Sneha', 3);
+INSERT INTO Majors
+VALUES (1, 'Computer Science'), (2, 'Mathematics'), (3, 'Physics');
+INSERT INTO Students
+VALUES (101, 'Abhilasha', 1), (102, 'Ravi', 2), (103, 'Sneha', 3);
+
+
 SELECT s.student_id, s.name, m.major_name
 FROM Students s
-  JOIN Majors m ON s.major_id = m.major_id
+JOIN Majors m
+ON s.major_id = m.major_id
 WHERE s.student_id = 101;
+
+
 
 
 

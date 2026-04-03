@@ -1,21 +1,23 @@
 package restassuredTest;
-import cucumberBddTest.model.bookstoreRequest.NewUser;
+
 import cucumberBddTest.model.bookstoreRequest.ISBN;
+import cucumberBddTest.model.bookstoreRequest.NewUser;
 import cucumberBddTest.model.bookstoreResponse.*;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
+
+import static restassuredTest.BookStoreEndToEnd.generateISBNList;
+import static restassuredTest.BookStoreEndToEnd.generateRandomName;
 import static utilityDemoTest.programInJavaTest.StringOperation.generatePassword;
-import static restassuredTest.BookStoreEndToEnd_Tests.generateISBNList;
-import static restassuredTest.BookStoreEndToEnd_Tests.generateRandomName;
 
 public class BookStoreEndToEndAPITestNGTest {
-    static ISBN ISBN;
+    static ISBN isbn;
     String userId;
     static  String token;
     static List<Book> books;
@@ -29,7 +31,7 @@ public class BookStoreEndToEndAPITestNGTest {
 
     @Test(description= "Verify Create User")
     public void VerifyCreateUser() throws IOException {
-          BookStoreEndToEnd_Tests e2ETests=new BookStoreEndToEnd_Tests();
+          BookStoreEndToEnd e2ETests=new BookStoreEndToEnd();
           username = generateRandomName(10);
           password=generatePassword();
           authorizationRequest=new NewUser(username, password);
@@ -69,13 +71,13 @@ public class BookStoreEndToEndAPITestNGTest {
     public boolean VerifyGenerateToken(){
         boolean bool=false;
         try {
-            BookStoreEndToEnd_Tests e2ETests = new BookStoreEndToEnd_Tests();
+            BookStoreEndToEnd e2ETests = new BookStoreEndToEnd();
             response = e2ETests.GenerateToken(username, password);
             String body = response.getBody().asString();
             System.out.println(body);
-            token = JsonPath.from(response.asString()).get("token");
-            Token token = response.getBody().as(Token.class);
-            System.out.println(token.token);
+            token = JsonPath.from(response.asString()).get("newtoken");
+            Token newtoken = response.getBody().as(Token.class);
+            System.out.println(newtoken.token);
             String statusLine = response.getStatusLine();
             System.out.println(statusLine);
             Assert.assertEquals(statusLine, "HTTP/1.1 200 OK", "User is Authorized");
@@ -91,7 +93,7 @@ public class BookStoreEndToEndAPITestNGTest {
     public boolean VerifyUserAuthorized(){
         boolean bool=false;
         try {
-        BookStoreEndToEnd_Tests e2ETests=new BookStoreEndToEnd_Tests();
+        BookStoreEndToEnd e2ETests=new BookStoreEndToEnd();
          response= e2ETests.AuthorizedUser(username,password);
         String body=response.getBody().asString();
         System.out.println(body);
@@ -112,7 +114,7 @@ public class BookStoreEndToEndAPITestNGTest {
     public boolean VerifyCreateListOfBooksByISBN() throws IOException{
         boolean bool=false;
         try {
-            BookStoreEndToEnd_Tests e2ETests = new BookStoreEndToEnd_Tests();
+            BookStoreEndToEnd e2ETests = new BookStoreEndToEnd();
             isbnList = generateISBNList();
             System.out.println(isbnList);
             response = e2ETests.CreateBooksListByAddingISBN(userId, isbnList, token);
@@ -126,7 +128,7 @@ public class BookStoreEndToEndAPITestNGTest {
                 System.out.println(bookOfUserNotPresent.toString());
                 System.out.println(bookOfUserNotPresent.code);
                 System.out.println(bookOfUserNotPresent.message);
-                BookStoreEndToEnd_Tests e2ETests4 = new BookStoreEndToEnd_Tests();
+                BookStoreEndToEnd e2ETests4 = new BookStoreEndToEnd();
                 response = e2ETests4.GetBookByUserID(token, userId);
                 String body4 = response.getBody().asString();
                 System.out.println(body4);
@@ -135,7 +137,7 @@ public class BookStoreEndToEndAPITestNGTest {
                 System.out.println(userData3.userId);
                 System.out.println(userData3.username);
                 System.out.println(userData3.books);
-                BookStoreEndToEnd_Tests e2ETests4 = new BookStoreEndToEnd_Tests();
+                BookStoreEndToEnd e2ETests4 = new BookStoreEndToEnd();
                 response = e2ETests4.GetBookByUserID(token, userId);
                 String body4 = response.getBody().asString();
                 System.out.println(body4);
@@ -145,7 +147,7 @@ public class BookStoreEndToEndAPITestNGTest {
                 System.out.println(bookOfUserNotPresent.toString());
                 System.out.println(bookOfUserNotPresent.code);
                 System.out.println(bookOfUserNotPresent.message);
-                BookStoreEndToEnd_Tests e2ETests4 = new BookStoreEndToEnd_Tests();
+                BookStoreEndToEnd e2ETests4 = new BookStoreEndToEnd();
                 response = e2ETests4.GetBookByUserID(token, userId);
                 String body4 = response.getBody().asString();
                 System.out.println(body4);
@@ -162,7 +164,7 @@ public class BookStoreEndToEndAPITestNGTest {
     public boolean VerifyBooksOfUser() throws IOException {
         boolean bol=false;
         try {
-            BookStoreEndToEnd_Tests e2ETests = new BookStoreEndToEnd_Tests();
+            BookStoreEndToEnd e2ETests = new BookStoreEndToEnd();
             response = e2ETests.GetBookByUserID(token, userId);
             String body = response.getBody().asString();
             System.out.println(body);
@@ -173,13 +175,11 @@ public class BookStoreEndToEndAPITestNGTest {
                 System.out.println(userData2.userId);
                 System.out.println(userData2.username);
                 System.out.println(userData2.books);
-
             } else if (statusLine.equalsIgnoreCase(" HTTP/1.1 401 Unauthorized")) {
                 BookOfUserNotPresent bookOfUserNotPresent = response.getBody().as(BookOfUserNotPresent.class);
                 System.out.println(bookOfUserNotPresent.toString());
                 System.out.println(bookOfUserNotPresent.code);
                 System.out.println(bookOfUserNotPresent.message);
-
             }
             bol=true;
         }
@@ -193,7 +193,7 @@ public class BookStoreEndToEndAPITestNGTest {
 
         @Test(description = "Verify get User",enabled  = false,dependsOnMethods = {"VerifyCreateUser"})
         public void VerifygetUser(){
-        BookStoreEndToEnd_Tests e2ETests=new BookStoreEndToEnd_Tests();
+        BookStoreEndToEnd e2ETests=new BookStoreEndToEnd();
          response= e2ETests.getUser(userId,token);
         String body=response.getBody().asString();
         System.out.println(body);
@@ -219,16 +219,16 @@ public class BookStoreEndToEndAPITestNGTest {
 
     @Test(description = "Verify get Books", dependsOnMethods = {"VerifyCreateUser"})
     public void VerifyGetBooks() throws IOException {
-        BookStoreEndToEnd_Tests e2ETests = new BookStoreEndToEnd_Tests();
+        BookStoreEndToEnd e2ETests = new BookStoreEndToEnd();
           response = e2ETests.GetBooks(token);
         String body = response.getBody().asString();
         System.out.println(body);
         String statusLine = response.getStatusLine();
         if (statusLine.equalsIgnoreCase("HTTP/1.1 200 OK")) {
-            Books books = response.getBody().as(Books.class);
-            System.out.println(books.books.get(0));
-            System.out.println(books.books.get(1));
-            System.out.println(books.books.get(2));
+            Books bookslist = response.getBody().as(Books.class);
+            System.out.println(bookslist.books.get(0));
+            System.out.println(bookslist.books.get(1));
+            System.out.println(bookslist.books.get(2));
         }
         else
         {
@@ -239,35 +239,32 @@ public class BookStoreEndToEndAPITestNGTest {
     @Test(description = "Verify Get book by ISBN")
     public void VerifyGetBookByISBN()
     {
-        BookStoreEndToEnd_Tests e2ETests=new BookStoreEndToEnd_Tests();
-         response=e2ETests.GetBookByISBN(ISBN);
+        BookStoreEndToEnd e2ETests=new BookStoreEndToEnd();
+        response=e2ETests.GetBookByISBN(isbn);
         String body=response.getBody().asString();
         System.out.println(body);
         String statusLine = response.getStatusLine();
         if (statusLine.equalsIgnoreCase("HTTP/1.1 200 OK")) {
-            List<Map<String, String>> book1 = JsonPath.from(response.asString()).get("books");
             Book[] booksdetails = response.jsonPath().getObject("book", Book[].class);
             for (Book book2 : booksdetails) {
                 System.out.println("Book Title:" + book2.toString());
             }
         }
         else if (statusLine.equalsIgnoreCase("HTTP/1.1 400 Bad bookstoreRequest")){
-
             BookOfUserNotPresent bookOfUserNotPresent=response.getBody().as(BookOfUserNotPresent.class);
             System.out.println(bookOfUserNotPresent.toString());
             System.out.println(bookOfUserNotPresent.code);
             System.out.println(bookOfUserNotPresent.message);
             }
-
     }
 
 
 
    @Test(description = "Verify update books by  UserID and ISBN")
     public void VerifyUpdateBookByUserIDandISBN() throws IOException {
-        BookStoreEndToEnd_Tests e2ETests=new BookStoreEndToEnd_Tests();
+        BookStoreEndToEnd e2ETests=new BookStoreEndToEnd();
         System.out.println(userId);
-         response=  e2ETests.UpdateBookByISBNAndUserId(token, userId,  ISBN);
+        response= e2ETests.UpdateBookByISBNAndUserId(token, userId,  isbn);
         String body=response.getBody().asString();
         System.out.println(body);
         String statusLine=response.getStatusLine();
@@ -278,7 +275,6 @@ public class BookStoreEndToEndAPITestNGTest {
             System.out.println(userData3.userId);
             System.out.println(userData3.username);
             System.out.println(userData3.books);
-
         }
       else if(statusLine.equalsIgnoreCase(" HTTP/1.1 401 Unauthorized"))
         {
@@ -292,8 +288,8 @@ public class BookStoreEndToEndAPITestNGTest {
 
 @Test(description = "Verify Delete Book")
     public void VerifyDeleteBook() {
-    BookStoreEndToEnd_Tests e2ETests = new BookStoreEndToEnd_Tests();
-    response = e2ETests.DeleteBookByUserIdAndISBN(token, userId, ISBN);
+    BookStoreEndToEnd e2ETests = new BookStoreEndToEnd();
+    response = e2ETests.DeleteBookByUserIdAndISBN(token, userId, isbn);
     String body = response.getBody().asString();
     System.out.println(body);
     String statusLine = response.getStatusLine();
@@ -311,4 +307,5 @@ public class BookStoreEndToEndAPITestNGTest {
         System.out.println(bookOfUserNotPresent.message);
     }
 }
+
 }
