@@ -85,7 +85,6 @@ public class Number2Operation {
         Scanner sc=new Scanner(System.in);
         row=sc.nextInt();
         space=row-1;
-
         for(j=1;j<=row;j++){
             for(i=1;i<=space;i++){
                 System.out.print(" ");
@@ -97,7 +96,6 @@ public class Number2Operation {
             System.out.println();
         }
         space=1;
-
         for(j=1;j<=row-1;j++){
             for(i=1;i<=space;i++)
             {
@@ -132,10 +130,10 @@ public class Number2Operation {
     }
 
     public static void palindromeMethod(int n){
-        int r, sum = 0, temp;
+        int sum = 0, temp;
         temp = n;
         while(n>0){
-            r= n% 10;
+          int r= n% 10;
             sum= (sum * 10)+ r;
             n= n/10;
         }
@@ -151,13 +149,10 @@ public class Number2Operation {
     static void checkPrime(int n)
     {
         int i, m=0, flag=0;
-
         m=n/2;
-
         if(n==0||n==1){
             System.out.println(n+"is not prime number");
         }
-
         else {
             for(i=2;i<=m;i++){
                 if (n % i == 0){
@@ -166,7 +161,6 @@ public class Number2Operation {
                     break;
                 }
             }
-
             if(flag==0){
                 System.out.println(n+"is Prime Number");
             }
@@ -205,7 +199,6 @@ public class Number2Operation {
     }
 
     public static void elementInEvenPosition(int[] arr){
-
         System.out.println("Element of given array");
         for(int i=1;i<arr.length;i=i+2){
             System.out.println(arr[i]);
@@ -216,19 +209,16 @@ public class Number2Operation {
  static boolean isArmstrong(int n) {
         int temp, digits = 0, last = 0, sum = 0;
         temp = n;
-
         while(temp > 0){
             temp = temp / 10;
             digits++;
         }
-
         temp = n;
         while(temp > 0) {
             last = temp % 10;
             sum += (Math.pow(last, digits));
             temp = temp / 10;
         }
-
      return n == sum;
     }
 
