@@ -340,13 +340,13 @@ public class StringOperation{
                 .entrySet().stream().filter(entry -> entry.getValue() > 1)
                 .map(Map.Entry::getKey)
                 .findFirst().orElse(null);
-
         if (result != null) {
             System.out.println("First repeated character:" + result);
         } else {
             System.out.println("NO repeated characters found");
         }
     }
+
     public static boolean containOnlyLetter(String input){
         for(int i=0;i<input.length();i++){
             if(!Character.isLetter(input.charAt(i)))
@@ -457,7 +457,6 @@ public static String swapFirstLast(String input) {
             result.append(word).append(" ");
         }
     }
-
     return result.toString().trim();
 }
 

@@ -15,8 +15,7 @@ public class RetryWithExponentialBackoff {
                 if (makeApiCall()) {
                     System.out.println("API call successful!");
                     break;
-                } else {
-                    throw new RuntimeException("Server returned 500 error");
+                } else { throw new RuntimeException("Server returned 500 error");
                 }
             } catch (Exception e) {
                 retryCount++;
