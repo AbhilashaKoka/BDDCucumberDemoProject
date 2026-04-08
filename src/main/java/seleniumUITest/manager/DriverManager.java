@@ -18,6 +18,12 @@ public class DriverManager {
     public DriverManager() {
     }
 
+//    private static ThreadLocal<WebDriver> webdriver= new ThreadLocal<>();//
+//    public static void initDriver() {
+//        webdriver.set(new ChromeDriver());
+//    }
+
+
     public WebDriver getDriver() {
         if(driver==null) {
             driver=createDriver();
