@@ -1,5 +1,4 @@
 package utilityDemoTest.searchingTest;
-
 public class MinDifferenceBetweenTwoConsecutiveElement {
   public static void main(String[] args)
         {

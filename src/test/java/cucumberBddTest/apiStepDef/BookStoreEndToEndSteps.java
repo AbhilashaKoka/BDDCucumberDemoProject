@@ -58,12 +58,14 @@ public class BookStoreEndToEndSteps {
             System.out.println(userPresent.code);
             System.out.println(userPresent.message);
         }
+
         SoftAssert softAssert=new SoftAssert();
         softAssert.assertTrue(VerifyGenerateToken(),"User Successfully Authorized!!");
         softAssert.assertTrue(VerifyUserAuthorized(),"Authorized Verify Successfully!!");
         softAssert.assertTrue(VerifyCreateListOfBooksByISBN(),"Create List Of Books By ISBN Successfully!!");
         softAssert.assertTrue(VerifyBooksOfUser(),"Books of User Successfully!!");
         softAssert.assertAll();
+
     }
 
 

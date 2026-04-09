@@ -14,8 +14,7 @@ public class CSVToJsonUtility {
             String[] headers = br.readLine().split(",");
             String line;
             ObjectMapper mapper = new ObjectMapper();
-
-            while ((line = br.readLine()) != null) {
+            while ((line = br.readLine()) != null){
                 String[] values = line.split(",");
                 ObjectNode jsonNode = mapper.createObjectNode();
 
