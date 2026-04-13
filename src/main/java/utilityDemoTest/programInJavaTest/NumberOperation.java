@@ -1,6 +1,7 @@
 package utilityDemoTest.programInJavaTest;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.List;
 import java.util.Scanner;
 
 public class NumberOperation {
@@ -274,5 +275,19 @@ public class NumberOperation {
         LocalDate currentDate=LocalDate.now();
         Period age= Period.between(birthdate, currentDate);
         System.out.println("You are"+age.getYears()+"year old");
+    }
+
+    public static boolean onlyOddNumbers(List<Integer> list) {
+        for (int i : list) {
+            if (i % 2 == 0)
+                return false;
+        }
+
+        return true;
+    }
+    public static boolean onlyOddNumbers2(List<Integer> list) {
+        return list
+                .parallelStream() // parallel stream for faster processing
+                .anyMatch(x -> x % 2 != 0); // return as soon as any elements match the condition
     }
 }

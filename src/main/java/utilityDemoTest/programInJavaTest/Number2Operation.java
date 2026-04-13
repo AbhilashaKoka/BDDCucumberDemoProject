@@ -1,4 +1,5 @@
 package utilityDemoTest.programInJavaTest;
+import java.util.List;
 import java.util.Scanner;
 
 public class Number2Operation {
@@ -218,6 +219,18 @@ public class Number2Operation {
      return n == sum;
     }
 
+    public static boolean onlyOddNumbers(List<Integer> list) {
+        return list.parallelStream() // parallel stream for faster processing
+                .anyMatch(x -> x % 2 != 0); // return as soon as any elements match the condition
+    }
+
+    public static boolean onlyOddNumbers2(List<Integer> list) {
+        for (int i : list) {
+            if (i % 2 == 0)
+                return false;
+        }
+        return true;
+    }
 
 }
 
