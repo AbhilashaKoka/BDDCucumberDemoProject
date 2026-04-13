@@ -1,5 +1,4 @@
 package utilityDemoTest.programInJavaTest;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.util.Map;
@@ -11,7 +10,7 @@ public class TestClass {
 
 
     @Test
-    public void ReversingsecondcharacterwithchangecaseTest() {
+    public void reversingsecondcharacterwithchangecaseTest() {
             String str = "sitakumari";
             Reversingsecondcharacterwithchangecase(str);
             Assert.assertEquals("iSaTuKaMiR","iSaTuKaMiR");
@@ -26,8 +25,8 @@ public class TestClass {
         for (Map.Entry<Character, Integer> entry : charCount.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
-
     }
+
     @Test
     public void containsOnlyDigitsTest() {
         String input1 = "123456";

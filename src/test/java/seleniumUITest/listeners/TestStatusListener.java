@@ -1,4 +1,4 @@
-package seleniumUITest;
+package seleniumUITest.listeners;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import seleniumUITest.base.BaseSetUp;
+
 import java.io.File;
 
 public class TestStatusListener extends BaseSetUp implements ITestListener {

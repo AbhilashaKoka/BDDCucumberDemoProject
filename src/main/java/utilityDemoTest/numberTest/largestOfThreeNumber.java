@@ -8,9 +8,7 @@ public class largestOfThreeNumber {
         int a=sc.nextInt();
         int b=sc.nextInt();
         int c=sc.nextInt();
-
         int max=Math.max(a,Math.max(b,c));
-
         System.out.println(max);
     }
 }

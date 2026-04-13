@@ -18,8 +18,7 @@ public class OperationInString {
     }
 
     public static void main(String args[]) {
-
-        OperationInString op= new OperationInString();
+       OperationInString op= new OperationInString();
         op=new OperationInString();
         op.ConcatTwoString();
         op. ContainString();
@@ -46,7 +45,7 @@ public class OperationInString {
         System.out.println(s);
      }
 
-    public void ContainString() {
+    public void ContainString(){
             boolean isContains = str4.contains("Javatpoint");
             System.out.println(isContains);
             System.out.println(str4.contains("javatpoint")); // false

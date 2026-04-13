@@ -5,7 +5,6 @@ import java.util.*;
 public class TreeSetMethodsDemo {
     public static void main(String[] args) {
         TreeSet<String> set = new TreeSet<>();
-
         // 1. add() - add elements (duplicates ignored, sorted order maintained)
         set.add("Java");
         set.add("Python");
@@ -61,7 +60,7 @@ public class TreeSetMethodsDemo {
         // 12. descendingIterator() - iterate in descending order
         System.out.print("Iterating descending: ");
         Iterator<String> dit = set.descendingIterator();
-        while (dit.hasNext()) {
+        while (dit.hasNext()){
             System.out.print(dit.next() + " ");
         }
         System.out.println();

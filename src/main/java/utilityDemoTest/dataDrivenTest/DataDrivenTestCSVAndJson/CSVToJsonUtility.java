@@ -10,7 +10,8 @@ public class CSVToJsonUtility {
 
     public static List<ObjectNode> readCSV(String filePath) throws IOException {
         List<ObjectNode> jsonList = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath)))
+        {
             String[] headers = br.readLine().split(",");
             String line;
             ObjectMapper mapper = new ObjectMapper();
@@ -27,6 +28,7 @@ public class CSVToJsonUtility {
         return jsonList;
     }
 
+
     public static List<ObjectNode> getRowsByKey(List<ObjectNode> jsonList, String key, String value) {
         List<ObjectNode> filteredRows = new ArrayList<>();
         for (ObjectNode jsonNode : jsonList) {
@@ -36,6 +38,7 @@ public class CSVToJsonUtility {
         }
         return filteredRows;
     }
+
 
     public static void main(String[] args) {
         try {

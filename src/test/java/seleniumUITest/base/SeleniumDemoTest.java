@@ -1,8 +1,9 @@
-package seleniumUITest;
+package seleniumUITest.base;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.io.File;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -15,7 +16,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-public class SeleniumDemoTest extends BaseSetUp{
+public class SeleniumDemoTest extends BaseSetUp {
 
     public static Boolean HandlingAccordion(){
         Boolean bol=false;
@@ -55,10 +56,8 @@ public class SeleniumDemoTest extends BaseSetUp{
         Boolean bol=false;
         WebElement Window_Frames=driver.findElement(By.xpath( "//*[@class=\"category-cards\"]//following::div[@class=\"card-body\"]//h5[contains(text(),\"Alerts, Frame & Windows\")]"));
         Window_Frames.click();
-
         WebElement Alerts_span=driver.findElement(By.xpath( "//*[@class=\"accordion\"]//div[@class=\"element-group\"]//following::span[@class=\"text\" and contains(text(),\"Alerts\")]"));
         Alerts_span.click();
-
         WebElement AlertWrapper=driver.findElement(By.xpath("//*[@id=\"javascriptAlertsWrapper\"]"));
         System.out.println(AlertWrapper.getAttribute("innerText"));
 
@@ -255,7 +254,6 @@ public class SeleniumDemoTest extends BaseSetUp{
         List<WebElement> chkboxes=driver.findElements(By.cssSelector("input[type='checkbox']"));
         int size=chkboxes.size();
         System.out.println(size);
-
         WebElement sortDesktop=driver.findElement(By.xpath("//span[@class=\"rct-title\"][ contains(text(),\"Desktop\")]//following::button[1][@title=\"Toggle\"]"));
         sortDesktop.click();
         List<WebElement> chkboxes2=driver.findElements(By.cssSelector("input[type='checkbox']"));
@@ -264,7 +262,6 @@ public class SeleniumDemoTest extends BaseSetUp{
         WebElement sortDesktop2=driver.findElement(By.xpath("//span[@class=\"rct-title\"][ contains(text(),\"WorkSpace\")]//following::button[1][@title=\"Toggle\"]"));
         WebDriverWait wait2=new WebDriverWait(driver, Duration.ofSeconds(60));
         wait2.until(ExpectedConditions.elementToBeClickable(By.cssSelector(" button[title=\"Toggle\"]")));
-
         sortDesktop2.click();
         WebElement sortDesktop3=driver.findElement(By.xpath("//span[@class=\"rct-title\"][ contains(text(),\"React\")]//following::button[1][@title=\"Toggle\"]"));
         sortDesktop3.click();
@@ -278,7 +275,6 @@ public class SeleniumDemoTest extends BaseSetUp{
         Widgets_Frames.click();
         WebElement DatePicker_span=driver.findElement(By.xpath( "//*[@class=\"accordion\"]//div[@class=\"element-group\"]//following::span[@class=\"text\" and contains(text(),\"Date Picker\")]"));
         DatePicker_span.click();
-
         WebElement dataPickerContainer = driver.findElement(By.xpath("//*[@id=\"datePickerContainer\"]"));
         WebElement dataPickerMonthYearInput = driver.findElement(By.xpath(" //*[@id=\"datePickerMonthYearInput\" and @type=\"text\"]"));
         List<WebElement> dataPickerWeeks = driver.findElements(By.xpath("//*[@class=\"react-datepicker__month\" and @role=\"listbox\"]"));

@@ -17,7 +17,6 @@ public class MainMethodDemo
 
     }
 
-
     public static void main(String[] args) {
 
     }

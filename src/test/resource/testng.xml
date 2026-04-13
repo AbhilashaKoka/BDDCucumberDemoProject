@@ -1,11 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" verbose="10" configfailurepolicy="skip" parallel="tests">
-<!--<listeners>-->
-<!--    <listener class-name="seleniumTestNG.TestStatusListener"></listener>-->
-<!--</listeners>-->
+<listeners>
+    <!--<listener class-name="seleniumTestNG.TestStatusListener"></listener>-->
+    <listener class-name="seleniumUITest.utils.RetryListener"/>
+    <listener class-name="seleniumUITest.listeners.TestStatusListener"/>
+</listeners>
     <test name="SeleniumTestNG">
         <classes>
-            <class name="seleniumUITest.Selenium2DemoTest"></class>
+            <class name="seleniumUITest.base.Selenium2DemoTest"></class>
         </classes>
     </test>
     <!--    <test name="SeleniumGridStandaloneTest">-->

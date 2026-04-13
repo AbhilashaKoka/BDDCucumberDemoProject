@@ -1,11 +1,14 @@
-package seleniumUITest;
+package seleniumUITest.tests;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import seleniumUITest.base.BaseSetUp;
+import seleniumUITest.base.SeleniumDemoTest;
+import seleniumUITest.listeners.TestStatusListener;
 
 
 @Listeners(TestStatusListener.class)
-public class TestNGTestClass extends BaseSetUp{
+public class TestNGTestClass extends BaseSetUp {
      @Test(description = "Verify textBox",enabled = true,priority = 1)
    public void TestButton() {
               Assert.assertEquals( SeleniumDemoTest.HandlingButton(), true);

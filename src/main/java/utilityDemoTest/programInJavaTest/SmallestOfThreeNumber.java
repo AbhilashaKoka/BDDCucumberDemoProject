@@ -12,7 +12,7 @@ public class SmallestOfThreeNumber {
         b = sc.nextInt();
         System.out.println("Enter the third Number");
         c = sc.nextInt();
-        largest=c<(a<b?a:b)?c:((a<b)?a:b);
+        largest= Math.min(c, (Math.min(a, b)));
         System.out.println("The smallest number is :"+largest);
 
     }

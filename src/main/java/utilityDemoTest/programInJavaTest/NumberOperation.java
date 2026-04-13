@@ -219,8 +219,7 @@ public class NumberOperation {
     public static void fibonacciSeriesMethod(int terms){
         int firstTerm=0;
         int secondTerm=1;
-        for(int i=1;i<=terms;++i)
-        {
+        for(int i=1;i<=terms;++i)   {
             System.out.println(firstTerm+" ");
             int nextTerm=firstTerm+secondTerm;
             firstTerm=secondTerm;
@@ -238,18 +237,15 @@ public class NumberOperation {
     }
 
     public static void diamondPattern(int numRows){
-        for (int i = 1; i <= numRows; i++)
-        {
+        for (int i = 1; i <= numRows; i++){
             for (int j = numRows - i; j >= 1; j--){
                 System.out.print(" ");
             }
-
-            for (int j = 1; j <= 2 * i - 1; j++) {
+            for (int j = 1; j <= 2 * i - 1; j++){
                 System.out.print("*");
             }
             System.out.println();
         }
-
         for (int i = numRows - 1; i >= 1; i--) {
             for (int j = 1; j <= numRows - i; j++) {
                 System.out.print(" ");
@@ -263,24 +259,15 @@ public class NumberOperation {
     public static void checkArmstrongNo(int number){
         int originalNumber=number;
         int sum=0;
-
         //calculate the number of the digits
         int numberOfDigits=String.valueOf(number).length();
-        while(number>0)
-        {
+        while(number>0)  {
             int digit=number%10;
-            sum+=Math.pow(digit,numberOfDigits);
-            number/=10;
-        }
-
-        if(sum==originalNumber)
-        {
-            System.out.println(originalNumber+"is a armstrong number");
-        }
-        else {
-            System.out.println(originalNumber+"is not a armstrong number");
-        }
-    }
+            sum+= (int) Math.pow(digit,numberOfDigits);
+            number/=10;}
+        if(sum==originalNumber){
+            System.out.println(originalNumber+"is a armstrong number");}
+        else { System.out.println(originalNumber+"is not a armstrong number"); } }
 
         public static void calculateAge(String birthdateString){
         LocalDate birthdate=LocalDate.parse(birthdateString);

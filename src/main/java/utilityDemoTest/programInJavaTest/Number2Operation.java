@@ -183,19 +183,14 @@ public class Number2Operation {
         }
     }
 
-
-
     public static void largestOfThreeNumber(int a, int b, int c){
-        int  largest=c>(a>b?a:b)?c:((a>b)?a:b);
+        int  largest= Math.max(c, (Math.max(a, b)));
         System.out.println("The largest number is :"+largest);
-
     }
 
     static int factorial(int n){
-        if(n==0)
-            return 1;
-        else
-            return (n*factorial(n-1));
+        if(n==0) return 1;
+        else  return (n*factorial(n-1));
     }
 
     public static void elementInEvenPosition(int[] arr){
@@ -205,7 +200,6 @@ public class Number2Operation {
         }
     }
 
-
  static boolean isArmstrong(int n) {
         int temp, digits = 0, last = 0, sum = 0;
         temp = n;
@@ -213,12 +207,14 @@ public class Number2Operation {
             temp = temp / 10;
             digits++;
         }
+
         temp = n;
         while(temp > 0) {
             last = temp % 10;
-            sum += (Math.pow(last, digits));
+            sum += (int) Math.pow(last, digits);
             temp = temp / 10;
         }
+
      return n == sum;
     }
 

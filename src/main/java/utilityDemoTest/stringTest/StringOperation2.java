@@ -10,30 +10,42 @@ public class StringOperation2 {
         String str1="listen";
         String str2="silent";
         System.out.println("Are Anagram:"+checkAnagram(str1, str2));
+
         String str11 = "Brag";
         String str22 = "Grab";
         anagramString(str11,str22);
+
+
         String input="hello world";
         System.out.println(capitalizeFirstLetter(input));
+
+
         String string = "The best of both worlds";
         String input1="abc";
         printAllSubString(input1);
+
+
         String str = "Javatpoint is a great site for learning Java.";
         int noOfVowel = countVowels(str);
+
         System.out.println("String: " + str);
         System.out.println("Total number of vowels in the string are: "+ noOfVowel + "\n");
         FindFreqEachCharacterInString("Java is Fun");
+
         FrequencyOfGivenCharacter("Java is Fun", 'a');
+
         LongestSubstringMethod("aaabbbbbccccc",0,0);
+
         String str4 = "FUN";
         subsetOfArrElements(str4);
+
         String str5="Madam";
         palindromeCheck(str5);
+
        String input345 = "[example]";
          String result = removeBrackets(input345);
+
         System.out.println(result); // Output: example
-
-
         }
 
     public static void palindromeCheck( String str ){
@@ -215,10 +227,9 @@ public class StringOperation2 {
 
 
         public static String removeBrackets(String str) {
-            // Check if the string starts with '[' and ends with ']'
-            if (str.startsWith("[") && str.endsWith("]")) {
-                // Remove the first and last characters
-                str = str.substring(1, str.length() - 1);
+            if (str.startsWith("[") && str.endsWith("]")) // Check if the string starts with '[' and ends with ']'
+            {
+                str = str.substring(1, str.length() - 1); // Remove the first and last characters
             }
             return str;
         }

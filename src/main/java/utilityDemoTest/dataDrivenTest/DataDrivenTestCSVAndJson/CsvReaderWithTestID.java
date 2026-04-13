@@ -5,17 +5,14 @@ import java.util.*;
 public class CsvReaderWithTestID {
     public static void main(String[] args) throws IOException {
         String csvFile = "src/main/java/utilityDemoTest/dataDrivenTest/DataDrivenTestCSVAndJson/TestData.csv";
-        // Read the CSV and store rows indexed by TestID
-        Map<String, Map<String, String>> dataByTestID = readCsvWithTestID(csvFile);
-        // Example usage: Fetch a row by TestID
-        String testID = "TC01";
+        Map<String, Map<String, String>> dataByTestID = readCsvWithTestID(csvFile); // Read the CSV and store rows indexed by TestID
+        String testID = "TC01"; // Example usage: Fetch a row by TestID
         if (dataByTestID.containsKey(testID)){
             System.out.println("Data for TestID " + testID + ": " + dataByTestID.get(testID));
         } else {
             System.out.println("No data found for TestID: " + testID);
         }
     }
-
     // Method to read CSV and store rows indexed by TestID
     private static Map<String, Map<String, String>> readCsvWithTestID(String csvFile) throws IOException {
         Map<String, Map<String, String>> dataMap = new HashMap<>(); // Store data by TestID

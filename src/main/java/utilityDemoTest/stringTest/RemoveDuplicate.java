@@ -15,11 +15,10 @@ public class RemoveDuplicate {
         for(char c:input.toCharArray()){
             charSet.add(c);
         }
-
         StringBuilder sb=new StringBuilder();
         for(char c:charSet){
             sb.append(c);
-        }
+       }
         System.out.println("String after removing duplicated:"+ sb);
     }
 }

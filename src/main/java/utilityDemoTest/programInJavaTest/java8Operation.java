@@ -80,8 +80,7 @@ public class java8Operation {
     }
 
     public static  void reverseEachCharacterInWord(String str){
-        String result= Arrays.stream(str.split(" "))
-                .map(word->new StringBuilder(str).reverse().toString())
+        String result= Arrays.stream(str.split(" ")) .map(word->new StringBuilder(str).reverse().toString())
                 .collect(Collectors.joining(""));
         System.out.println("Original string:"+str);
         System.out.println("Reversed string:"+result);
@@ -105,12 +104,10 @@ public class java8Operation {
 
     public static void checkPrimeNumber(int num){
         boolean isPrime=isPrime(num);
-        if(isPrime)
-        {
+        if(isPrime){
             System.out.println(num+"is a prime number");
         }
-        else
-        {
+        else  {
             System.out.println(num+"is not a prime number");
         }
     }
@@ -132,24 +129,15 @@ public class java8Operation {
     }
 
     public static void listToMapconversion(List<String> items){
-        Map<String, Integer> itemMap=items.stream()
-                .collect(Collectors.toMap(item->item, item->item.length()));
-
-        Map<String, Integer> itemMap2=items.stream()
-                .collect(Collectors.toMap(item->item, String::length));
-
+        Map<String, Integer> itemMap=items.stream() .collect(Collectors.toMap(item->item, item->item.length()));
+        Map<String, Integer> itemMap2=items.stream().collect(Collectors.toMap(item->item, String::length));
         System.out.println("List to map:"+itemMap2);
         itemMap.forEach((key,value)-> System.out.println(key+":"+value));
     }
+
     public static void secondLargestInarr(int[] arr){
-
         List<Integer> numbers= Arrays.asList(1,2,3,4,5,6,6,7,8);
-        Optional<Integer> secondLargest=numbers.stream()
-                .distinct()
-                .sorted()
-                .skip(numbers.size() - 2)
-                .findFirst();
-
+        Optional<Integer> secondLargest=numbers.stream().distinct().sorted() .skip(numbers.size() - 2) .findFirst();
         secondLargest.ifPresent(s-> System.out.println("The second largest number is:"+s));
     }
 
@@ -171,8 +159,7 @@ public class java8Operation {
 
         input.chars()
                 .mapToObj(c->(char)c)
-                .collect(Collectors
-                        .groupingBy(Function.identity(),Collectors.counting()))
+                .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()))
                 .entrySet().stream().filter(entry->entry.getValue()>1)
                 .forEach(entry-> System.out.println("Character:"+entry.getKey()+",Count:"+entry.getValue()));
 

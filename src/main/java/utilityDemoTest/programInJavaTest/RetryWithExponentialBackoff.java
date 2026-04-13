@@ -11,19 +11,23 @@ public class RetryWithExponentialBackoff {
 
         while (retryCount < maxRetries) {
             try {
-                // Simulating API call or server interaction
-                if (makeApiCall()) {
+               if (makeApiCall()) // Simulating API call or server interaction
+                {
                     System.out.println("API call successful!");
                     break;
-                } else { throw new RuntimeException("Server returned 500 error");
+                } else {
+                    throw new RuntimeException("Server returned 500 error");
                 }
-            } catch (Exception e) {
+            } catch (Exception e)
+            {
                 retryCount++;
-                if (retryCount < maxRetries) {
+                if (retryCount < maxRetries)
+                {
                     System.out.println("Retry " + retryCount + " failed. Waiting " + waitTime + "ms before retrying...");
                     try {
                         TimeUnit.MILLISECONDS.sleep(waitTime);
-                    } catch (InterruptedException interruptedException) {
+                    } catch (InterruptedException interruptedException)
+                    {
                         Thread.currentThread().interrupt();
                         break;
                     }

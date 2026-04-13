@@ -5,7 +5,6 @@ import java.util.*;
 public class HashSetMethodsDemo {
     public static void main(String[] args) {
         HashSet<String> set = new HashSet<>();
-
         // 1. add() - add elements (duplicates ignored)
         set.add("Java");
         set.add("Python");

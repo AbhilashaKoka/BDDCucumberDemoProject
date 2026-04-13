@@ -128,14 +128,13 @@ public class Array2Operation {
     public static int binarySearch(int[] array, int target){
         int left= 0;
         int right= array.length-1;
-
         while(left<=right)
         {
             int mid=left+(right-left)/2;
             if(array[mid]==target){
                 return mid;
             }
-            if(array[mid]<target){
+            else if(array[mid]<target){
                 left=mid+1;
             }
             else{
@@ -147,14 +146,13 @@ public class Array2Operation {
 
     public static void pullallZeroToLeft( int[] arr) {
         int len = arr.length;
-        int count = 0;
-        for (int i = 0; i < len; i++)
-            if (arr[i]!= 0)
+        int count = 0;//count keeps track of position for non-zero elements
+        for (int i = 0; i < len; i++)//Moves all non-zero elements to front
+                if (arr[i]!= 0)
                 arr[count++] = arr[i];
-            while (count < len)
-            arr[count++] = 0;
-
-        for (int j = 0; j < len; j++)
+                while (count < len)
+                arr[count++] = 0;
+        for (int j = 0; j < len; j++)//Fills remaining positions with 0
             System.out.print(arr[j] + " ");
     }
 
@@ -162,17 +160,14 @@ public class Array2Operation {
     public static void InLineINitializationOfArr() {
         int[] numbers = {1, 2, 3, 4, 5};
         System.out.println("Inline initialized array:");
-
         for (int number : numbers){
             System.out.println(number + "");
         }
 
     }
     public static void InitializationwithAnonymousArray() {
-
         String[] names = new String[]{"java", "Python", "C++", "Javascript"};
         System.out.println("\n\n Initialized with anonymous array:");
-
         for (String name : names){
             System.out.print(name + " ");
         }
@@ -274,15 +269,12 @@ public class Array2Operation {
 
     public static void SecondLargestUsingMapMethod(int[] array){
         Map<Integer, Integer> map = new TreeMap<>(Collections.reverseOrder());
-        for (int num : array)
-        {
+        for (int num : array){
             map.put(num, map.getOrDefault(num, 0) + 1);
         }
-
         int count = 0;
         int secondLargest = Integer.MIN_VALUE;
-        for (int key : map.keySet())
-        {
+        for (int key : map.keySet()) {
             count++;
             if (count == 2)
             {
@@ -369,8 +361,8 @@ public class Array2Operation {
                 .filter(number->number%2==0)
                 .collect(Collectors.toList());
         return ls;
-
     }
+
     public static void compareTwoArrayList(ArrayList<String> ls1, ArrayList<String> ls2){
         boolean isEqual=ls1.equals(ls2);
         System.out.println("list1 equals list2:"+isEqual);
@@ -418,7 +410,6 @@ public class Array2Operation {
     public static void sortArrWithoutUsingSorting(int[] arr){
         int temp=0;
         System.out.println("Element of the original array:");
-
         for(int i=0;i<arr.length;i++){
             System.out.println(arr[i]+" ");
         }
@@ -449,23 +440,19 @@ public class Array2Operation {
     }
 
     public static void rightRotationElement(int[] arr, int n){
-
         System.out.println("Original Array:");
         for(int i=0;i<arr.length;i++){
             System.out.println(arr[i]+" ");
         }
-
         for(int i=0;i<n;i++){
             int j, last;
             last=arr[arr.length-1];
-
             for(j=arr.length-1;j>0;j--){
-                arr[j]=arr[j-1];
+             arr[j]=arr[j-1];
             }
             arr[j]=last;
         }
         System.out.println();
-
         System.out.println("Array after right rotation:");
         for(int i=0;i<arr.length;i++){
             System.out.println(arr[i]+" ");
@@ -474,13 +461,11 @@ public class Array2Operation {
 
     public static void reverseElementOfAnArray(int[] arr){
         System.out.println("Original Array");
-
         for(int i=0;i<arr.length;i++){
             System.out.println(arr[i]+" ");
         }
         System.out.println();
         System.out.println("Array in reverse order:");
-
         for(int i= arr.length-1;i>=0;i--){
             System.out.println(arr[i]+"");
         }
@@ -488,30 +473,25 @@ public class Array2Operation {
 
     public static void removeduplicateElementOfAnArray(int[] arr){
         int length=arr.length;
-
         length=removeDuplicate(arr, length);
-
         for(int i=0;i<length;i++){
             System.out.println(arr[i]+" ");
         }
-
     }
+
+
     static int removeDuplicate(int[] arr, int n){
         if(n==0||n==1){
             return n ;
         }
-
         int[] temp=new int[n];
         int j=0;
-
         for(int i=0;i<n-1;i++){
             if(arr[i]!=arr[i+1]){
                 temp[j++]=arr[i];
             }
         }
-
         temp[j++]=arr[n-1];
-
         if (j >= 0) System.arraycopy(temp, 0, arr, 0, j);
         return j;
     }
@@ -550,6 +530,7 @@ public class Array2Operation {
         }
         System.out.println("Largest element  present in the array:"+max);
     }
+
     static int getThirdLargest(int[] a){
         int temp;
         for(int i=0;i<a.length;i++){

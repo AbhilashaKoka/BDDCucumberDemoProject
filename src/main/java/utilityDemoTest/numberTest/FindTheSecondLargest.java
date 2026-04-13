@@ -17,7 +17,7 @@ public class FindTheSecondLargest {
 
         for(int num : arr) {
             if(num > first) {
-                second = first;   // ✅ update second
+                second = first;// update second
                 first = num;
             }
             else if(num > second && num != first) {

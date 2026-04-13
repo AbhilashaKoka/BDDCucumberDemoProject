@@ -66,8 +66,6 @@ public class LinkedListMethodsDemo {
         // 11. clear()
         list.clear();
         System.out.println("After clear: " + list);
-
-
         //================================================================//
         String[] languages = {"Java", "Python", "C++"};
         // Convert array to list

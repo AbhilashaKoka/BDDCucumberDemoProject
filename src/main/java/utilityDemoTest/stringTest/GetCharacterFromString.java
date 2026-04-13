@@ -12,13 +12,11 @@ public static void GetCharacterFromStrMethod(String str)
     int srcBeginIndex = 11;
     int srcEndIndex = 11;
     int dstBeginIndex = 2;
-
     try
     {
         str.getChars(srcBeginIndex, srcEndIndex, chArr, dstBeginIndex);
         System.out.println(chArr);
     }
-
     catch(Exception excpn)
     {
         System.out.println(excpn);

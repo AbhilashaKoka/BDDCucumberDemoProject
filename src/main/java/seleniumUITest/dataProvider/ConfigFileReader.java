@@ -9,7 +9,6 @@ public class ConfigFileReader {
     private final Properties properties;
     private final String propertyFilePath="src/test/resource/Configs/Configuration.properties";
 
-
     public ConfigFileReader() {
         BufferedReader reader=null;
        try {
@@ -18,13 +17,14 @@ public class ConfigFileReader {
           try {
               properties.load(reader);
           }
-          catch(IOException e) {
+          catch(IOException e)
+          {
           e.printStackTrace();
           }
-       }catch (FileNotFoundException e){
+       }catch (FileNotFoundException e)
+       {
         throw new RuntimeException("properties file not found at path:"+propertyFilePath);
        }
-
        finally{
        try {
         if (reader != null) reader.close();

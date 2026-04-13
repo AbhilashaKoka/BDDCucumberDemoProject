@@ -27,7 +27,6 @@ public class StringOperation{
         }
     }
 
-
     public static void vowelAndConsonent(String str){
         int vowelCount = 0, consonentsCount = 0;
         for (char ch : str.toLowerCase().toCharArray()) {
@@ -40,8 +39,6 @@ public class StringOperation{
         }
         System.out.println("Vowel count:" + vowelCount + ":"+ "Consonent Count:" + consonentsCount);
     }
-
-
 
     public static int[] countVowelsAndConsonants(String input) {
         int vowelsCount = 0, consonantsCount = 0;
@@ -108,7 +105,6 @@ public class StringOperation{
         }
     }
 
-
     public static String reverseString(String input){
         if(input.isEmpty())
             return input;
@@ -120,7 +116,6 @@ public class StringOperation{
                 .map(word->new StringBuilder(word).reverse().toString())
                 .collect(Collectors.joining(" "));
     }
-
 
     public static String reverseWordInTradition(String input){
         String[] words=input.split("\\s+");
@@ -145,15 +140,12 @@ public class StringOperation{
         return result.toString().trim();
     }
 
-
     public static String removeDuplicateWords(String input){
         Set<String> wordSet=Arrays.stream(input.split("\\s+"))
                 .collect(Collectors.toCollection(LinkedHashSet::new));
         return String.join(" ",wordSet);
 
     }
-
-
     public static boolean isPalindrome(String input)
     {
         boolean bol=false;
@@ -161,8 +153,6 @@ public class StringOperation{
         String PalindromeString=new StringBuffer(normalizedString).reverse().toString();
         return normalizedString.equals(PalindromeString);
     }
-
-
 
     public static char findNonRepeatedInCharater(String input) {
         Map<Character,Integer> charCount = new HashMap<>();
@@ -183,8 +173,7 @@ public class StringOperation{
         for(String s1:str1){
             mergedarr[index++]=s1;
         }
-        for(String s2:str2)
-        {
+        for(String s2:str2){
          mergedarr[index++]=s2;
         }
         System.out.println("Merged array using loop:");
@@ -192,7 +181,6 @@ public class StringOperation{
         System.out.println(element);
         }
     }
-
     public static void maxOccurOfChar(String str){
         Map<Character,Integer> charfrequencyMap=new HashMap<>();
         char maxOcurringChar=' ';
@@ -208,8 +196,8 @@ public class StringOperation{
             }
         }
         System.out.println("Maximum occuring character:'"+maxOcurringChar+"'with a frequency of"+maxFequency);
-
     }
+
     public static boolean containOnlyLetter1(String input) {
         if (!input.isEmpty()){
             for (int i = 0; i < input.length(); i++){
@@ -237,9 +225,7 @@ public class StringOperation{
         int temp = 0, chars = len / n;
         String[] equalStr = new String[n];
         if (len % n != 0)
-        {
-         System.out.println("Sorry the string can`t be divided into equals parts");
-        }
+        {System.out.println("Sorry the string can`t be divided into equals parts"); }
         else {
             for (int i = 0; i < len; i = i + chars)
             {

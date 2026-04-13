@@ -21,7 +21,7 @@ public class SelectionSorting {
                 }
             }
 
-            // ✅ Swap AFTER inner loop
+            // Swap AFTER inner loop
             int temp = arr[i];
             arr[i] = arr[minIndex];
             arr[minIndex] = temp;

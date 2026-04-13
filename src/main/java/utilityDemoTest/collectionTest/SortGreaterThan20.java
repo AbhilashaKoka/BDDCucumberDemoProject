@@ -13,10 +13,9 @@
              int[] arr4 = SortArrayOnly(arr3);
              System.out.println(Arrays.toString(arr4));
          }
-
          public static int[] greaterThan20UsingList(int[] arr) {
              List<Integer> greaterThan20 = new ArrayList<>();
-             for (int a : arr) {
+             for (int a : arr){
                  if (a > 20) {
                      greaterThan20.add(a);
                  }
@@ -24,16 +23,15 @@
              Collections.sort(greaterThan20);
              return greaterThan20.stream().mapToInt(Integer::intValue).toArray();
          }
-
          public static int[] SortArrayOnly(int[] arr) {
              int count = 0;// Step 1: Count elements > 20
-             for (int a : arr) {
+             for (int a : arr){
                  if (a > 20) count++;
              }
-            int[] filtered = new int[count];  // Step 2: Copy them into new array
+            int[] filtered = new int[count];// Step 2: Copy them into new array
              int index = 0;
-             for (int a : arr) {
-                 if (a > 20) {
+             for (int a : arr){
+                 if (a > 20){
                      filtered[index++] = a;
                  }
              }
