@@ -1,6 +1,10 @@
 package seleniumUITest.utils;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
+
+
 
 public class RetryAnalyzer implements IRetryAnalyzer {
 
@@ -9,12 +13,21 @@ public class RetryAnalyzer implements IRetryAnalyzer {
 
     @Override
     public boolean retry(ITestResult result) {
-        if (count < maxRetry) {
-            count++;
-            System.out.println("Retrying test: " + result.getName() +
-                    " Attempt: " + count);
-            return true;
+
+        Throwable throwable = result.getThrowable();
+
+        // Retry only for specific exceptions
+        if (throwable instanceof TimeoutException ||
+                throwable instanceof StaleElementReferenceException) {
+
+            if (count < maxRetry) {
+                count++;
+                System.out.println("Retrying due to: " + throwable.getClass().getSimpleName() +
+                        " | Attempt: " + count);
+                return true;
+            }
         }
-        return false;
+
+        return false; // Do not retry for other exceptions
     }
 }
