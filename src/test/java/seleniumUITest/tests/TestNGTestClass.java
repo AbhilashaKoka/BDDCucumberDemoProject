@@ -5,11 +5,12 @@ import org.testng.annotations.Test;
 import seleniumUITest.base.BaseSetUp;
 import seleniumUITest.base.SeleniumDemoTest;
 import seleniumUITest.listeners.TestStatusListener;
+import seleniumUITest.utils.RetryAnalyzer;
 
 
 @Listeners(TestStatusListener.class)
 public class TestNGTestClass extends BaseSetUp {
-     @Test(description = "Verify textBox",enabled = true,priority = 1)
+     @Test(description = "Verify textBox",enabled = true,priority = 1,retryAnalyzer = RetryAnalyzer.class)
    public void TestButton() {
               Assert.assertEquals( SeleniumDemoTest.HandlingButton(), true);
         }
