@@ -54,5 +54,45 @@ public class ArrayListAllMethodsDemo {
         // 16. Clear
         list.clear();
         System.out.println("After clear: " + list);
+
+        ArrayList<String>list2=new ArrayList<>();
+        list2.add("Java");
+        list2.add("Python");
+        list2.add("C++");
+        Collections.addAll(list2,"mango","Grapes");
+        System.out.println("After addAll: " + list2);
+
+        ArrayList<String> list3=new ArrayList<>();
+        list3.add("Java");
+        list3.add("Python");
+        list3.add("C++");
+        list3.remove("Banana");
+        list3.remove(0);
+        System.out.println("After removeAll: " + list3);
+
+
+        ArrayList<String> list4=new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+        list.add("C++");
+        if(list.contains("Mango")){
+            System.out.println("Contains Mango");
+        }
+
+        ArrayList<String> list5=new ArrayList<>();
+        list5.add("Apple");
+        list5.add("C++");
+        list5.set(0,"Orange");
+        System.out.println("After set: " + list5);
+
+
+        ArrayList<String> list6=new ArrayList<>();
+        list6.add("Apple");
+        list6.add("C++");
+        list6.add("Banana");
+        Collections.sort(list6);
+        System.out.println("After sort: " + list6);
+
+
     }
 }

@@ -1,6 +1,7 @@
 package utilityDemoTest.collectionTest;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class HashMapMethodsDemo {
     public static void main(String[] args) {
@@ -43,5 +44,18 @@ public class HashMapMethodsDemo {
         // 13. clear() - remove all entries
         map.clear();
         System.out.println("After clear: " + map);
+        HashMap<Integer, String> hm2=new HashMap<Integer, String>();
+
+        hm2.put(1,"Geeks");
+        hm2.put(2,"Lisa");
+        hm2.put(3,"Daniel");
+        System.out.println("Value for 1 is"+hm2.get(1));
+        for(Map.Entry<Integer, String> e: hm2.entrySet()){
+            System.out.println(e.getKey()+" "+e.getValue());
+        }
+
+
     }
+
+
 }

@@ -83,5 +83,95 @@ public class LinkedListMethodsDemo {
         for (String lang : array) {
             System.out.println(lang);
         }
-    }
-}
+
+
+        ArrayList<Integer> al=new ArrayList<Integer>();
+        for(int i=1;i<=5;i++)
+            al.add(i);
+
+        System.out.println(al);
+        al.remove(3);
+        System.out.println(al);
+
+        for(int i=0;i<al.size();i++){
+            System.out.print(al.get(i)+"");
+        }
+
+
+       LinkedList<Integer> li=new LinkedList<Integer>();
+        for(int j=1;j<=5;j++) {
+            li.add(j);
+
+            System.out.println(li);
+            li.remove(3);
+            System.out.println(li);
+
+            li.remove(3);
+            System.out.println(li);
+
+            for (int i = 0; i < li.size(); i++) {
+                System.out.print(li.get(i) + "");
+            }
+        }
+
+        Vector<Integer> v=new Vector<Integer>();
+        for(int z=1;z<=5;z++)
+        {
+            v.add(z);
+            System.out.println(v);
+            v.remove(z);
+            System.out.println(v);
+
+            for(int k=0;k<v.size();k++)
+                System.out.println(v.get(k)+" ");
+        }
+
+        Stack<String> stack=new Stack<String>();
+        stack.push("java");
+        stack.push("python");
+        stack.push("Greeks");
+        stack.push("Greeks");
+
+        Iterator<String> itr=stack.iterator();
+        while(itr.hasNext())
+        {
+            System.out.println(itr.next()+" ");
+        }
+        System.out.println();
+        stack.pop();
+        itr=stack.iterator();
+        while(itr.hasNext())
+        {
+            System.out.print(itr.next()+" ");
+
+        }
+
+        PriorityQueue<Integer> pQueue=new PriorityQueue<Integer>();
+        pQueue.add(1);
+        pQueue.add(2);
+        pQueue.add(3);
+        System.out.println(pQueue.peek());
+
+        System.out.println(pQueue.poll());
+
+        System.out.println(pQueue.peek());
+
+
+        ArrayDeque<Integer> de_que=new ArrayDeque<Integer>(10);
+        de_que.add(1);
+        de_que.add(2);
+        de_que.add(3);
+        de_que.add(4);
+        System.out.println(de_que);
+        de_que.clear();
+        de_que.addFirst(564);
+        de_que.addFirst(291);
+
+        de_que.addLast(345);
+        de_que.addLast(345);
+        System.out.println(de_que);
+
+
+            }
+
+        }

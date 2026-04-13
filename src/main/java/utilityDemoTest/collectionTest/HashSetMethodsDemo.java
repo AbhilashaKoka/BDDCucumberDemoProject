@@ -44,5 +44,45 @@ public class HashSetMethodsDemo {
         // 9. clear() - remove all elements
         set.clear();
         System.out.println("After clear: " + set);
+
+
+        HashSet<String> hs = new HashSet<String>();
+        hs.add("Java");
+        hs.add("For");
+        hs.add("Python");
+        hs.add("Java");
+        hs.add("Python");
+
+        Iterator<String> it2 = hs.iterator();
+        while (it2.hasNext()) {
+            System.out.println(it2.next());
+
+        }
+
+        LinkedHashSet<String> ihs = new LinkedHashSet<String>();
+        ihs.add("Java");
+        ihs.add("For");
+        ihs.add("Python");
+
+        ihs.add("Python");
+        ihs.add("Java");
+        Iterator<String> itr = ihs.iterator();
+        while (itr.hasNext()) {
+            System.out.println(itr.next());
+        }
+
+        TreeSet<String> ts = new TreeSet<String>();
+        ts.add("Java");
+        ts.add("For");
+        ts.add("Python");
+        ts.add("Java");
+        ts.add("Python");
+        Iterator<String> itr3 = ts.iterator();
+        while (itr3.hasNext())
+            System.out.println(itr3.next());
+
+
+
     }
+
 }
