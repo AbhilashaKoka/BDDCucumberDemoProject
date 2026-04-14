@@ -61,8 +61,6 @@ public class collectionInterface {
     }
     }
     System.out.println("After removing elements: " + fruits2);
-
-
         List<String> colors2=new ArrayList<>(Arrays.asList("Red","Green","Blue"));
         ListIterator<String> listIt=colors2.listIterator();
         System.out.print("forward:");

@@ -1,6 +1,6 @@
 package utilityDemoTest.fileTest;
-
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,6 +10,7 @@ import java.nio.file.StandardCopyOption;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Scanner;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -99,5 +100,20 @@ public static void selectFiles(File folder, String fileExtension){
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    boolean findStringInFile(String filePath, String str) throws FileNotFoundException {
+        File file = new File(filePath);
+        Scanner scanner = new Scanner(file);
+        // read the file line by line
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
+            if (line.contains(str)) {
+                scanner.close();
+                return true;
+            }
+        }
+        scanner.close();
+        return false;
     }
 }
