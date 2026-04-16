@@ -181,7 +181,6 @@ public class Array2Operation {
             doubles[2] = 3.3;
             doubles[3] = 4.4;
         }
-
         System.out.println("\n\n Initialized in a block");
     }
     public static void splitArray(int[] arr){
@@ -282,7 +281,6 @@ public class Array2Operation {
                 break;
             }
         }
-
         System.out.println("Second largest element:"+secondLargest);
     }
 
@@ -291,7 +289,8 @@ public class Array2Operation {
     public static void secondLargestInarr(int[] arr){
         //Creating a list of Integer
         List<Integer> numbers= Arrays.asList(1,2,3,4,5,6,6,7,8);
-        Optional<Integer> secondLargest=numbers.stream()
+        Optional<Integer> secondLargest=
+                numbers.stream()
                 .distinct()
                 .sorted()
                 .skip(numbers.size() - 2)
@@ -301,7 +300,7 @@ public class Array2Operation {
 
     public static void sortingArrayInDescendingOrder(Integer[] numbers){
         for( int number:numbers){
-            System.out.println(number+"");
+            System.out.println(number+" ");
         }
         Arrays.sort(numbers, Collections.reverseOrder());
         for(int number:numbers){
@@ -334,11 +333,9 @@ public class Array2Operation {
 
     public static void arrSubstraction(int[] array1, int[] array2){
         int[] substractionResult = new int[array1.length];
-
         for (int i = 0; i < array1.length; i++){
             substractionResult[i] = array1[i] - array2[i];
         }
-
         System.out.println("\nSubstraction Result");
         for(int num:substractionResult)
         {
@@ -357,7 +354,8 @@ public class Array2Operation {
     }
 
     public static List<Integer> filterEvenNumberArrayList(ArrayList<Integer> num){
-        List<Integer> ls= num.stream()
+        List<Integer> ls=
+                num.stream()
                 .filter(number->number%2==0)
                 .collect(Collectors.toList());
         return ls;
@@ -659,7 +657,7 @@ public class Array2Operation {
     }
 
 
-    public static void CopyArrayToAnotherArray (int[] arr1) {
+    public static void CopyArrayToAnotherArray(int[] arr1) {
         int[] arr2 = new int[arr1.length];
         System.arraycopy(arr1, 0, arr2, 0, arr1.length);
         System.out.println("Element of the original array:");

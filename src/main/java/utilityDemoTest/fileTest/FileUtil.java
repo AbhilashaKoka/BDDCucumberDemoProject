@@ -40,8 +40,7 @@ public class FileUtil {
     }
 
 
-    public static void uploadFile(String zipFilePath, String targetPath) throws IOException{
-        File zipFile=new File(zipFilePath);
+    public static void uploadFile(String zipFilePath, String targetPath) throws IOException{File zipFile=new File(zipFilePath);
     File targetDirectory=new File(targetPath);
     if(!targetDirectory.exists())
     {
@@ -65,7 +64,6 @@ public class FileUtil {
               catch(IOException e){
                   e.printStackTrace();
               }
-
             });
         }
     }

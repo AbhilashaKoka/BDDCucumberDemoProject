@@ -18,6 +18,7 @@ public class LoginPage{
         WebElement Input_Box= driver.findElement(By.cssSelector("input[placeholder=\"Username\"]"));
         Input_Box.sendKeys("Admin");
 
+
         WebElement Pwd_Box= driver.findElement(By.cssSelector("input[placeholder=\"Password\"]"));
         Pwd_Box.sendKeys("admin123");
 

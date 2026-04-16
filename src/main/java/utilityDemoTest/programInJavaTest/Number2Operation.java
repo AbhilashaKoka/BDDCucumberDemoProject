@@ -17,10 +17,8 @@ public class Number2Operation {
         elementInEvenPosition(arr);
         int i, fact = 1;
         int number = 4;
-
         fact = factorial(number);
         System.out.println("Factorial of" + number + "is:" + fact);
-
         int a, b, c;
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the first Number");
@@ -36,7 +34,6 @@ public class Number2Operation {
         ramdomNumbermethod(min, max);
         int number1 = 987654;
         reverseNumberMethod(number1);
-
         RightTraiangle();
         LeftTrianglePattern();
         PyramidPattern();
@@ -74,7 +71,7 @@ public class Number2Operation {
                 System.out.print(" ");
             }
             for(j=0;j<=i;j++){
-                System.out.print("* ");
+                System.out.print("*");
             }
             System.out.println();
         }
@@ -118,7 +115,6 @@ public class Number2Operation {
             number=number/10;
         }
         System.out.println("The reverse of the given number is "+reverse);
-
     }
 
     public static void ramdomNumbermethod(int min, int max){
@@ -174,7 +170,7 @@ public class Number2Operation {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter a string/number to check is it is a palindrome");
         original=in.nextLine();
-        int length=original.length();
+        int length=original.length( );
         for(int i=length-1;i>=0;i--){
             reverse=reverse+original.charAt(i);
             if(original.equals(reverse))
@@ -185,7 +181,7 @@ public class Number2Operation {
     }
 
     public static void largestOfThreeNumber(int a, int b, int c){
-        int  largest= Math.max(c, (Math.max(a, b)));
+        int  largest= Math.max(c,(Math.max(a, b)));
         System.out.println("The largest number is :"+largest);
     }
 

@@ -13,7 +13,6 @@ public class java8Operation {
 
         Stream<String> stream1= Stream.of("Java","Python","C++");
         Stream<String> stream2= Stream.of("Javascript","TypeScript","Kotlin");
-
         concatenateStream(stream1,stream2);
 
         String input1 = "programming";
@@ -79,27 +78,34 @@ public class java8Operation {
         System.out.println("Reversed String:"+revstr);
     }
 
-    public static  void reverseEachCharacterInWord(String str){
-        String result= Arrays.stream(str.split(" ")) .map(word->new StringBuilder(str).reverse().toString())
+    public static void reverseEachCharacterInWord(String str){
+        String result= Arrays.stream(str.split(" "))
+                .map(word->new StringBuilder(str).reverse().toString())
                 .collect(Collectors.joining(""));
         System.out.println("Original string:"+str);
         System.out.println("Reversed string:"+result);
     }
 
+
     public static void retrievelastElementfromList(List<String> str){
-        Optional<String> lastElement=str.stream().reduce((first,second)->second);
+        Optional<String> lastElement=str.stream()
+                .reduce((first,second)->second);
         lastElement.ifPresent(element-> System.out.println("The last element is:"+element));
     }
 
-    public static void removeDuplicateElement(List<Integer> num){
-        List<Integer>  num2=num.stream().distinct().collect(Collectors.toList());
-        System.out.println("List without duplicates:"+num2);
 
+    public static void removeDuplicateElement(List<Integer> num){
+        List<Integer>  num2=num.stream()
+                .distinct().collect(Collectors.toList());
+        System.out.println("List without duplicates:"+num2);
     }
+
 
     public static void printEvenNumber(List<Integer> num){
         System.out.println("Even numbers:");
-        num.stream().filter(n->n%2==0).forEach(System.out::println);
+        num.stream()
+                .filter(n->n%2==0)
+                .forEach(System.out::println);
     }
 
     public static void checkPrimeNumber(int num){
