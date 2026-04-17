@@ -5,15 +5,13 @@ import java.util.*;
 public class HashSetMethodsDemo {
     public static void main(String[] args) {
         HashSet<String> set = new HashSet<>();
-        // 1. add() - add elements (duplicates ignored)
-        set.add("Java");
+        set.add("Java");  // 1. add() - add elements (duplicates ignored)
         set.add("Python");
         set.add("C++");
         set.add("Java"); // duplicate ignored
         System.out.println("After add: " + set);
 
-        // 2. addAll() - add multiple elements
-        set.addAll(Arrays.asList("Go", "Rust", "Kotlin"));
+        set.addAll(Arrays.asList("Go", "Rust", "Kotlin")); // 2. addAll() - add multiple elements
         System.out.println("After addAll: " + set);
 
         // 3. contains() - check existence

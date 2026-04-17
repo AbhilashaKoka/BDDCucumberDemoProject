@@ -51,7 +51,7 @@ public class LinkedListMethodsDemo {
         list3.add("C++");
         String[] array = list2.toArray(new String[0]);// Convert list to array
         System.out.println("Array elements:");
-        for (String lang : array) { System.out.println(lang);  }
+        for (String lang : array) { System.out.println(lang); }
         ArrayList<Integer> al=new ArrayList<Integer>();
         for(int i=1;i<=5;i++) al.add(i);
         System.out.println(al);
@@ -119,14 +119,14 @@ public class LinkedListMethodsDemo {
 
 
    public void ReversedLinkedList() {
-                LinkedList<Integer> ll = new LinkedList<>();
-                ll.add(1);
-                ll.add(2);
-                ll.add(3);
-                System.out.println(ll);
-                LinkedList<Integer> ll1 = new LinkedList<>();
-                ll.descendingIterator().forEachRemaining(ll1::add);
-                System.out.println(ll1);
+   LinkedList<Integer> ll = new LinkedList<>();
+   ll.add(1);
+   ll.add(2);
+   ll.add(3);
+   System.out.println(ll);
+   LinkedList<Integer> ll1 = new LinkedList<>();
+   ll.descendingIterator().forEachRemaining(ll1::add);
+    System.out.println(ll1);
             }
 
 

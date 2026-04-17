@@ -5,22 +5,18 @@ import java.util.*;
 public class TreeMapMethodsDemo {
     public static void main(String[] args) {
         TreeMap<String, Integer> map = new TreeMap<>();
-
         // 1. put() - add key-value pairs
         map.put("Java", 1);
         map.put("Python", 2);
         map.put("C++", 3);
         System.out.println("After put: " + map);
-
         // 2. putIfAbsent() - add only if key not present
         map.putIfAbsent("Rust", 4);
         map.putIfAbsent("Java", 10); // ignored since Java already exists
         System.out.println("After putIfAbsent: " + map);
-
         // 3. get() / getOrDefault()
         System.out.println("Get Python: " + map.get("Python"));
         System.out.println("GetOrDefault Go: " + map.getOrDefault("Go", -1));
-
         // 4. containsKey() / containsValue()
         System.out.println("ContainsKey Java? " + map.containsKey("Java"));
         System.out.println("ContainsValue 3? " + map.containsValue(3));

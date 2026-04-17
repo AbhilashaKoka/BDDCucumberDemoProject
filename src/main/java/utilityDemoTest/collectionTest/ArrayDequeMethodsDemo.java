@@ -42,19 +42,16 @@ public class ArrayDequeMethodsDemo {
         System.out.println("After push: " + deque);
         System.out.println("Pop: " + deque.pop()); // pop = removeFirst
         System.out.println("After pop: " + deque);
-
         // 9. contains(), size(), isEmpty()
         System.out.println("Contains Java? " + deque.contains("Java"));
         System.out.println("Size: " + deque.size());
         System.out.println("Is empty? " + deque.isEmpty());
-
         // 10. Iteration
         System.out.print("Iterating: ");
         for (String lang : deque) {
             System.out.print(lang + " ");
         }
         System.out.println();
-
         // 11. clear()
         deque.clear();
         System.out.println("After clear: " + deque);
