@@ -28,7 +28,7 @@ public class TabsPage {
     public boolean  TabsLandingPage()
     {
         boolean bol=false;
-        DriverManager.scrollWindowUp(Widgets_Frames);
+        DriverManager.scrollWindowUp(Widgets_Frames,driver);
         Widgets_Frames.click();
         Tab_span.click();
         bol=true;

@@ -28,7 +28,7 @@ public class SliderPage {
     public boolean SliderLandingPage()
     {
         boolean bol=false;
-        DriverManager.scrollWindowUp(Widgets_Frames);
+        DriverManager.scrollWindowUp(Widgets_Frames,driver);
         Widgets_Frames.click();
         Slider_span.click();
         bol=true;

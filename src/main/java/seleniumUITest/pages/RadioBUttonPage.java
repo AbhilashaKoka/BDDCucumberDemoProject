@@ -35,7 +35,7 @@ public class RadioBUttonPage {
     public boolean RadioBUttonLandingPage()
     {
         boolean bol=false;
-        DriverManager.scrollWindowUp(Elements_Frames);
+        DriverManager.scrollWindowUp(Elements_Frames,driver);
         Elements_Frames.click();
         RadioButton_span.click();
         bol=true;

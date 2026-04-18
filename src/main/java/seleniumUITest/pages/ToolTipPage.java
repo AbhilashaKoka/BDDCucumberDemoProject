@@ -33,7 +33,7 @@ public class ToolTipPage {
     public boolean ToolTipLandingPage()
     {
         boolean bol=false;
-        DriverManager.scrollWindowUp(Element_Frames);
+        DriverManager.scrollWindowUp(Element_Frames,driver);
         Element_Frames.click();
         TextBox_Span.click();
         bol=true;

@@ -46,7 +46,7 @@ public class HomePage {
     public boolean HomeLandingPage()
     {
         Boolean bol=false;
-        DriverManager.scrollWindow();
+        DriverManager.scrollWindow(driver);
         Element_frame.click();
         TextBox_Span.click();
         bol=true;

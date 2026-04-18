@@ -1,9 +1,8 @@
 package seleniumCDPTest;
-
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.v85.emulation.Emulation;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -17,17 +16,16 @@ public class MultiRegionGeoTest {
         );
 
         for (Region region : regions) {
+           WebDriverManager.chromedriver().setup();
             ChromeDriver driver = new ChromeDriver();
-            DevTools devTools = driver.getDevTools();
+         
+            DevTools devTools = ((ChromeDriver) driver).getDevTools();
             devTools.createSession();
-
-            // Override geolocation
             devTools.send(Emulation.setGeolocationOverride(
-                    Optional.of(region.latitude),
-                    Optional.of(region.longitude),
-                    Optional.of(10) // accuracy in meters
+                    Optional.of(40.7128),   // latitude
+                    Optional.of(-74.0060),  // longitude
+                    Optional.of(1)          // accuracy
             ));
-
             driver.get("https://www.google.com/maps");
             System.out.println("Testing region: " + region.name);
 

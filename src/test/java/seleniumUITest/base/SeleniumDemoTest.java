@@ -1,6 +1,7 @@
 package seleniumUITest.base;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -17,6 +18,14 @@ import java.util.List;
 import java.util.Set;
 
 public class SeleniumDemoTest extends BaseSetUp {
+    private static WebDriver driver;
+    private static  Actions action;
+    private static JavascriptExecutor js;
+
+    public SeleniumDemoTest() {
+        driver = getInstance().getDriver(); // get driver from singleton
+        action = new Actions(driver);
+    }
 
     public static Boolean HandlingAccordion(){
         Boolean bol=false;

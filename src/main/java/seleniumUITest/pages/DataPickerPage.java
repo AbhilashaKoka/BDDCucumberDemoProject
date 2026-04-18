@@ -44,7 +44,7 @@ public class DataPickerPage {
     public boolean DataPickerLandingPage()
     {
         boolean bol=false;
-        DriverManager.scrollWindowUp(Widgets_Frames);
+        DriverManager.scrollWindowUp(Widgets_Frames,driver);
         Widgets_Frames.click();
         DatePicker_span.click();
         bol=true;

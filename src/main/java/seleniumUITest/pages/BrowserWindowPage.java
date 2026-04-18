@@ -50,7 +50,7 @@ public class BrowserWindowPage {
     public boolean BrowserWindowLandingPage()
     {
         boolean bol=false;
-        DriverManager.scrollWindowUp(Window_Frames);
+        DriverManager.scrollWindowUp(Window_Frames,driver);
         Window_Frames.click();
         BrowserWindows_span.click();
         bol=true;

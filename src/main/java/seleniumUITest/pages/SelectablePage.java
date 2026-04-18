@@ -29,7 +29,7 @@ public class SelectablePage {
     public boolean SelectableLandingPage()
     {
         boolean bol=false;
-        DriverManager.scrollWindowUp(Interactions_Frames);
+        DriverManager.scrollWindowUp(Interactions_Frames,driver);
         Interactions_Frames.click();
         Selectable_span.click();
         bol=true;

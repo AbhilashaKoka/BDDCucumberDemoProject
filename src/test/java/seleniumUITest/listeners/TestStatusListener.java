@@ -9,9 +9,14 @@ import org.testng.ITestResult;
 import seleniumUITest.base.BaseSetUp;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.Date;
 
-public class TestStatusListener extends BaseSetUp implements ITestListener {
+public class TestStatusListener implements ITestListener {
     private static int stepCount = 1;
+
+    public TestStatusListener() {
+    }
 
     public void onTestFailure(ITestResult result){
         System.out.println("****TEST CASE FAILED****");
@@ -75,6 +80,18 @@ public class TestStatusListener extends BaseSetUp implements ITestListener {
         System.out.println("***********On Finish Code go here**********");
     }
 
-
+    public void failedScreenshot(String testMethodName) {
+        try {
+            WebDriver driver = BaseSetUp.getInstance().getDriver();
+            if (driver != null) {
+                File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+                Date d = new Date();
+                String timestamp = d.toString().replace(":", "_").replace(" ", "_");
+                FileUtils.copyFile(src, new File("Screenshots/" + testMethodName + "_" + timestamp + ".png"));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     }

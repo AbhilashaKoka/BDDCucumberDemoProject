@@ -9,7 +9,7 @@ public class TemporarySuspendThread extends Thread{
         TemporarySuspendThread t3 = new TemporarySuspendThread();
         t1.start();
         t2.start();
-        t2.suspend();
+      //  t2.suspend();
         t3.start();
     }
 

@@ -65,7 +65,7 @@ WebDriver driver;
     Elements_frame.click();
     WebTable_Span.click();
     Search_Box.sendKeys("Kierra", Keys.ENTER);
-        DriverManager.scrollWindow();
+        DriverManager.scrollWindow(driver);
         for(WebElement row:table_row)
         {
             row.findElement(By.xpath("//div[@class=\"action-buttons\"]//span[@title=\"Edit\"]")).click();

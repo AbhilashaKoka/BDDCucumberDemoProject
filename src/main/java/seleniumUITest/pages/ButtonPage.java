@@ -58,7 +58,7 @@ public class ButtonPage {
     public boolean BrowserWindowLandingPage()
     {
         boolean bol=false;
-        DriverManager.scrollWindowUp(Elements_Frames);
+        DriverManager.scrollWindowUp(Elements_Frames,driver);
         Elements_Frames.click();
         Button_span.click();
         bol=true;

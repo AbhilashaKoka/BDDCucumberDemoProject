@@ -3,6 +3,7 @@ package seleniumCDPTest;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.v85.emulation.Emulation;
+
 import java.util.Optional;
 
 public class GeoLocationTest {
@@ -11,12 +12,14 @@ public class GeoLocationTest {
         DevTools devTools = driver.getDevTools();
         devTools.createSession();
 
-        // Set geolocation to New York City
+        // Override geolocation
         devTools.send(Emulation.setGeolocationOverride(
-                Optional.of(40.7128),   // Latitude
-                Optional.of(-74.0060),  // Longitude
-                Optional.of(1)          // Accuracy in meters
+                Optional.of(40.7128),   // latitude
+                Optional.of(-74.0060),  // longitude
+                Optional.of(1)          // accuracy
         ));
+
         driver.get("https://www.google.com/maps");
+        driver.quit();
     }
 }

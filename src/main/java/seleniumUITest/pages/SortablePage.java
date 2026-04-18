@@ -28,7 +28,7 @@ public class SortablePage {
     public boolean SortableLandingPage()
     {
         boolean bol=false;
-        DriverManager.scrollWindowUp(Interactions_Frames);
+        DriverManager.scrollWindowUp(Interactions_Frames,driver);
         Interactions_Frames.click();
         Sortable_span.click();
         bol=true;

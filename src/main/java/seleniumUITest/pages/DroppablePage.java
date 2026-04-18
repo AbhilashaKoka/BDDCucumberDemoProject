@@ -29,7 +29,7 @@ public class DroppablePage {
     public boolean DroppableLandingPage()
     {
         boolean bol=false;
-        DriverManager.scrollWindowUp(Interactions_Frames);
+        DriverManager.scrollWindowUp(Interactions_Frames,driver);
         Interactions_Frames.click();
         Droppable_span.click();
         bol=true;

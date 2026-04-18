@@ -105,7 +105,7 @@ WebDriver driver;
     public boolean PracticeFormLandingPage()
     {
         boolean bol=false;
-        DriverManager.scrollWindowUp(Frame_formFrames);
+        DriverManager.scrollWindowUp(Frame_formFrames,driver);
         Frame_formFrames.click();
         PracticeForms.click();
         bol=true;
@@ -115,7 +115,7 @@ WebDriver driver;
 
     public boolean SubmitPracticeForm(PracticeFormsDetails practiceFormsDetails) throws AWTException, InterruptedException {
         boolean bol=false;
-        DriverManager.scrollWindowUp(InputBox_FirstName);
+        DriverManager.scrollWindowUp(InputBox_FirstName,driver);
         InputBox_FirstName.sendKeys(practiceFormsDetails.getFirstName(), TAB);
         InputBox_LastName.sendKeys(practiceFormsDetails.getLastName(), TAB);
         InputBox_Email.sendKeys(practiceFormsDetails.getEmail(), TAB);
@@ -136,15 +136,15 @@ WebDriver driver;
            }
         }
 
-        DriverManager.scrollWindowUp(Inputbox_Mobile);
+        DriverManager.scrollWindowUp(Inputbox_Mobile,driver);
         Inputbox_Mobile.sendKeys(practiceFormsDetails.getMobile(), TAB);
 
-        DriverManager.scrollWindowUp(Inputbox_DateOfBirth);
+        DriverManager.scrollWindowUp(Inputbox_DateOfBirth,driver);
         Inputbox_DateOfBirth.sendKeys(practiceFormsDetails.getDOB(), TAB, ENTER, TAB);
 
 
 
-        DriverManager.scrollWindowUp(Inputbox_Subject);
+        DriverManager.scrollWindowUp(Inputbox_Subject,driver);
         Actions actions = new Actions(driver);
         actions.sendKeys(SHIFT).perform();
         actions.sendKeys(practiceFormsDetails.getSubject()).perform();
@@ -163,13 +163,13 @@ WebDriver driver;
 
         }
 
-        DriverManager.scrollWindowUp(Upload_Picture);
+        DriverManager.scrollWindowUp(Upload_Picture,driver);
         if(Upload_Picture.isEnabled()) {
 
             Upload_Picture.sendKeys(System.getProperty("user.dir")+"\\src\\test\\resource\\testDataResources\\",practiceFormsDetails.getFileName());
         }
 
-        DriverManager.scrollWindowUp(TextArea_CurrentAdress);
+        DriverManager.scrollWindowUp(TextArea_CurrentAdress,driver);
         TextArea_CurrentAdress.sendKeys(practiceFormsDetails.getCurrentAddr(), TAB);
         DropDown_States.sendKeys(practiceFormsDetails.getState(), TAB, TAB);
         DropDown_City.sendKeys(practiceFormsDetails.getCity(), TAB, TAB);
@@ -182,7 +182,7 @@ WebDriver driver;
     public boolean HandlingModalBox()
     {
         boolean bol=false;
-        DriverManager.MoveToElement(ModalBox);
+        DriverManager.MoveToElement(ModalBox,driver);
         for(WebElement rows:Table_Coloumn) {
             String str1 = rows.findElement(By.xpath("td[1]")).getAttribute("innerText");
             String str2 = rows.findElement(By.xpath("td[2]")).getAttribute("innerText");

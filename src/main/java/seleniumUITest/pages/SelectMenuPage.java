@@ -29,7 +29,7 @@ public class SelectMenuPage {
     public boolean SelectMenuLandingPage()
     {
         boolean bol=false;
-        DriverManager.scrollWindowUp(Widgets_Frames);
+        DriverManager.scrollWindowUp(Widgets_Frames,driver);
         Widgets_Frames.click();
         SelectMenu_span.click();
         bol=true;

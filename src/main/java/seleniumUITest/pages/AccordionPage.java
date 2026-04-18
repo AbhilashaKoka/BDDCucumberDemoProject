@@ -37,7 +37,7 @@ public class AccordionPage {
     public boolean AccordionLandingPage()
     {
         boolean bol=false;
-        DriverManager.scrollWindowUp(Widgets_Frames);
+        DriverManager.scrollWindowUp(Widgets_Frames,driver);
         Widgets_Frames.click();
         Accordian_span.click();
         bol=true;

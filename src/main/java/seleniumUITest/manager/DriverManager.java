@@ -10,136 +10,136 @@ import java.time.Duration;
 import java.util.ArrayList;
 
 public class DriverManager {
-    public static WebDriver driver;
+
     static JavascriptExecutor js;
     static Actions action;
     static WebElement element;
 
-    public DriverManager() {
+    private static DriverManager instance;
+    private WebDriver driver;
+
+    // Private constructor
+    private DriverManager() {
+        driver = createDriver();
     }
 
-//    private static ThreadLocal<WebDriver> webdriver= new ThreadLocal<>();//
-//    public static void initDriver() {
-//        webdriver.set(new ChromeDriver());
-//    }
-
-
-    public WebDriver getDriver() {
-        if(driver==null) {
-            driver=createDriver();
+    // Singleton accessor
+    public static DriverManager getInstance() {
+        if (instance == null) {
+            instance = new DriverManager();
         }
-        return driver;
+        return instance;
     }
 
-       private WebDriver createDriver( ) {
-//        System.setProperty("Webdriver.driver.chrome", "\\src\\test\\resource\\driver\\chromedriver-win64\\chromedriver.exe");
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("start-maximized");
-//        return driver = new ChromeDriver(options);
+    private WebDriver createDriver() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
-        //  options.addArguments("headless");
-           return  driver=new ChromeDriver(options);
+        return new ChromeDriver(options);
+    }
+
+    public WebDriver getDriver() {
+        return driver;
+    }
+
+    public void quitDriver() {
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+            instance = null;
         }
 
-
-        public void quiteDriver()
-       {
-        driver.quit();
-        }
-
-        public  void launchBaseUrl(){
+    }        public  void launchBaseUrl(){
         driver.get("https://demoqa.com");
         }
 
 
-    public static void waitForElementToAppear(By finBy) {
+    public static void waitForElementToAppear(By finBy, WebDriver driver) {
         WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfElementLocated(finBy));
     }
 
 
-    public static void scrollWindow() {
+    public static void scrollWindow(WebDriver driver) {
         js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,300)");
     }
 
 
-    public static void scrollWindowUp(WebElement element) {
+    public static void scrollWindowUp(WebElement element,WebDriver driver) {
         js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,300)", element);
     }
 
-    public static void scrollWindowDown() {
+    public static void scrollWindowDown(WebDriver driver) {
         js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,-300)");
     }
 
-    public static void MoveToElement(WebElement element) {
+    public static void MoveToElement(WebElement element,WebDriver driver) {
         action = new Actions(driver);
         action.moveToElement(element).perform();
     }
 
 
-    public static void waitForElementToVisible(WebElement element) {
+    public static void waitForElementToVisible(WebElement element,WebDriver driver) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public static String getWindowHandler() {
+    public static String getWindowHandler(WebDriver driver) {
         return driver.getWindowHandle();
     }
 
-    public static ArrayList<String> getWindowHandlers() {
+    public static ArrayList<String> getWindowHandlers(WebDriver driver) {
         return new ArrayList<>(driver.getWindowHandles());
     }
 
-    public static Object[] getWindowHandlersArrayOfObject() {
+    public static Object[] getWindowHandlersArrayOfObject(WebDriver driver) {
 
         return driver.getWindowHandles().toArray();
 
     }
 
-    public static void SwitchTOWindowObject(Object[] windowsHandles, int index){
+    public static void SwitchTOWindowObject(Object[] windowsHandles, int index, WebDriver driver){
         driver.switchTo().window((String) windowsHandles[index]);
 
     }
 
-    public static void SwitchToWindowByIndex(ArrayList<String> handles, int index)
+    public static void SwitchToWindowByIndex(ArrayList<String> handles, int index,WebDriver driver)
     {
         String handle=handles.get(index);
         driver.switchTo().window(handle);
     }
 
-    public static void SwitchToWindowByName(String parentWindow)
+    public static void SwitchToWindowByName(String parentWindow,WebDriver driver)
     {
 
         driver.switchTo().window(parentWindow);
     }
 
-    public static void NavigateToUrl(String url)
+    public static void NavigateToUrl(String url,WebDriver driver)
     {
         driver.get(url);
     }
 
-    public static Dimension GetSizeOfWindow(){
+    public static Dimension GetSizeOfWindow(WebDriver driver){
         return driver.manage().window().getSize();
     }
 
-    public static Point GetPositionOfWindow()
+    public static Point GetPositionOfWindow(WebDriver driver)
     {
         return driver.manage().window().getPosition();
     }
 
 
-    public static void switchToframeByIndex(int index)
+    public static void switchToframeByIndex(int index,WebDriver driver)
     {
         driver.switchTo().frame(index);
     }
 
 
-    public static void switchToframeByName(WebElement str)
+    public static void switchToframeByName(WebElement str,WebDriver driver)
     {
         driver.switchTo().frame(str);
     }

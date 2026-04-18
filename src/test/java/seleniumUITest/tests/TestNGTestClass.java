@@ -1,4 +1,6 @@
 package seleniumUITest.tests;
+
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -9,10 +11,16 @@ import seleniumUITest.utils.RetryAnalyzer;
 
 
 @Listeners(TestStatusListener.class)
-public class TestNGTestClass extends BaseSetUp {
-     @Test(description = "Verify textBox",enabled = true,priority = 1,retryAnalyzer = RetryAnalyzer.class)
+public class TestNGTestClass  {
+    private final WebDriver driver;
+
+    public TestNGTestClass() {
+        driver = BaseSetUp.getInstance().getDriver();
+    }
+
+    @Test(description = "Verify textBox",enabled = true,priority = 1,retryAnalyzer = RetryAnalyzer.class)
    public void TestButton() {
-              Assert.assertEquals( SeleniumDemoTest.HandlingButton(), true);
+        Assert.assertEquals( SeleniumDemoTest.HandlingButton(), true);
         }
 
     @Test(description = "Verify CheckBox",enabled = false)

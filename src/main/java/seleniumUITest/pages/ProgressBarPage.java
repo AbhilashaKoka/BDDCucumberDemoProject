@@ -29,7 +29,7 @@ public class ProgressBarPage {
     public boolean ProgressBarLandingPage()
     {
         boolean bol=false;
-        DriverManager.scrollWindowUp(Widgets_Frames);
+        DriverManager.scrollWindowUp(Widgets_Frames,driver);
         Widgets_Frames.click();
         ProgressBar_span.click();
         bol=true;

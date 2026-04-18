@@ -47,7 +47,7 @@ public class AlertPage {
     public boolean AccordionLandingPage()
     {
         boolean bol=false;
-        DriverManager.scrollWindowUp(Window_Frames);
+        DriverManager.scrollWindowUp(Window_Frames,driver);
         Window_Frames.click();
         Alerts_span.click();
         bol=true;

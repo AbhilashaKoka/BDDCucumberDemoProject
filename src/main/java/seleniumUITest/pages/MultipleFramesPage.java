@@ -44,7 +44,7 @@ public class MultipleFramesPage {
     public boolean MultipleFramesLandingPage()
     {
         boolean bol=false;
-        DriverManager.scrollWindowUp(Window_Frames);
+        DriverManager.scrollWindowUp(Window_Frames,driver);
         Window_Frames.click();
         NestedFrames_span.click();
         bol=true;

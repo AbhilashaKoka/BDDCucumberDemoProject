@@ -12,6 +12,10 @@ import java.time.Duration;
 public class Selenium2DemoTest {
         WebDriver driver;
 
+        public Selenium2DemoTest() {
+              super();
+        }
+
 
         public void setUpDriver(){
         System.setProperty("Webdriver.driver.chrome", "\\src\\test\\resource\\driver\\chromedriver-win64\\chromedriver.exe");

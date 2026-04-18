@@ -28,7 +28,7 @@ public class ResizablePage {
     public boolean DResizableLandingPage()
     {
         boolean bol=false;
-        DriverManager.scrollWindowUp(Interactions_Frames);
+        DriverManager.scrollWindowUp(Interactions_Frames,driver);
         Interactions_Frames.click();
         Resizable_span.click();
         bol=true;

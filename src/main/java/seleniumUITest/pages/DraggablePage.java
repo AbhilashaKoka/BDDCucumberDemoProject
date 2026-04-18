@@ -29,7 +29,7 @@ public class DraggablePage {
     public boolean DraggableLandingPage()
     {
         boolean bol=false;
-        DriverManager.scrollWindowUp(Interactions_Frames);
+        DriverManager.scrollWindowUp(Interactions_Frames,driver);
         Interactions_Frames.click();
         Dragabble_span.click();
         bol=true;

@@ -53,7 +53,7 @@ public class CheckBoxPage {
     public boolean CheckBoxLandingPage()
     {
         boolean bol=false;
-        DriverManager.scrollWindowUp(Elements_Frames);
+        DriverManager.scrollWindowUp(Elements_Frames,driver);
         Elements_Frames.click();
         CheckBox_span.click();
         bol=true;

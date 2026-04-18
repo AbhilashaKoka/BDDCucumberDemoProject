@@ -38,7 +38,7 @@ public class FramePage {
     public boolean FrameLandingPage()
     {
         boolean bol=false;
-        DriverManager.scrollWindowUp(Window_Frames);
+        DriverManager.scrollWindowUp(Window_Frames,driver);
         Window_Frames.click();
         Frames_span.click();
         bol=true;
