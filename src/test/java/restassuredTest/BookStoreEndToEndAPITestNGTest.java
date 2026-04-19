@@ -14,7 +14,7 @@ import java.util.List;
 
 import static restassuredTest.BookStoreEndToEnd.generateISBNList;
 import static restassuredTest.BookStoreEndToEnd.generateRandomName;
-import static utilityDemoTest.dataDrivenTest.StringOperation.generatePassword;
+import static utilityDemoTest.StringOperation.generatePassword;
 
 public class BookStoreEndToEndAPITestNGTest {
     static ISBN isbn;
