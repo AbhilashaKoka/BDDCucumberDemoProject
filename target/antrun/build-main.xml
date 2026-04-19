@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="maven-antrun-" default="main">
+  <target name="main">
+    <exec executable="java">
+      <arg value="-cp" />
+      <arg value="C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\target\classes:C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\target\test-classes" />
+      <arg value="io.cucumber.core.cli.Main" />
+      <arg value="@target/failedrerun.txt" />
+    </exec>
+  </target>
+</project>
