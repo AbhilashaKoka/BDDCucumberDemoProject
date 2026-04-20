@@ -2,14 +2,15 @@
 <suite name="Suite" verbose="10" configfailurepolicy="skip" parallel="tests">
 <listeners>
     <!--<listener class-name="seleniumTestNG.TestStatusListener"></listener>-->
-    <listener class-name="seleniumUITest.utils.RetryListener"/>
-    <listener class-name="seleniumUITest.listeners.TestStatusListener"/>
+    <listener class-name="seleniumUITest.tests.RetryListener"/>
+    <listener class-name="seleniumUITest.tests.TestStatusListener"/>
 </listeners>
     <test name="SeleniumTestNG">
         <classes>
             <class name="seleniumUITest.tests.TestNGTestClass"></class>
         </classes>
     </test>
+
     <!--    <test name="SeleniumGridStandaloneTest">-->
     <!--        <classes>-->
     <!--            <class name="seleniumGridTest.RemoteDriverSetUp"></class>-->

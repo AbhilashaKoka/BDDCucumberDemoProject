@@ -10,8 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import seleniumUITest.listeners.TestStatusListener;
-import seleniumUITest.utils.RetryAnalyzer;
+
 import java.io.File;
 import java.net.HttpURLConnection;
 import java.net.URL;

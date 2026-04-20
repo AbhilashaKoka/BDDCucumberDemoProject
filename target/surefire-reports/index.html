@@ -129,15 +129,15 @@
                   <a name="TestButton">
                   </a> <!-- TestButton -->
                   <span class="method-name">TestButton</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;app&quot;]/div/div/div/div[2]/div[2]/h1[contains(text(), &quot;Buttons&quot;)]&quot;}
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@class=&quot;accordion&quot;]//div[@class=&quot;element-group&quot;]//following::span[@class=&quot;text&quot; and contains(text(),&quot;Buttons&quot;)]&quot;}
   (Session info: chrome=147.0.7727.102)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;25.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [29ae4ad929c82c2907bfca35a9b2179c, findElement {using=xpath, value=//*[@id=&quot;app&quot;]/div/div/div/div[2]/div[2]/h1[contains(text(), &quot;Buttons&quot;)]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\ABHILA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61390}, goog:processID: 30476, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61390/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 29ae4ad929c82c2907bfca35a9b2179c
+Command: [bf3cb22aa5990e4cf7073a4e6c7f38a1, findElement {value=//*[@class=&quot;accordion&quot;]//div[@class=&quot;element-group&quot;]//following::span[@class=&quot;text&quot; and contains(text(),&quot;Buttons&quot;)], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\ABHILA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54558}, goog:processID: 31692, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54558/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bf3cb22aa5990e4cf7073a4e6c7f38a1
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -149,8 +149,8 @@ Session ID: 29ae4ad929c82c2907bfca35a9b2179c
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at seleniumUITest.tests.TestNGTestClass.HandlingButton(TestNGTestClass.java:380)
-	at seleniumUITest.tests.TestNGTestClass.TestButton(TestNGTestClass.java:64)
+	at seleniumUITest.tests.TestNGTestClass.HandlingButton(TestNGTestClass.java:377)
+	at seleniumUITest.tests.TestNGTestClass.TestButton(TestNGTestClass.java:63)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
@@ -175,8 +175,8 @@ Session ID: 29ae4ad929c82c2907bfca35a9b2179c
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite parallel=&quot;tests&quot; name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
   &lt;listeners&gt;
-    &lt;listener class-name=&quot;seleniumUITest.utils.RetryListener&quot;/&gt;
-    &lt;listener class-name=&quot;seleniumUITest.listeners.TestStatusListener&quot;/&gt;
+    &lt;listener class-name=&quot;seleniumUITest.tests.RetryListener&quot;/&gt;
+    &lt;listener class-name=&quot;seleniumUITest.tests.TestStatusListener&quot;/&gt;
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;SeleniumTestNG&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
@@ -224,12 +224,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'TestButton')
 data.setCell(0, 2, 'seleniumUITest.tests.TestNGTestClass')
-data.setCell(0, 3, 329);
+data.setCell(0, 3, 108);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 8 seconds</span>
+              <span class="suite-total-time">Total running time: 4 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -250,57 +250,57 @@ return data;
             <div class="ignored-class-div">
               <span class="ignored-class-name">seleniumUITest.tests.TestNGTestClass</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">TestDroppable</span>
+                <span class="ignored-method-name">TestRadioButton</span>
                 <br/>
-                <span class="ignored-method-name">TestDatePicker</span>
-                <br/>
-                <span class="ignored-method-name">TestMultipleFrame</span>
-                <br/>
-                <span class="ignored-method-name">TestAlert</span>
-                <br/>
-                <span class="ignored-method-name">TestWebTable</span>
-                <br/>
-                <span class="ignored-method-name">TestFrame</span>
+                <span class="ignored-method-name">TestAccordion</span>
                 <br/>
                 <span class="ignored-method-name">TestBrowserWindow</span>
                 <br/>
-                <span class="ignored-method-name">TestSortable</span>
-                <br/>
-                <span class="ignored-method-name">TestRadioButton</span>
-                <br/>
-                <span class="ignored-method-name">TestTextBox</span>
-                <br/>
-                <span class="ignored-method-name">TestMenu</span>
+                <span class="ignored-method-name">TestFrame</span>
                 <br/>
                 <span class="ignored-method-name">TestPracticeForm</span>
                 <br/>
                 <span class="ignored-method-name">TestUpload</span>
                 <br/>
+                <span class="ignored-method-name">TestMultipleFrame</span>
+                <br/>
+                <span class="ignored-method-name">TestAlert</span>
+                <br/>
+                <span class="ignored-method-name">TestDroppable</span>
+                <br/>
+                <span class="ignored-method-name">TestWebTable</span>
+                <br/>
+                <span class="ignored-method-name">TestMenu</span>
+                <br/>
                 <span class="ignored-method-name">TestResizable</span>
                 <br/>
-                <span class="ignored-method-name">TestProgressBar</span>
-                <br/>
-                <span class="ignored-method-name">TestDraggable</span>
-                <br/>
-                <span class="ignored-method-name">TestSelectable</span>
-                <br/>
-                <span class="ignored-method-name">TestModalDialog</span>
-                <br/>
-                <span class="ignored-method-name">TestSlider</span>
-                <br/>
-                <span class="ignored-method-name">TestTabs</span>
+                <span class="ignored-method-name">TestTextBox</span>
                 <br/>
                 <span class="ignored-method-name">TestAutoComplete</span>
                 <br/>
-                <span class="ignored-method-name">TestLink</span>
+                <span class="ignored-method-name">TestSortable</span>
                 <br/>
-                <span class="ignored-method-name">TestAccordion</span>
+                <span class="ignored-method-name">TestTabs</span>
+                <br/>
+                <span class="ignored-method-name">TestDraggable</span>
+                <br/>
+                <span class="ignored-method-name">TestDatePicker</span>
+                <br/>
+                <span class="ignored-method-name">TestProgressBar</span>
                 <br/>
                 <span class="ignored-method-name">TestSelectMenu</span>
                 <br/>
                 <span class="ignored-method-name">TestToolTip</span>
                 <br/>
+                <span class="ignored-method-name">TestSelectable</span>
+                <br/>
                 <span class="ignored-method-name">TestCheckBox</span>
+                <br/>
+                <span class="ignored-method-name">TestLink</span>
+                <br/>
+                <span class="ignored-method-name">TestModalDialog</span>
+                <br/>
+                <span class="ignored-method-name">TestSlider</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -321,11 +321,11 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">TestButton</span>
-                <span class="method-start">6258 ms</span>
+                <span class="method-start">3483 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">7911 ms</span>
+                <span class="method-start">4593 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

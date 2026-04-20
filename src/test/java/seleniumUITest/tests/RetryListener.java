@@ -1,9 +1,12 @@
-package seleniumUITest.utils;
+package seleniumUITest.tests;
 
 import org.testng.IAnnotationTransformer;
 import org.testng.annotations.ITestAnnotation;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
+
+
 //Apply Retry Globally. This avoids adding retry to every test manually
 public class RetryListener implements IAnnotationTransformer {
 

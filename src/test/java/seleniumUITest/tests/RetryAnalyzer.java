@@ -1,4 +1,4 @@
-package seleniumUITest.utils;
+package seleniumUITest.tests;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.testng.IRetryAnalyzer;
