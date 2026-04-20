@@ -15,6 +15,7 @@ C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Sprin
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\seleniumUITest\listeners\TestStatusListener.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\seleniumUITest\tests\TestNGTestClass.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\seleniumUITest\utils\RetryAnalyzer.java
+C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\seleniumUITest\tests\DriverManager.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\cucumberBddTest\apiStepDef\BookStoreEndToEndSteps.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\cucumberBddTest\apiUtility\JwtUtils.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\seleniumGridTest\RotatingProxyGrid.java
@@ -30,9 +31,7 @@ C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Sprin
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\cucumberBddTest\utility\ExcelUtils.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\cucumberBddTest\uiStepDef\AlertsStepdefs.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\restassuredTest\utilities\NestedScenarioFactory.java
-C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\seleniumUITest\base\BaseSetUp.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\seleniumperfTest\BaseproxySetUp.java
-C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\seleniumUITest\base\SeleniumDemoTest.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\seleniumUITest\locatorUtilites\LocatorDemo.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\cucumberBddTest\uiStepDef\TextBoxStepDefs.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\cucumberBddTest\model\bookstoreRequest\AddBookRequest.java
@@ -43,6 +42,7 @@ C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Sprin
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\cucumberBddTest\utility\TestBook.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\dataDrivenTest\TestMethod.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\cucumberBddTest\uiStepDef\BrowserStepDefs.java
+C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\seleniumUITest\tests\Selenium2DemoTest.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\cucumberBddTest\model\bookstoreResponse\UserPresent.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\cucumberBddTest\uiStepDef\PracticeFormStepDefs.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\restassuredTest\utilities\NestedPayloadApiTest.java
@@ -53,11 +53,11 @@ C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Sprin
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\seleniumGridTest\StandaloneTest.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\cucumberBddTest\model\bookstoreRequest\ISBN.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\cucumberBddTest\uiStepDef\CheckBoxStepDefs.java
-C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\seleniumUITest\base\Selenium2DemoTest.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\appiumTest\MobileTest.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\restassuredTest\DDTSerializeDeserializeDemo\DataDrivenTest.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\restassuredTest\PetStore_Tests.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\restassuredTest\utilities\ConfigDrivenScenarioFactory.java
+C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\seleniumUITest\tests\SeleniumDemoTest.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\restassuredTest\utilities\EnvAwarePostApiTest.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\restassuredTest\utilities\MultiParamScenarioFactory.java
 C:\Users\Abhilasha\Documents\DOCUMENT\StudyDocumentFolder\IDE\IdeaProjects\Spring_Course-master\APIDemoProject\src\test\java\restassuredTest\utilities\EnvAwareApiTest.java

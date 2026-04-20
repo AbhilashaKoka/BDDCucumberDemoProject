@@ -7,7 +7,7 @@
 </listeners>
     <test name="SeleniumTestNG">
         <classes>
-            <class name="seleniumUITest.base.Selenium2DemoTest"></class>
+            <class name="seleniumUITest.tests.TestNGTestClass"></class>
         </classes>
     </test>
     <!--    <test name="SeleniumGridStandaloneTest">-->

@@ -10,7 +10,6 @@ import java.time.Duration;
 import java.util.ArrayList;
 
 public class DriverManager {
-
     static JavascriptExecutor js;
     static Actions action;
     static WebElement element;

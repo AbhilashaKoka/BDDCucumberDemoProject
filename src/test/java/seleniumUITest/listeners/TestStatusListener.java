@@ -6,37 +6,38 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import seleniumUITest.base.BaseSetUp;
-
+import seleniumUITest.manager.DriverManager;
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class TestStatusListener implements ITestListener {
+public class TestStatusListener implements ITestListener{
     private static int stepCount = 1;
-
-    public TestStatusListener() {
+    WebDriver driver;
+    @Override
+    public void onTestFailure(ITestResult result) {
+        System.out.println("**** TEST CASE FAILED ****");
+        takeScreenshot(result.getName());
     }
 
-    public void onTestFailure(ITestResult result){
-        System.out.println("****TEST CASE FAILED****");
-        try
-        {
-         failedScreenshot(result.getName());
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    }
-    public void onTestFailureMethod2(ITestResult result) {
-        Object testClass = result.getInstance();
-        WebDriver driver = ((BaseSetUp) testClass).getDriver();
-        File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        File destFile=new File("path/to/screenshots/" + result.getName() + "_step" + stepCount + ".png");
-        stepCount++;
-        try{
-            FileUtils.copyFile(srcFile,destFile);
-            System.out.println("Screenshot take for failed test case: " + result.getName());
-        }catch(Exception e){
+    private void takeScreenshot(String testMethodName) {
+        try {
+             driver = DriverManager.getInstance().getDriver();
+            if (driver != null) {
+                File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+                String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+                File dest = new File("Screenshots/" + testMethodName + "_" + timestamp + ".png");
+
+                // Ensure directory exists
+                dest.getParentFile().mkdirs();
+
+                FileUtils.copyFile(src, dest);
+                System.out.println("Screenshot saved: " + dest.getAbsolutePath());
+            } else {
+                System.out.println("Driver was null, screenshot skipped.");
+            }
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -45,53 +46,36 @@ public class TestStatusListener implements ITestListener {
         stepCount = 1;
     }
 
-
     @Override
     public void onTestStart(ITestResult result) {
-        System.out.println("***********On Test Start Code go here**********");
+        System.out.println("*********** On Test Start **********");
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        System.out.println("***********On Test Success Code go here**********");
-    }
-    @Override
-    public void onTestSkipped(ITestResult result) {
-        System.out.println("***********On Test Skipped Code go here**********");
+        System.out.println("*********** On Test Success **********");
     }
 
     @Override
-    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-        System.out.println("***********On Test FailedButWithInSuccessPercentage Code go here**********");
+    public void onTestSkipped(ITestResult result) {
+        System.out.println("*********** On Test Skipped **********");
     }
+
+    @Override
+    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {}
 
     @Override
     public void onTestFailedWithTimeout(ITestResult result) {
-        System.out.println("***********On Test Failed With TimeOut Code go here**********");
+        onTestFailure(result);
     }
 
     @Override
     public void onStart(ITestContext context) {
-        System.out.println("***********On  Start Code go here**********");
+        System.out.println("*********** On Start **********");
     }
 
     @Override
     public void onFinish(ITestContext context) {
-        System.out.println("***********On Finish Code go here**********");
+        System.out.println("*********** On Finish **********");
     }
-
-    public void failedScreenshot(String testMethodName) {
-        try {
-            WebDriver driver = BaseSetUp.getInstance().getDriver();
-            if (driver != null) {
-                File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-                Date d = new Date();
-                String timestamp = d.toString().replace(":", "_").replace(" ", "_");
-                FileUtils.copyFile(src, new File("Screenshots/" + testMethodName + "_" + timestamp + ".png"));
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    }
+}

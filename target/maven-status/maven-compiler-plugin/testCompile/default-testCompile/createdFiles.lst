@@ -21,10 +21,9 @@ restassuredTest\BookStoreEndToEndAPITestNGTest.class
 cucumberBddTest\model\bookstoreResponse\Books.class
 cucumberBddTest\model\bookstoreRequest\CollectionOfISBNs.class
 restassuredTest\PetStore_TestNGTest.class
-seleniumUITest\base\SeleniumDemoTest.class
 cucumberBddTest\model\bookstoreResponse\BookOfUserNotPresent.class
+seleniumUITest\tests\DriverManager.class
 cucumberBddTest\uiStepDef\TextBoxStepDefs.class
-seleniumUITest\base\BaseSetUp.class
 restassuredTest\utilities\EnvAwareApiTest.class
 cucumberBddTest\apiStepDef\APITestSteps.class
 restassuredTest\utilities\EnvAwarePostApiTest.class
@@ -36,6 +35,7 @@ cucumberBddTest\uiStepDef\AlertsStepdefs.class
 restassuredTest\utilities\ConfigDrivenScenarioFactory$Config.class
 restassuredTest\SerializeDeserializeDemo\SerializeAndDeserializeExample.class
 seleniumUITest\utils\RetryListener.class
+seleniumUITest\tests\Selenium2DemoTest.class
 seleniumperfTest\BaseproxySetUp.class
 cucumberBddTest\testStepDef\BookSteps.class
 restassuredTest\utilities\AgeValidationScenarioTest.class
@@ -49,7 +49,6 @@ seleniumUITest\locatorUtilites\LocatorDemo.class
 cucumberBddTest\apiUtility\JwtUtils.class
 seleniumGridTest\RemoteDriverSetUp.class
 cucumberBddTest\model\bookstoreResponse\JSONSuccessResponse.class
-seleniumUITest\base\Selenium2DemoTest.class
 cucumberBddTest\apiUtility\JwtFilter.class
 cucumberBddTest\model\bookstoreResponse\UserData.class
 cucumberBddTest\utility\ExcelUtils.class

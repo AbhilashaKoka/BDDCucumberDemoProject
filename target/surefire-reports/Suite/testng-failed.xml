@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="seleniumUITest.utils.RetryListener"/>
+    <listener class-name="seleniumUITest.listeners.TestStatusListener"/>
+  </listeners>
+  <test thread-count="5" parallel="tests" name="SeleniumTestNG(failed)" verbose="0">
+    <classes>
+      <class name="seleniumUITest.tests.TestNGTestClass">
+        <methods>
+          <include name="setUp"/>
+          <include name="TestButton"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- seleniumUITest.tests.TestNGTestClass -->
+    </classes>
+  </test> <!-- SeleniumTestNG(failed) -->
+</suite> <!-- Failed suite [Suite] -->
