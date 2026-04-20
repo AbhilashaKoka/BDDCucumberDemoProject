@@ -12,7 +12,6 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import seleniumUITest.listeners.TestStatusListener;
 import seleniumUITest.utils.RetryAnalyzer;
-
 import java.io.File;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -32,161 +31,175 @@ public class TestNGTestClass  {
     private static Actions action;
     private static JavascriptExecutor js;
 
+
+
+
     @BeforeMethod
     public void setUp() {
         if(driver==null) {
             DriverManager.setDriver();
             driver = DriverManager.getDriver();
             driver.get("https://demoqa.com");
+            // Initialize helpers
+            action = new Actions(driver);
+            js = (JavascriptExecutor) driver;
         }
     }
 
+
+
     @AfterMethod
     public void tearDown() {
-        DriverManager.quitDriver();
+        if (driver != null) {
+            DriverManager.quitDriver();
+        }
     }
+
+
+
+
 
     @Test(description = "Verify textBox",enabled = true,priority = 1,retryAnalyzer = RetryAnalyzer.class)
    public void TestButton() {
-        Assert.assertEquals( HandlingButton(), true);
+        Assert.assertTrue( HandlingButton(), "Button handling failed");
         }
 
     @Test(description = "Verify CheckBox",enabled = false)
     public void TestCheckBox() {
-      Assert.assertEquals(HandlingCheckBox(),true);
+      Assert.assertTrue(HandlingCheckBox(),"Button handling failed");
     }
 
     @Test(description = "verify datapicker",enabled = false)
     public void TestDatePicker() {
-        Assert.assertEquals( HandlingDataPicker(),true);
+        Assert.assertTrue( HandlingDataPicker(),"Button handling failed");
    }
 
     @Test(description = "verify BrowserWindow",enabled = false)
     public void TestBrowserWindow() throws InterruptedException {
-       Assert.assertEquals(HandlingBrowserWindow(),true);
+       Assert.assertTrue(HandlingBrowserWindow(),"Button handling failed");
    }
 
     @Test(description = "verify AutoComplete",enabled = false)
     public void TestAutoComplete() {
-        Assert.assertEquals( HandlingAutoComplete(),true);
+        Assert.assertTrue( HandlingAutoComplete(),"Button handling failed");
    }
 
     @Test(description = "verify Alert",enabled = false)
     public void TestAlert() {
-        Assert.assertEquals( HandlingAlert(),true);
+        Assert.assertTrue( HandlingAlert(),"Button handling failed");
    }
 
     @Test(description = "verify Accordion",enabled = false)
     public void TestAccordion() {
-         Assert.assertEquals(HandlingAccordion(),true);
+         Assert.assertTrue(HandlingAccordion(),"Button handling failed");
    }
 
     @Test(description = "verify PracticeForm",enabled = false)
     public void TestPracticeForm() throws InterruptedException {
-        Assert.assertEquals(HandlingForm(),true);
+        Assert.assertTrue(HandlingForm(),"Button handling failed");
     }
     @Test(description = "verify Frames",enabled = false)
     public void TestFrame() {
-        Assert.assertEquals( HandlingFrame(),true);
+        Assert.assertTrue( HandlingFrame(),"Button handling failed");
     }
 
     @Test(description = "verify Links",enabled = false)
     public void TestLink() {
-        Assert.assertEquals(HandlingLink(),true);
+        Assert.assertTrue(HandlingLink(),"Button handling failed");
     }
 
     @Test(description = "verify Menu",enabled = false)
     public void TestMenu() {
-        Assert.assertEquals( HandlingMenu(),true);
+        Assert.assertTrue( HandlingMenu(),"Button handling failed");
     }
 
     @Test(description = "verify ModalDialog",enabled = false)
-    public void TestModalDialog() throws InterruptedException { Assert.assertEquals(HandlingModalDialog(),true);}
+    public void TestModalDialog() throws InterruptedException { Assert.assertTrue(HandlingModalDialog(),"Button handling failed");}
     @Test(description = "verify MultipleFrames",enabled = false)
     public void TestMultipleFrame(){
-       Assert.assertEquals(HandlingMultipleFrames(),true);
+       Assert.assertTrue(HandlingMultipleFrames(),"Button handling failed");
 
     }
     @Test(description = "verify ProgressBar",enabled = false)
     public void TestProgressBar()
     {
-        Assert.assertEquals( HandlingProgressBar(),true);
+        Assert.assertTrue( HandlingProgressBar(),"Button handling failed");
     }
 
     @Test(description = "verify RadioButton",enabled = false)
     public void TestRadioButton() {
-        Assert.assertEquals(HandlingRadioButton(),true);
+        Assert.assertTrue(HandlingRadioButton(),"Button handling failed");
     }
 
     @Test(description = "verify Resizable",enabled = false)
         public void TestResizable()
         {
-            Assert.assertEquals(HandlingResizable(),true);
+            Assert.assertTrue(HandlingResizable(),"Button handling failed");
         }
 
 
     @Test(description = "verify Selectable",enabled = false)
     public void TestSelectable()
     {
-        Assert.assertEquals(HandlingSelectable(),true);
+        Assert.assertTrue(HandlingSelectable(),"Button handling failed");
     }
 
     @Test(description = "verify SelectMenu",enabled = false)
     public void TestSelectMenu()
     {
-        Assert.assertEquals(HandlingSelectMenu(),true);
+        Assert.assertTrue(HandlingSelectMenu(),"Button handling failed");
     }
 
 
     @Test(description = "verify Slider",enabled = false)
     public void TestSlider()
     {
-        Assert.assertEquals( HandlingSlider(),true);
+        Assert.assertTrue( HandlingSlider(),"Button handling failed");
     }
 
     @Test(description = "verify Sortable",enabled = false)
     public void TestSortable(){
-        Assert.assertEquals(HandlingSortable(),true);
+        Assert.assertTrue(HandlingSortable(),"Button handling failed");
     }
 
     @Test(description = "verify Tabs",enabled = false)
     public void TestTabs(){
-        Assert.assertEquals(HandlingTabs(),true);
+        Assert.assertTrue(HandlingTabs(),"Button handling failed");
     }
 
 
     @Test(description = "verify TextBox",enabled = false)
     public void TestTextBox() throws InterruptedException {
-        Assert.assertEquals(HandlingTextBox(),true);
+        Assert.assertTrue(HandlingTextBox(),"Button handling failed");
     }
 
     @Test(description = "verify ToolTips",enabled = false)
     public void TestToolTip()
     {
-        Assert.assertEquals(HandlingToolTip(),true);
+        Assert.assertTrue(HandlingToolTip(),"Button handling failed");
     }
 
     @Test(description = "verify Upload",enabled = false)
     public void TestUpload() throws InterruptedException {
-        Assert.assertEquals(HandlingUploadAndDownload(),true);
+        Assert.assertTrue(HandlingUploadAndDownload(),"Button handling failed");
     }
 
     @Test(description = "verify WebTable",enabled = false)
     public void TestWebTable()
     {
-        Assert.assertEquals(HandlingWebTableTest(),true);
+        Assert.assertTrue(HandlingWebTableTest(),"Button handling failed");
     }
 
     @Test(description = "verify Draggable",enabled = false)
     public void TestDraggable()
     {
-        Assert.assertEquals(HandlingDraggable(),true);
+        Assert.assertTrue(HandlingDraggable(),"Button handling failed");
     }
 
     @Test(description = "verify Droppable",enabled = false)
     public void TestDroppable()
     {
-        Assert.assertEquals(HandlingDroppable(),true);
+        Assert.assertTrue(HandlingDroppable(),"Button handling failed");
     }
 
 
@@ -201,7 +214,6 @@ public class TestNGTestClass  {
         WebElement accordianContainer=driver.findElement(By.xpath(" //*[@id=\"accordianContainer\"]"));
         System.out.println(accordianContainer.getAttribute("innerText"));
 
-        JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,350)");
 
         List<WebElement> accordiansLIst=driver.findElements(By.xpath(" //div[@id=\"accordianContainer\"]//following::div[@class=\"accordion\"]"));
@@ -303,8 +315,7 @@ public class TestNGTestClass  {
         driver.get("https://www.google.com");
         driver.switchTo().window(parentWindow);
         System.out.println("Parent Tab");
-        js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,350)");
+           js.executeScript("window.scrollBy(0,350)");
 
         WebElement tabButton2=driver.findElement(By.xpath("//*[@id=\"tabButton\"]"));
         tabButton2.click();
@@ -417,7 +428,7 @@ public class TestNGTestClass  {
         CheckBox_span.click();
         WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("  button[title=\"Toggle\"]")));
-        JavascriptExecutor js=(JavascriptExecutor)driver;
+
         js.executeScript("location.reload()");
         WebElement sort= driver.findElement(By.cssSelector("  button[title=\"Toggle\"]"));
         // js.executeScript("arguments[0].scrollIntoView;",sort);
@@ -556,7 +567,6 @@ public class TestNGTestClass  {
         Window_Frames.click();
         WebElement Frames_span=driver.findElement(By.xpath( "//*[@class=\"accordion\"]//div[@class=\"element-group\"]//following::span[@class=\"text\" and contains(text(),\"Frames\")]"));
         Frames_span.click();
-
         WebElement iframes=driver.findElement(By.xpath("//*[@id=\"framesWrapper\"]"));
         System.out.println(iframes.getAttribute("innerText"));
         WebElement iframes1=driver.findElement(By.xpath("//*[@id=\"frame1Wrapper\"]//iframe"));
@@ -579,13 +589,10 @@ public class TestNGTestClass  {
         Elements_Frames.click();
         WebElement Links_span=driver.findElement(By.xpath( "//*[@class=\"accordion\"]//div[@class=\"element-group\"]//following::span[@class=\"text\" and contains(text(),\"Links\")]"));
         Links_span.click();
-
-
         List<WebElement> Links = driver.findElements(By.xpath("//*[@id=\"linkWrapper\"]/p/a"));
         System.out.println(Links.size());
         for (WebElement link : Links) {
             String url = link.getAttribute("href");
-
             try {
                 URL links = new URL(url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) links.openConnection();
@@ -628,8 +635,7 @@ public class TestNGTestClass  {
         WebElement ModalDialogs_span=driver.findElement(By.xpath( "//*[@class=\"accordion\"]//div[@class=\"element-group\"]//following::span[@class=\"text\" and contains(text(),\"Modal Dialogs\")]"));
         ModalDialogs_span.click();
         driver.get("https://demoqa.com/modal-dialogs");
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,350)");
+                js.executeScript("window.scrollBy(0,350)");
 
         WebElement modalWrapper=driver.findElement(By.xpath("//*[@id=\"modalWrapper\"]"));
         System.out.println(modalWrapper.getAttribute("innerText"));
@@ -661,7 +667,7 @@ public class TestNGTestClass  {
         WebElement NestedFrames_span=driver.findElement(By.xpath( "//*[@class=\"accordion\"]//div[@class=\"element-group\"]//following::span[@class=\"text\" and contains(text(),\"Nested Frames\")]"));
         NestedFrames_span.click();
 
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+
         js.executeScript("window.scrollBy(0,350)");
         WebElement frame1=driver.findElement(By.xpath("//*[@id=\"framesWrapper\"]//following-sibling::div[@id=\"frame1Wrapper\"]/iframe[@id=\"frame1\"]"));
         driver.switchTo().frame(frame1);
@@ -828,8 +834,6 @@ public class TestNGTestClass  {
         Element_Frames.click();
         WebElement UploadAndDownload_Span=driver.findElement(By.xpath("//*[@class=\"accordion\"]//div[@class=\"element-group\"]//following::span[@class=\"text\" and contains(text(),\"Upload and Download\")]"));
         UploadAndDownload_Span.click();
-
-
         Path pathOfDownloadFolder= Paths.get("D:\\Users\\akoka\\Downloads");
         if(Files.exists(pathOfDownloadFolder)&& Files.isDirectory(pathOfDownloadFolder)){
             System.out.println("Directory Exist!!");
@@ -838,9 +842,7 @@ public class TestNGTestClass  {
             System.out.println("Directory does not exist!!!");
         }
         WebElement title=driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/div[2]"));
-        JavascriptExecutor js=(JavascriptExecutor)driver;
-        js.executeScript("window.scrollBy(0,350)",title);
-
+         js.executeScript("window.scrollBy(0,350)",title);
         WebElement DownloadButton=driver.findElement(By.xpath("//*[@id=\"downloadButton\"]"));
         DownloadButton.click();
         Thread.sleep(5000);
@@ -866,7 +868,6 @@ public class TestNGTestClass  {
         Element_Frames.click();
         WebElement WebTables_Span=driver.findElement(By.xpath("//*[@class=\"accordion\"]//div[@class=\"element-group\"]//following::span[@class=\"text\" and contains(text(),\"Web Tables\")]"));
         WebTables_Span.click();
-
         WebElement searchButton=driver.findElement(By.xpath("//input[@id=\"searchBox\"]"));
         searchButton.sendKeys("Kierra", Keys.ENTER);
 //        WebElement AddButton=driver.findElement(By.xpath("//Button[@id=\"addNewRecordButton\"]"));
@@ -875,7 +876,6 @@ public class TestNGTestClass  {
 //        WebElement table=driver.findElement(By.xpath(" //div[@class='rt-table']"));
 //        WebElement tableHeader=driver.findElement(By.xpath(" //div[@class='rt-thead -header']"));
 //        WebElement tableBody=driver.findElement(By.xpath(" //div[@class='rt-tbody']"));
-
         List<WebElement> RowGroup=driver.findElements(By.xpath("//div[@class='rt-tr-group']"));
         int sizeofRows=RowGroup.size();
         List<WebElement> tablerow=driver.findElements(By.xpath(" //div[@class='rt-td']"));

@@ -1,18 +1,18 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 7.938 s <<< FAILURE! - in TestSuite
-TestButton(seleniumUITest.tests.TestNGTestClass)  Time elapsed: 1.192 s  <<< FAILURE!
-org.openqa.selenium.ElementClickInterceptedException: 
-element click intercepted: Element <h5>...</h5> is not clickable at point (154, 669). Other element would receive the click: <footer>...</footer>
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 8.778 s <<< FAILURE! - in TestSuite
+TestButton(seleniumUITest.tests.TestNGTestClass)  Time elapsed: 0.341 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="app"]/div/div/div/div[2]/div[2]/h1[contains(text(), "Buttons")]"}
   (Session info: chrome=147.0.7727.102)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.22.0', revision: 'c5f3146703*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [280d453c1454ebd9bc5ac67863213b21, clickElement {id=f.54249F83305133034E9F67A91902CF2D.d.907DB1749F6DE9F391D8924C31CE34DE.e.3}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\ABHILA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61653}, goog:processID: 13400, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61653/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (280d453c1454ebd9bc5ac67863213b21)] -> xpath: //*[@class="category-cards"]//following::div[@class="card-body"]//h5[contains(text(),"Elements")]]
-Session ID: 280d453c1454ebd9bc5ac67863213b21
-	at seleniumUITest.tests.TestNGTestClass.HandlingButton(TestNGTestClass.java:366)
-	at seleniumUITest.tests.TestNGTestClass.TestButton(TestNGTestClass.java:51)
+Command: [29ae4ad929c82c2907bfca35a9b2179c, findElement {using=xpath, value=//*[@id="app"]/div/div/div/div[2]/div[2]/h1[contains(text(), "Buttons")]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\ABHILA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61390}, goog:processID: 30476, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61390/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 29ae4ad929c82c2907bfca35a9b2179c
+	at seleniumUITest.tests.TestNGTestClass.HandlingButton(TestNGTestClass.java:380)
+	at seleniumUITest.tests.TestNGTestClass.TestButton(TestNGTestClass.java:64)
 
