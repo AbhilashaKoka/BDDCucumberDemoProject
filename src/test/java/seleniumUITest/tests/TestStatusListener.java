@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import seleniumUITest.manager.DriverManager;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -23,7 +22,7 @@ public class TestStatusListener implements ITestListener{
 
     private void takeScreenshot(String testMethodName) {
         try {
-             driver = DriverManager.getInstance().getDriver();
+            driver = DriverManager.getDriver();
             if (driver != null) {
                 File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
                 String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());

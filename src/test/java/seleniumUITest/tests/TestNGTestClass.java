@@ -10,7 +10,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import java.io.File;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -45,8 +44,6 @@ public class TestNGTestClass  {
         }
     }
 
-
-
     @AfterMethod
     public void tearDown() {
         if (driver != null) {
@@ -54,151 +51,147 @@ public class TestNGTestClass  {
         }
     }
 
-
-
-
-
     @Test(description = "Verify textBox",enabled = true,priority = 1,retryAnalyzer = RetryAnalyzer.class)
    public void TestButton() {
-        Assert.assertTrue( HandlingButton(), "Button handling failed");
+        Assert.assertTrue( HandlingButton(), "TestButton failed");
         }
 
     @Test(description = "Verify CheckBox",enabled = false)
     public void TestCheckBox() {
-      Assert.assertTrue(HandlingCheckBox(),"Button handling failed");
+      Assert.assertTrue(HandlingCheckBox(),"TestCheckBox failed");
     }
 
     @Test(description = "verify datapicker",enabled = false)
     public void TestDatePicker() {
-        Assert.assertTrue( HandlingDataPicker(),"Button handling failed");
+        Assert.assertTrue( HandlingDataPicker(),"TestDatePicker failed");
    }
 
     @Test(description = "verify BrowserWindow",enabled = false)
     public void TestBrowserWindow() throws InterruptedException {
-       Assert.assertTrue(HandlingBrowserWindow(),"Button handling failed");
+       Assert.assertTrue(HandlingBrowserWindow(),"TestBrowserWindow failed");
    }
 
     @Test(description = "verify AutoComplete",enabled = false)
     public void TestAutoComplete() {
-        Assert.assertTrue( HandlingAutoComplete(),"Button handling failed");
+        Assert.assertTrue( HandlingAutoComplete(),"TestAutoComplete failed");
    }
 
     @Test(description = "verify Alert",enabled = false)
     public void TestAlert() {
-        Assert.assertTrue( HandlingAlert(),"Button handling failed");
+        Assert.assertTrue( HandlingAlert(),"TestAlert failed");
    }
 
     @Test(description = "verify Accordion",enabled = false)
     public void TestAccordion() {
-         Assert.assertTrue(HandlingAccordion(),"Button handling failed");
+         Assert.assertTrue(HandlingAccordion(),"TestAccordion failed");
    }
 
     @Test(description = "verify PracticeForm",enabled = false)
     public void TestPracticeForm() throws InterruptedException {
-        Assert.assertTrue(HandlingForm(),"Button handling failed");
+        Assert.assertTrue(HandlingForm(),"BTestPracticeForm failed");
     }
     @Test(description = "verify Frames",enabled = false)
     public void TestFrame() {
-        Assert.assertTrue( HandlingFrame(),"Button handling failed");
+        Assert.assertTrue( HandlingFrame(),"TestFrame failed");
     }
 
     @Test(description = "verify Links",enabled = false)
     public void TestLink() {
-        Assert.assertTrue(HandlingLink(),"Button handling failed");
+        Assert.assertTrue(HandlingLink(),"TestLink failed");
     }
 
     @Test(description = "verify Menu",enabled = false)
     public void TestMenu() {
-        Assert.assertTrue( HandlingMenu(),"Button handling failed");
+        Assert.assertTrue( HandlingMenu(),"TestMenu failed");
     }
 
     @Test(description = "verify ModalDialog",enabled = false)
-    public void TestModalDialog() throws InterruptedException { Assert.assertTrue(HandlingModalDialog(),"Button handling failed");}
+    public void TestModalDialog() throws InterruptedException { Assert.assertTrue(HandlingModalDialog(),"BTestModalDialog failed");}
     @Test(description = "verify MultipleFrames",enabled = false)
     public void TestMultipleFrame(){
-       Assert.assertTrue(HandlingMultipleFrames(),"Button handling failed");
+       Assert.assertTrue(HandlingMultipleFrames(),"BTestMultipleFrame failed");
 
     }
     @Test(description = "verify ProgressBar",enabled = false)
     public void TestProgressBar()
     {
-        Assert.assertTrue( HandlingProgressBar(),"Button handling failed");
+        Assert.assertTrue( HandlingProgressBar(),"TestProgressBar failed");
     }
 
     @Test(description = "verify RadioButton",enabled = false)
     public void TestRadioButton() {
-        Assert.assertTrue(HandlingRadioButton(),"Button handling failed");
+        Assert.assertTrue(HandlingRadioButton(),"TestRadioButton failed");
     }
 
     @Test(description = "verify Resizable",enabled = false)
         public void TestResizable()
         {
-            Assert.assertTrue(HandlingResizable(),"Button handling failed");
+            Assert.assertTrue(HandlingResizable(),"TestResizable failed");
         }
 
 
     @Test(description = "verify Selectable",enabled = false)
     public void TestSelectable()
     {
-        Assert.assertTrue(HandlingSelectable(),"Button handling failed");
+        Assert.assertTrue(HandlingSelectable(),"TestSelectable failed");
     }
 
     @Test(description = "verify SelectMenu",enabled = false)
     public void TestSelectMenu()
     {
-        Assert.assertTrue(HandlingSelectMenu(),"Button handling failed");
+        Assert.assertTrue(HandlingSelectMenu(),"TestSelectMenu failed");
     }
 
 
     @Test(description = "verify Slider",enabled = false)
     public void TestSlider()
     {
-        Assert.assertTrue( HandlingSlider(),"Button handling failed");
+        Assert.assertTrue( HandlingSlider(),"TestSlider failed");
     }
 
     @Test(description = "verify Sortable",enabled = false)
     public void TestSortable(){
-        Assert.assertTrue(HandlingSortable(),"Button handling failed");
+        Assert.assertTrue(HandlingSortable(),"TestSortable failed");
     }
 
     @Test(description = "verify Tabs",enabled = false)
     public void TestTabs(){
-        Assert.assertTrue(HandlingTabs(),"Button handling failed");
+        Assert.assertTrue(HandlingTabs(),"TestTabs failed");
     }
 
 
     @Test(description = "verify TextBox",enabled = false)
     public void TestTextBox() throws InterruptedException {
-        Assert.assertTrue(HandlingTextBox(),"Button handling failed");
+        Assert.assertTrue(HandlingTextBox(),"TestTextBox failed");
     }
 
     @Test(description = "verify ToolTips",enabled = false)
     public void TestToolTip()
     {
-        Assert.assertTrue(HandlingToolTip(),"Button handling failed");
+        Assert.assertTrue(HandlingToolTip(),"TestToolTip failed");
     }
 
     @Test(description = "verify Upload",enabled = false)
     public void TestUpload() throws InterruptedException {
-        Assert.assertTrue(HandlingUploadAndDownload(),"Button handling failed");
+        Assert.assertTrue(HandlingUploadAndDownload(),"TestUpload failed");
     }
 
     @Test(description = "verify WebTable",enabled = false)
     public void TestWebTable()
     {
-        Assert.assertTrue(HandlingWebTableTest(),"Button handling failed");
+        Assert.assertTrue(HandlingWebTableTest(),"TestWebTable failed");
     }
 
     @Test(description = "verify Draggable",enabled = false)
     public void TestDraggable()
     {
-        Assert.assertTrue(HandlingDraggable(),"Button handling failed");
+        Assert.assertTrue(HandlingDraggable(),"TestDraggable failed");
     }
 
     @Test(description = "verify Droppable",enabled = false)
     public void TestDroppable()
     {
-        Assert.assertTrue(HandlingDroppable(),"Button handling failed");
+        Assert.assertTrue(HandlingDroppable(),"TestDroppable failed");
     }
 
 
