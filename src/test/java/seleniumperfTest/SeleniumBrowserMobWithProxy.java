@@ -20,7 +20,7 @@ public class SeleniumBrowserMobWithProxy {
 
     static WebDriver driver;
     static JavascriptExecutor js ;
-static  Proxy seleniumProxy;
+ static  Proxy seleniumProxy;
 static     BrowserMobProxy proxy;
 
 

@@ -67,9 +67,7 @@ public class TestNGTestClass  {
    }
 
     @Test(description = "verify BrowserWindow",enabled = false)
-    public void TestBrowserWindow() throws InterruptedException {
-       Assert.assertTrue(HandlingBrowserWindow(),"TestBrowserWindow failed");
-   }
+    public void TestBrowserWindow() throws InterruptedException {Assert.assertTrue(HandlingBrowserWindow(),"TestBrowserWindow failed");}
 
     @Test(description = "verify AutoComplete",enabled = false)
     public void TestAutoComplete() {
@@ -107,11 +105,10 @@ public class TestNGTestClass  {
 
     @Test(description = "verify ModalDialog",enabled = false)
     public void TestModalDialog() throws InterruptedException { Assert.assertTrue(HandlingModalDialog(),"BTestModalDialog failed");}
-    @Test(description = "verify MultipleFrames",enabled = false)
-    public void TestMultipleFrame(){
-       Assert.assertTrue(HandlingMultipleFrames(),"BTestMultipleFrame failed");
 
-    }
+    @Test(description = "verify MultipleFrames",enabled = false)
+    public void TestMultipleFrame(){Assert.assertTrue(HandlingMultipleFrames(),"BTestMultipleFrame failed");}
+
     @Test(description = "verify ProgressBar",enabled = false)
     public void TestProgressBar()
     {

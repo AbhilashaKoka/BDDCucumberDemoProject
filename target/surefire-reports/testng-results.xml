@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-20T12:13:14 IST" name="Suite" finished-at="2026-04-20T12:13:21 IST" duration-ms="7258">
+  <suite started-at="2026-04-20T22:24:09 IST" name="Suite" finished-at="2026-04-20T22:24:15 IST" duration-ms="6395">
     <groups>
     </groups>
-    <test started-at="2026-04-20T12:13:14 IST" name="SeleniumTestNG" finished-at="2026-04-20T12:13:21 IST" duration-ms="7258">
+    <test started-at="2026-04-20T22:24:09 IST" name="SeleniumTestNG" finished-at="2026-04-20T22:24:15 IST" duration-ms="6395">
       <class name="seleniumUITest.tests.TestNGTestClass">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:seleniumUITest.tests.TestNGTestClass@75329a49]" started-at="2026-04-20T12:13:14 IST" name="setUp" finished-at="2026-04-20T12:13:20 IST" duration-ms="6584" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:seleniumUITest.tests.TestNGTestClass@6ce139a4]" started-at="2026-04-20T22:24:09 IST" name="setUp" finished-at="2026-04-20T22:24:14 IST" duration-ms="5315" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="TestButton()[pri:1, instance:seleniumUITest.tests.TestNGTestClass@75329a49]" started-at="2026-04-20T12:13:20 IST" name="TestButton" description="Verify textBox" finished-at="2026-04-20T12:13:21 IST" duration-ms="246" status="FAIL">
+        <test-method signature="TestButton()[pri:1, instance:seleniumUITest.tests.TestNGTestClass@6ce139a4]" started-at="2026-04-20T22:24:14 IST" name="TestButton" description="Verify textBox" finished-at="2026-04-20T22:24:14 IST" duration-ms="476" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="app"]/div/div/div/div[2]/div[2]/h1[contains(text(), "Buttons")]"}
@@ -20,9 +20,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.22.0', revision: 'c5f3146703*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cca6f6e158e76f2b8b888f8488975a22, findElement {using=xpath, value=//*[@id="app"]/div/div/div/div[2]/div[2]/h1[contains(text(), "Buttons")]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\ABHILA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55429}, goog:processID: 33680, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55429/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: cca6f6e158e76f2b8b888f8488975a22]]>
+Command: [c8c5a0133277278ba8d9fe561bf4b711, findElement {using=xpath, value=//*[@id="app"]/div/div/div/div[2]/div[2]/h1[contains(text(), "Buttons")]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\ABHILA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56996}, goog:processID: 12912, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56996/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c8c5a0133277278ba8d9fe561bf4b711]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="app"]/div/div/div/div[2]/div[2]/h1[contains(text(), "Buttons")]"}
@@ -31,9 +31,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.22.0', revision: 'c5f3146703*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cca6f6e158e76f2b8b888f8488975a22, findElement {using=xpath, value=//*[@id="app"]/div/div/div/div[2]/div[2]/h1[contains(text(), "Buttons")]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\ABHILA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55429}, goog:processID: 33680, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55429/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: cca6f6e158e76f2b8b888f8488975a22
+Command: [c8c5a0133277278ba8d9fe561bf4b711, findElement {using=xpath, value=//*[@id="app"]/div/div/div/div[2]/div[2]/h1[contains(text(), "Buttons")]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.57 (b4f28b5637d0..., userDataDir: C:\Users\ABHILA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56996}, goog:processID: 12912, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56996/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c8c5a0133277278ba8d9fe561bf4b711
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
@@ -48,7 +48,7 @@ at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(Elemen
 at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at seleniumUITest.tests.TestNGTestClass.HandlingButton(TestNGTestClass.java:372)
+at seleniumUITest.tests.TestNGTestClass.HandlingButton(TestNGTestClass.java:369)
 at seleniumUITest.tests.TestNGTestClass.TestButton(TestNGTestClass.java:56)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:565)
@@ -76,7 +76,7 @@ at java.base/java.lang.Thread.run(Thread.java:1474)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestButton -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:seleniumUITest.tests.TestNGTestClass@75329a49]" started-at="2026-04-20T12:13:21 IST" name="tearDown" finished-at="2026-04-20T12:13:21 IST" duration-ms="222" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:seleniumUITest.tests.TestNGTestClass@6ce139a4]" started-at="2026-04-20T22:24:15 IST" name="tearDown" finished-at="2026-04-20T22:24:15 IST" duration-ms="265" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
